@@ -34,5 +34,4 @@ public class Sender {
         
         System.out.println("Server started to listen...");
     }
-    
 }

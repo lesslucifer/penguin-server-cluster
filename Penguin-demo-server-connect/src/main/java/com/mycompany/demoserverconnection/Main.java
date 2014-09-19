@@ -17,7 +17,7 @@ public class Main {
     
     // Change to true first to run server
     // Change to false after to run client -> connect to server
-    private static final boolean isServer = false;
+    private static final boolean isServer = true;
     
     private static final int MY_PORT = 3015;
     private static final int SERVER_PORT = 3015;
@@ -51,13 +51,6 @@ public class Main {
                     reciever.write(obj);
                 }
             }
-            
-//            while(true)
-//            {
-//                String name = scan.nextLine();
-//                myObject obj = new myObject(name, 10);
-//                reciever.write(obj);
-//            }
         }
     }
 }
