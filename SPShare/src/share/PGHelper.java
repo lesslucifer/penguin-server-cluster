@@ -6,6 +6,9 @@
 
 package share;
 
+import com.google.common.base.Function;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -13,7 +16,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
-import java.util.UUID;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  *
@@ -91,10 +95,22 @@ public class PGHelper
         
         return out;
     }
+    
+    public static String stackTrace(StackTraceElement []traces)
+    {
+        String message = "";
+        for(StackTraceElement stackTraceElement : traces) {                         
+            message = message + System.lineSeparator() + stackTraceElement.toString();
+        }
+        
+        return message;
+    }
+    
+    private static final Gson prettyJson = new GsonBuilder().setPrettyPrinting().create();
+    public static String obj2PrettyJSON(Object obj)
+    {
+        String strData = prettyJson.toJson(obj);
 
-    public static String randomKey() {
-        UUID rand = UUID.randomUUID();
-        return Long.toHexString(rand.getMostSignificantBits() + 37 * 
-                rand.getLeastSignificantBits());
+        return strData;
     }
 }

@@ -6,6 +6,9 @@
 
 package share;
 
+import libCore.config.Config;
+import share.utilities.TimeUtil;
+
 /**
  * Define some hard constants
  * Almost of them are ad-hoc - should be changed later
@@ -42,10 +45,11 @@ public class PGConst
     public static final long TIME_COOLDOWN_SYNC_FRIENDS = 60L*60L*1000L;    // 1 hours
     public static final int REMOVE_NPC_LEVEL = 10;
     public static final int REMOVE_NPC_N_FRIENDS = 15;
+    public static final int RP_PRIZE_EXPIRE = 7 * TimeUtil.DAY_SECS;
     
     public static final String ADMIN_UID = "288377918";
     public static final String ADMIN_TOOL_UID = "canhcutvuive";
     public static final String ADMIN_TOOL_PASSWORD = "1@3$5^bayTAM";
     
-    public static final String A1BACKUP_DIR = "..";
+    public static final String A1BACKUP_DIR = Config.getParam("a1backup", "directory");
 }

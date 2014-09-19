@@ -106,8 +106,11 @@ public class PGMacro
     public static final String GIFT_CODE_EXPIRED_TIME = "expire";
     public static final String GIFT_TEMPLATE_DATA = "data";
     public static final String GIFT_CODE_ID = "code";
+    public static final String RP_SPECIAL_PRIZE = "special";
+    public static final String RAND_PRIZE_ID = "prize_id";
+    public static final String RP_ITEM_ID = "item_id";
     
-    
+    public static final String MAIL = "mail";
     public static final String MAIL_ID = "mail_id";
     public static final String MAIL_SEND_TIME = "time";
     public static final String MAIL_SENDER = "sender";
@@ -131,6 +134,7 @@ public class PGMacro
     public static final String USER_TEMP_DATA = "temp_data";
     public static final String WAKE_DOG_FIRST_TIME = "wake_dog_first_time";
     public static final String LAST_TIME_SYNC_FRIEND_LIST = "last_sync_friends";
+    public static final String RAND_PRIZE_TURN = "rand_prize_turn";
     
     public static final String USER_DAILY_DATA = "daily_data";
     public static final String TAKEN_SNAPSHOT = "taken_snapshot";

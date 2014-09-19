@@ -86,6 +86,7 @@ public class PGError
     public static final int INVALID_ACHIVEMENT = -909;
     public static final int RECEIVED_ACHIEVEMENT = -910;
     public static final int ACHIEVEMENT_DISABLED = -911;
+    public static final int NOT_ENOUGH_RP_TURN = -912;
     
     public static final int HAVE_WAKEN_DOG_FIRST_TIME = -1001;
     public static final int RECEIVED_LOGIN_PRIZE = -1002;
