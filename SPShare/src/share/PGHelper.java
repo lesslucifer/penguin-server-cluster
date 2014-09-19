@@ -6,7 +6,6 @@
 
 package share;
 
-import com.google.common.base.Function;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
@@ -16,8 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
+import java.util.UUID;
 
 /**
  *
@@ -112,5 +110,10 @@ public class PGHelper
         String strData = prettyJson.toJson(obj);
 
         return strData;
+    }
+    
+    public static String randomGUID()
+    {
+        return UUID.randomUUID().toString();
     }
 }
