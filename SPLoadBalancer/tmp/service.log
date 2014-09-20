@@ -1,0 +1,1013 @@
+Listening for transport dt_socket at address: 55558
+apppath=./cmd/..
+appenv=development
+file-log4j=./cmd/../conf/development.log4j.ini
+log4j:ERROR Could not find value for key log4j.appender.info
+log4j:ERROR Could not instantiate appender named "info".
+log4j:WARN No such property [datePattern] in org.apache.log4j.RollingFileAppender.
+DEBUG - ConfigurationUtils.locate(): base is /data/zserver/java-projects/Chai_Logic/./cmd/../conf, name is development.config.ini
+DEBUG - Loading configuration from the path /data/zserver/java-projects/Chai_Logic/./cmd/../conf/development.config.ini
+./cmd/..
+DEBUG - Logging to org.slf4j.impl.Log4jLoggerAdapter(org.eclipse.jetty.util.log) via org.eclipse.jetty.util.log.Slf4jLog
+DEBUG - Container org.eclipse.jetty.server.Server@5e628704 + qtp42753698{100<=0<=0/2000,-1} as threadpool
+DEBUG - Statistics on = false for SelectChannelConnector@0.0.0.0:55555
+DEBUG - Container org.eclipse.jetty.server.Server@5e628704 + SelectChannelConnector@0.0.0.0:55555 as connector
+INFO - ./cmd/../amfservices/conf
+DEBUG - Container o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/} + org.eclipse.jetty.servlet.ErrorPageErrorHandler@2b76086d as error
+DEBUG - Container org.eclipse.jetty.server.Server@5e628704 + o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/} as handler
+DEBUG - Container o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/} - org.eclipse.jetty.servlet.ErrorPageErrorHandler@2b76086d as error
+DEBUG - Container o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/} + org.eclipse.jetty.servlet.ErrorPageErrorHandler@2b76086d as error
+DEBUG - Container org.eclipse.jetty.server.handler.HandlerCollection@19fac852 + org.eclipse.jetty.server.handler.ResourceHandler@1f758cd1 as handler
+DEBUG - Container org.eclipse.jetty.server.handler.HandlerCollection@19fac852 + o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/} as handler
+DEBUG - Container org.eclipse.jetty.server.Server@5e628704 - o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/} as handler
+DEBUG - Container org.eclipse.jetty.server.Server@5e628704 + org.eclipse.jetty.server.handler.HandlerCollection@19fac852 as handler
+INFO - ==============================
+INFO - Webserver is starting to listen
+DEBUG - starting org.eclipse.jetty.server.Server@5e628704
+INFO - jetty-8.1.0.RC5
+DEBUG - starting org.eclipse.jetty.server.handler.HandlerCollection@19fac852
+DEBUG - starting org.eclipse.jetty.server.handler.ResourceHandler@1f758cd1
+DEBUG - starting org.eclipse.jetty.server.handler.ResourceHandler@1f758cd1
+DEBUG - STARTED org.eclipse.jetty.server.handler.ResourceHandler@1f758cd1
+DEBUG - starting o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/}
+DEBUG - Thread Context classloader WebAppClassLoader=758504003@2d35da43
+DEBUG - Parent class loader: sun.misc.Launcher$AppClassLoader@6ba7bf11 
+DEBUG - Parent class loader: sun.misc.Launcher$ExtClassLoader@51f12c4e 
+DEBUG - preConfigure o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/} with org.eclipse.jetty.webapp.WebInfConfiguration@2a8c7be5
+DEBUG - Set temp dir /tmp/jetty-0.0.0.0-55555-conf-_v2-any-
+DEBUG - preConfigure o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/} with org.eclipse.jetty.webapp.WebXmlConfiguration@5bf0cf51
+DEBUG - parse: jar:file:/data/zserver/java-projects/Chai_Logic/dist/lib/jetty-all-8.1.0.RC5.jar!/org/eclipse/jetty/webapp/webdefault.xml
+DEBUG - parsing: sid=jar:file:/data/zserver/java-projects/Chai_Logic/dist/lib/jetty-all-8.1.0.RC5.jar!/org/eclipse/jetty/webapp/webdefault.xml,pid=null
+DEBUG - jar:file:/data/zserver/java-projects/Chai_Logic/dist/lib/jetty-all-8.1.0.RC5.jar!/org/eclipse/jetty/webapp/webdefault.xml: Calculated metadatacomplete = True with version=2.5
+DEBUG - parse: file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/blazeds.xml
+DEBUG - parsing: sid=file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/blazeds.xml,pid=null
+DEBUG - resolveEntity(-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN, http://java.sun.com/dtd/web-app_2_3.dtd)
+DEBUG - Redirected entity http://java.sun.com/dtd/web-app_2_3.dtd --> jar:file:/data/zserver/java-projects/Chai_Logic/dist/lib/servlet-api-3.0.jar!/javax/servlet/resources/web-app_2_3.dtd
+DEBUG - file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/blazeds.xml: Calculated metadatacomplete = NotSet with version=DTD
+DEBUG - preConfigure o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/} with org.eclipse.jetty.webapp.MetaInfConfiguration@2392d604
+DEBUG - preConfigure o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/} with org.eclipse.jetty.webapp.FragmentConfiguration@66ff45de
+DEBUG - preConfigure o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/} with org.eclipse.jetty.webapp.JettyWebXmlConfiguration@14426a6
+DEBUG - configure o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/} with org.eclipse.jetty.webapp.WebInfConfiguration@2a8c7be5
+DEBUG - configure o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/} with org.eclipse.jetty.webapp.WebXmlConfiguration@5bf0cf51
+DEBUG - configure o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/} with org.eclipse.jetty.webapp.MetaInfConfiguration@2392d604
+DEBUG - configure o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/} with org.eclipse.jetty.webapp.FragmentConfiguration@66ff45de
+DEBUG - configure o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/} with org.eclipse.jetty.webapp.JettyWebXmlConfiguration@14426a6
+DEBUG - Configuring web-jetty.xml
+DEBUG - metadata resolve o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/}
+DEBUG - loaded class org.eclipse.jetty.servlet.listener.ELContextCleaner
+DEBUG - loaded class org.eclipse.jetty.servlet.listener.ELContextCleaner from sun.misc.Launcher$AppClassLoader@6ba7bf11
+DEBUG - loaded class org.eclipse.jetty.servlet.listener.IntrospectorCleaner
+DEBUG - loaded class org.eclipse.jetty.servlet.listener.IntrospectorCleaner from sun.misc.Launcher$AppClassLoader@6ba7bf11
+DEBUG - filterNameMap={}
+DEBUG - pathFilters=null
+DEBUG - servletFilterMap=null
+DEBUG - servletPathMap={/=default}
+DEBUG - servletNameMap={default=default}
+INFO - NO JSP Support for /v2, did not find org.apache.jasper.servlet.JspServlet
+DEBUG - filterNameMap={}
+DEBUG - pathFilters=null
+DEBUG - servletFilterMap=null
+DEBUG - servletPathMap={*.XSP=jsp, *.JSPX=jsp, *.jspf=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspx=jsp, *.xsp=jsp, /=default, *.JSP=jsp}
+DEBUG - servletNameMap={jsp=jsp, default=default}
+DEBUG - loaded class flex.messaging.HttpFlexSession
+DEBUG - loaded class flex.messaging.HttpFlexSession from sun.misc.Launcher$AppClassLoader@6ba7bf11
+DEBUG - filterNameMap={ContinuationFilter=ContinuationFilter}
+DEBUG - pathFilters=[[/*]/[]==0=>ContinuationFilter]
+DEBUG - servletFilterMap={}
+DEBUG - servletPathMap={*.XSP=jsp, *.JSPX=jsp, *.jspf=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspx=jsp, *.xsp=jsp, /=default, *.JSP=jsp}
+DEBUG - servletNameMap={jsp=jsp, default=default}
+DEBUG - filterNameMap={ContinuationFilter=ContinuationFilter}
+DEBUG - pathFilters=[[/*]/[]==0=>ContinuationFilter]
+DEBUG - servletFilterMap={}
+DEBUG - servletPathMap={*.XSP=jsp, *.JSPX=jsp, *.jspf=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspx=jsp, /*=MessageBrokerServlet, *.xsp=jsp, /=default, *.JSP=jsp}
+DEBUG - servletNameMap={jsp=jsp, default=default, MessageBrokerServlet=MessageBrokerServlet}
+DEBUG - Container org.eclipse.jetty.servlet.ServletHandler@3882e4f3 + ContinuationFilter as filter
+DEBUG - Container org.eclipse.jetty.servlet.ServletHandler@3882e4f3 + [/*]/[]==0=>ContinuationFilter as filterMapping
+DEBUG - Container org.eclipse.jetty.servlet.ServletHandler@3882e4f3 + default as servlet
+DEBUG - Container org.eclipse.jetty.servlet.ServletHandler@3882e4f3 + jsp as servlet
+DEBUG - Container org.eclipse.jetty.servlet.ServletHandler@3882e4f3 + MessageBrokerServlet as servlet
+DEBUG - Container org.eclipse.jetty.servlet.ServletHandler@3882e4f3 + [/]=>default as servletMapping
+DEBUG - Container org.eclipse.jetty.servlet.ServletHandler@3882e4f3 + [*.jsp, *.jspf, *.jspx, *.xsp, *.JSP, *.JSPF, *.JSPX, *.XSP]=>jsp as servletMapping
+DEBUG - Container org.eclipse.jetty.servlet.ServletHandler@3882e4f3 + [/*]=>MessageBrokerServlet as servletMapping
+DEBUG - Container org.eclipse.jetty.security.ConstraintSecurityHandler@19852a81 + org.eclipse.jetty.servlet.ServletHandler@3882e4f3 as handler
+DEBUG - Container org.eclipse.jetty.server.session.SessionHandler@75a9883d + org.eclipse.jetty.security.ConstraintSecurityHandler@19852a81 as handler
+DEBUG - Container org.eclipse.jetty.server.session.SessionHandler@75a9883d + org.eclipse.jetty.server.session.HashSessionManager@4d2f9924 as sessionManager
+DEBUG - Container o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/} + org.eclipse.jetty.server.session.SessionHandler@75a9883d as handler
+DEBUG - starting org.eclipse.jetty.server.session.SessionHandler@75a9883d
+DEBUG - starting org.eclipse.jetty.server.session.HashSessionManager@4d2f9924
+DEBUG - Container org.eclipse.jetty.server.Server@5e628704 + org.eclipse.jetty.server.session.HashSessionIdManager@41a7c484 as sessionIdManager
+DEBUG - starting org.eclipse.jetty.server.session.HashSessionIdManager@41a7c484
+DEBUG - STARTED org.eclipse.jetty.server.session.HashSessionIdManager@41a7c484
+DEBUG - STARTED org.eclipse.jetty.server.session.HashSessionManager@4d2f9924
+DEBUG - starting org.eclipse.jetty.security.ConstraintSecurityHandler@19852a81
+DEBUG - starting org.eclipse.jetty.servlet.ServletHandler@3882e4f3
+DEBUG - filterNameMap={ContinuationFilter=ContinuationFilter}
+DEBUG - pathFilters=[[/*]/[]==0=>ContinuationFilter]
+DEBUG - servletFilterMap={}
+DEBUG - servletPathMap={*.XSP=jsp, *.JSPX=jsp, *.jspf=jsp, *.jsp=jsp, *.JSPF=jsp, *.jspx=jsp, /*=MessageBrokerServlet, *.xsp=jsp, /=default, *.JSP=jsp}
+DEBUG - servletNameMap={jsp=jsp, default=default, MessageBrokerServlet=MessageBrokerServlet}
+DEBUG - starting org.eclipse.jetty.servlet.ServletHandler@3882e4f3
+DEBUG - STARTED org.eclipse.jetty.servlet.ServletHandler@3882e4f3
+DEBUG - starting org.eclipse.jetty.security.ConstraintSecurityHandler@19852a81
+DEBUG - STARTED org.eclipse.jetty.security.ConstraintSecurityHandler@19852a81
+DEBUG - starting org.eclipse.jetty.server.session.SessionHandler@75a9883d
+DEBUG - STARTED org.eclipse.jetty.server.session.SessionHandler@75a9883d
+DEBUG - starting o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/}
+DEBUG - starting org.eclipse.jetty.servlet.ErrorPageErrorHandler@2b76086d
+DEBUG - starting org.eclipse.jetty.servlet.ErrorPageErrorHandler@2b76086d
+DEBUG - STARTED org.eclipse.jetty.servlet.ErrorPageErrorHandler@2b76086d
+INFO - started o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/}
+INFO - started o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/}
+DEBUG - starting ContinuationFilter
+DEBUG - loaded class org.eclipse.jetty.continuation.ContinuationFilter
+DEBUG - loaded class org.eclipse.jetty.continuation.ContinuationFilter from sun.misc.Launcher$AppClassLoader@6ba7bf11
+DEBUG - Holding class org.eclipse.jetty.continuation.ContinuationFilter
+DEBUG - STARTED ContinuationFilter
+DEBUG - starting default
+DEBUG - loaded class org.eclipse.jetty.servlet.DefaultServlet
+DEBUG - loaded class org.eclipse.jetty.servlet.DefaultServlet from sun.misc.Launcher$AppClassLoader@6ba7bf11
+DEBUG - Holding class org.eclipse.jetty.servlet.DefaultServlet
+DEBUG - ignoring resource cache configuration, using resourceCache attribute
+DEBUG - Cache resourceCache=null
+DEBUG - resource base = null
+DEBUG - STARTED default
+DEBUG - starting jsp
+DEBUG - Holding class org.eclipse.jetty.servlet.NoJspServlet
+DEBUG - STARTED jsp
+DEBUG - starting MessageBrokerServlet
+DEBUG - loaded class flex.messaging.MessageBrokerServlet
+DEBUG - loaded class flex.messaging.MessageBrokerServlet from sun.misc.Launcher$AppClassLoader@6ba7bf11
+DEBUG - Holding class flex.messaging.MessageBrokerServlet
+DEBUG - getResource(flex/messaging/errors.properties)=jar:file:/data/zserver/java-projects/Chai_Logic/dist/lib/flex-messaging-common.jar!/flex/messaging/errors.properties
+DEBUG - getResource(flex/messaging/errors.properties)=jar:file:/data/zserver/java-projects/Chai_Logic/dist/lib/flex-messaging-common.jar!/flex/messaging/errors.properties
+DEBUG - loaded class com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl
+DEBUG - loaded class com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl from null
+DEBUG - loaded class com.sun.org.apache.xerces.internal.parsers.XIncludeAwareParserConfiguration
+DEBUG - loaded class com.sun.org.apache.xerces.internal.parsers.XIncludeAwareParserConfiguration from null
+DEBUG - loaded class com.sun.org.apache.xerces.internal.impl.dv.dtd.DTDDVFactoryImpl
+DEBUG - loaded class com.sun.org.apache.xerces.internal.impl.dv.dtd.DTDDVFactoryImpl from null
+DEBUG - loaded class com.sun.org.apache.xpath.internal.jaxp.XPathFactoryImpl
+DEBUG - loaded class com.sun.org.apache.xpath.internal.jaxp.XPathFactoryImpl from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault
+DEBUG - loaded class com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault from null
+DEBUG - getResource(flex/messaging/errors.properties)=jar:file:/data/zserver/java-projects/Chai_Logic/dist/lib/flex-messaging-common.jar!/flex/messaging/errors.properties
+DEBUG - getResource(flex/messaging/errors.properties)=jar:file:/data/zserver/java-projects/Chai_Logic/dist/lib/flex-messaging-common.jar!/flex/messaging/errors.properties
+DEBUG - getResource(flex/messaging/errors.properties)=jar:file:/data/zserver/java-projects/Chai_Logic/dist/lib/flex-messaging-common.jar!/flex/messaging/errors.properties
+DEBUG - getResource(flex/messaging/errors.properties)=jar:file:/data/zserver/java-projects/Chai_Logic/dist/lib/flex-messaging-common.jar!/flex/messaging/errors.properties
+DEBUG - loaded class org.apache.commons.logging.impl.Log4JLogger
+DEBUG - loaded class org.apache.commons.logging.impl.Log4JLogger from sun.misc.Launcher$AppClassLoader@6ba7bf11
+DEBUG - Set parameter http.useragent = Jakarta Commons-HttpClient/3.0.1
+DEBUG - Set parameter http.protocol.version = HTTP/1.1
+DEBUG - Set parameter http.connection-manager.class = class org.apache.commons.httpclient.SimpleHttpConnectionManager
+DEBUG - Set parameter http.protocol.cookie-policy = rfc2109
+DEBUG - Set parameter http.protocol.element-charset = US-ASCII
+DEBUG - Set parameter http.protocol.content-charset = ISO-8859-1
+DEBUG - Set parameter http.method.retry-handler = org.apache.commons.httpclient.DefaultHttpMethodRetryHandler@7b6bb7d9
+DEBUG - Set parameter http.dateparser.patterns = [EEE, dd MMM yyyy HH:mm:ss zzz, EEEE, dd-MMM-yy HH:mm:ss zzz, EEE MMM d HH:mm:ss yyyy, EEE, dd-MMM-yyyy HH:mm:ss z, EEE, dd-MMM-yyyy HH-mm-ss z, EEE, dd MMM yy HH:mm:ss z, EEE dd-MMM-yyyy HH:mm:ss z, EEE dd MMM yyyy HH:mm:ss z, EEE dd-MMM-yyyy HH-mm-ss z, EEE dd-MMM-yy HH:mm:ss z, EEE dd MMM yy HH:mm:ss z, EEE,dd-MMM-yy HH:mm:ss z, EEE,dd-MMM-yyyy HH:mm:ss z, EEE, dd-MM-yyyy HH:mm:ss z]
+DEBUG - Set parameter http.connection-manager.max-total = 100
+DEBUG - Set parameter http.connection-manager.max-per-host = {HostConfiguration[]=2}
+DEBUG - Set parameter http.connection.timeout = 0
+DEBUG - Set parameter http.socket.timeout = 0
+DEBUG - Set parameter http.connection.stalecheck = true
+DEBUG - Set parameter http.tcp.nodelay = true
+DEBUG - Set parameter http.socket.linger = -1
+DEBUG - STARTED MessageBrokerServlet
+DEBUG - postConfigure o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/} with org.eclipse.jetty.webapp.WebInfConfiguration@2a8c7be5
+DEBUG - postConfigure o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/} with org.eclipse.jetty.webapp.WebXmlConfiguration@5bf0cf51
+DEBUG - postConfigure o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/} with org.eclipse.jetty.webapp.MetaInfConfiguration@2392d604
+DEBUG - postConfigure o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/} with org.eclipse.jetty.webapp.FragmentConfiguration@66ff45de
+DEBUG - postConfigure o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/} with org.eclipse.jetty.webapp.JettyWebXmlConfiguration@14426a6
+DEBUG - STARTED o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/}
+DEBUG - starting org.eclipse.jetty.server.handler.HandlerCollection@19fac852
+DEBUG - STARTED org.eclipse.jetty.server.handler.HandlerCollection@19fac852
+DEBUG - starting org.eclipse.jetty.server.Server@5e628704
+DEBUG - starting qtp42753698{100<=0<=0/2000,-1}
+DEBUG - STARTED qtp42753698{100<=99<=100/2000,0}
+DEBUG - starting SelectChannelConnector@0.0.0.0:55555
+DEBUG - starting null/null
+DEBUG - STARTED PooledBuffers [0/1024@6144,0/1024@16384,0/1024@-]/PooledBuffers [0/1024@6144,0/1024@32768,0/1024@-]
+DEBUG - starting org.eclipse.jetty.server.nio.SelectChannelConnector$ConnectorSelectorManager@5ab6b2a5
+DEBUG - Starting Thread[qtp42753698-17 Selector0,5,main] on org.eclipse.jetty.io.nio.SelectorManager$1@63713b42
+DEBUG - STARTED org.eclipse.jetty.server.nio.SelectChannelConnector$ConnectorSelectorManager@5ab6b2a5
+INFO - Started SelectChannelConnector@0.0.0.0:55555
+DEBUG - STARTED SelectChannelConnector@0.0.0.0:55555
+DEBUG - STARTED org.eclipse.jetty.server.Server@5e628704
+DEBUG - created SCEP@55d4ee7e{l(/10.30.12.188:33003)<->r(/10.30.12.188:55555),d=false,open=true,ishut=false,oshut=false,rb=false,wb=false,w=true,i=0}-{AsyncHttpConnection@e75be38,g=HttpGenerator{s=0,h=-1,b=-1,c=-1},p=HttpParser{s=-14,l=0,c=0},r=0}
+DEBUG - filled 949/949
+DEBUG - REQUEST /v2/logic on AsyncHttpConnection@e75be38,g=HttpGenerator{s=0,h=-1,b=-1,c=-1},p=HttpParser{s=2,l=485,c=41},r=1
+DEBUG - scope null||/v2/logic @ o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/}
+DEBUG - context=/v2||/logic @ o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/}
+DEBUG - sessionManager=org.eclipse.jetty.server.session.HashSessionManager@4d2f9924
+DEBUG - session=null
+DEBUG - servlet /v2||/logic -> MessageBrokerServlet
+DEBUG - chain=ContinuationFilter->MessageBrokerServlet
+DEBUG - call filter ContinuationFilter
+DEBUG - call servlet MessageBrokerServlet
+DEBUG - new session & id 1m6tmrswkrwaz7q4l7xmelmwm 1m6tmrswkrwaz7q4l7xmelmwm
+Add pool: TClientPool{_cliFactory=TClientFactory{_cliClass=class com.vng.zing.stdprofile2.thrift.StdProfile2Service$Client, _connCfg=ConnConfig{addr=10.30.22.148, port=9281, framed=true, useFastFrmTrans=false, timeout=0}}}
+DEBUG - RESPONSE /v2/logic  200
+DEBUG - oshut SCEP@55d4ee7e{l(/10.30.12.188:33003)<->r(/10.30.12.188:55555),d=true,open=true,ishut=false,oshut=false,rb=false,wb=false,w=true,i=0r}-{AsyncHttpConnection@e75be38,g=HttpGenerator{s=4,h=0,b=0,c=-1},p=HttpParser{s=2,l=485,c=41},r=1}
+DEBUG - ishut SCEP@55d4ee7e{l(/10.30.12.188:33003)<->r(/10.30.12.188:55555),d=true,open=true,ishut=false,oshut=true,rb=false,wb=false,w=true,i=0r}-{AsyncHttpConnection@e75be38,g=HttpGenerator{s=4,h=0,b=0,c=-1},p=HttpParser{s=7,l=485,c=41},r=1}
+DEBUG - java.net.SocketException: Transport endpoint is not connected
+DEBUG - close SCEP@55d4ee7e{l(/10.30.12.188:33003)<->r(/10.30.12.188:55555),d=true,open=true,ishut=true,oshut=true,rb=false,wb=false,w=true,i=0r}-{AsyncHttpConnection@e75be38,g=HttpGenerator{s=4,h=0,b=0,c=-1},p=HttpParser{s=7,l=485,c=41},r=1}
+DEBUG - filled -1/0
+DEBUG - destroyEndPoint SCEP@55d4ee7e{l(null)<->r(/10.30.12.188:55555),d=false,open=false,ishut=true,oshut=true,rb=false,wb=false,w=true,i=0!}-{AsyncHttpConnection@e75be38,g=HttpGenerator{s=0,h=-1,b=-1,c=-1},p=HttpParser{s=0,l=0,c=-3},r=1}
+DEBUG - closed AsyncHttpConnection@e75be38,g=HttpGenerator{s=0,h=-1,b=-1,c=-1},p=HttpParser{s=0,l=0,c=-3},r=1
+DEBUG - created SCEP@b2e0e2f{l(/10.30.12.188:33208)<->r(/10.30.12.188:55555),d=false,open=true,ishut=false,oshut=false,rb=false,wb=false,w=true,i=0}-{AsyncHttpConnection@7ca53564,g=HttpGenerator{s=0,h=-1,b=-1,c=-1},p=HttpParser{s=-14,l=0,c=0},r=0}
+DEBUG - filled 1030/1030
+DEBUG - REQUEST /v2/logic on AsyncHttpConnection@7ca53564,g=HttpGenerator{s=0,h=-1,b=-1,c=-1},p=HttpParser{s=2,l=523,c=41},r=1
+DEBUG - scope null||/v2/logic @ o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/}
+DEBUG - context=/v2||/logic @ o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/}
+DEBUG - Got Session ID 1m6tmrswkrwaz7q4l7xmelmwm from cookie
+DEBUG - sessionManager=org.eclipse.jetty.server.session.HashSessionManager@4d2f9924
+DEBUG - session=org.eclipse.jetty.server.session.HashedSession:1m6tmrswkrwaz7q4l7xmelmwm@1872480022
+DEBUG - servlet /v2||/logic -> MessageBrokerServlet
+DEBUG - chain=ContinuationFilter->MessageBrokerServlet
+DEBUG - call filter ContinuationFilter
+DEBUG - call servlet MessageBrokerServlet
+DEBUG - RESPONSE /v2/logic  200
+DEBUG - oshut SCEP@b2e0e2f{l(/10.30.12.188:33208)<->r(/10.30.12.188:55555),d=true,open=true,ishut=false,oshut=false,rb=false,wb=false,w=true,i=0r}-{AsyncHttpConnection@7ca53564,g=HttpGenerator{s=4,h=0,b=0,c=-1},p=HttpParser{s=2,l=523,c=41},r=1}
+DEBUG - ishut SCEP@b2e0e2f{l(/10.30.12.188:33208)<->r(/10.30.12.188:55555),d=true,open=true,ishut=false,oshut=true,rb=false,wb=false,w=true,i=0r}-{AsyncHttpConnection@7ca53564,g=HttpGenerator{s=4,h=0,b=0,c=-1},p=HttpParser{s=7,l=523,c=41},r=1}
+DEBUG - java.net.SocketException: Transport endpoint is not connected
+DEBUG - close SCEP@b2e0e2f{l(/10.30.12.188:33208)<->r(/10.30.12.188:55555),d=true,open=true,ishut=true,oshut=true,rb=false,wb=false,w=true,i=0r}-{AsyncHttpConnection@7ca53564,g=HttpGenerator{s=4,h=0,b=0,c=-1},p=HttpParser{s=7,l=523,c=41},r=1}
+DEBUG - filled -1/0
+DEBUG - destroyEndPoint SCEP@b2e0e2f{l(null)<->r(/10.30.12.188:55555),d=false,open=false,ishut=true,oshut=true,rb=false,wb=false,w=true,i=0!}-{AsyncHttpConnection@7ca53564,g=HttpGenerator{s=0,h=-1,b=-1,c=-1},p=HttpParser{s=0,l=0,c=-3},r=1}
+DEBUG - closed AsyncHttpConnection@7ca53564,g=HttpGenerator{s=0,h=-1,b=-1,c=-1},p=HttpParser{s=0,l=0,c=-3},r=1
+DEBUG - created SCEP@59f52125{l(/10.30.12.188:33212)<->r(/10.30.12.188:55555),d=false,open=true,ishut=false,oshut=false,rb=false,wb=false,w=true,i=0}-{AsyncHttpConnection@6c533246,g=HttpGenerator{s=0,h=-1,b=-1,c=-1},p=HttpParser{s=-14,l=0,c=0},r=0}
+DEBUG - filled 736/736
+DEBUG - REQUEST /v2/logic on AsyncHttpConnection@6c533246,g=HttpGenerator{s=0,h=-1,b=-1,c=-1},p=HttpParser{s=2,l=2,c=41},r=1
+DEBUG - scope null||/v2/logic @ o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/}
+DEBUG - context=/v2||/logic @ o.e.j.w.WebAppContext{/v2,file:/data/zserver/java-projects/Chai_Logic/amfservices/conf/}
+DEBUG - sessionManager=org.eclipse.jetty.server.session.HashSessionManager@4d2f9924
+DEBUG - session=null
+DEBUG - servlet /v2||/logic -> MessageBrokerServlet
+DEBUG - chain=ContinuationFilter->MessageBrokerServlet
+DEBUG - call filter ContinuationFilter
+DEBUG - call servlet MessageBrokerServlet
+DEBUG - new session & id 3nqqz2l8ai6i1tsd53njxheg9 3nqqz2l8ai6i1tsd53njxheg9
+DEBUG - RESPONSE /v2/logic  200
+DEBUG - oshut SCEP@59f52125{l(/10.30.12.188:33212)<->r(/10.30.12.188:55555),d=true,open=true,ishut=false,oshut=false,rb=false,wb=false,w=true,i=0r}-{AsyncHttpConnection@6c533246,g=HttpGenerator{s=4,h=0,b=0,c=-1},p=HttpParser{s=2,l=2,c=41},r=1}
+DEBUG - ishut SCEP@59f52125{l(/10.30.12.188:33212)<->r(/10.30.12.188:55555),d=true,open=true,ishut=false,oshut=true,rb=false,wb=false,w=true,i=0r}-{AsyncHttpConnection@6c533246,g=HttpGenerator{s=4,h=0,b=0,c=-1},p=HttpParser{s=7,l=2,c=41},r=1}
+DEBUG - java.net.SocketException: Transport endpoint is not connected
+DEBUG - close SCEP@59f52125{l(/10.30.12.188:33212)<->r(/10.30.12.188:55555),d=true,open=true,ishut=true,oshut=true,rb=false,wb=false,w=true,i=0r}-{AsyncHttpConnection@6c533246,g=HttpGenerator{s=4,h=0,b=0,c=-1},p=HttpParser{s=7,l=2,c=41},r=1}
+DEBUG - destroyEndPoint SCEP@59f52125{l(null)<->r(/10.30.12.188:55555),d=true,open=false,ishut=true,oshut=true,rb=false,wb=false,w=true,i=0!}-{AsyncHttpConnection@6c533246,g=HttpGenerator{s=4,h=0,b=0,c=-1},p=HttpParser{s=7,l=2,c=41},r=1}
+DEBUG - closed AsyncHttpConnection@6c533246,g=HttpGenerator{s=4,h=0,b=0,c=-1},p=HttpParser{s=7,l=2,c=41},r=1
+DEBUG - filled -1/0
+DEBUG - invalidate 1m6tmrswkrwaz7q4l7xmelmwm
+DEBUG - invalidate 3nqqz2l8ai6i1tsd53njxheg9

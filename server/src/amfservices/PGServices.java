@@ -4,8 +4,11 @@
  */
 package amfservices;
 
+import config.PGConfig;
 import java.io.IOException;
 import java.util.*;
+import pgentity.HackEntity;
+import pgentity.UserList;
 import share.AMFBuilder;
 import share.PGConst;
 import share.PGException;
@@ -690,6 +693,33 @@ public class PGServices
         return this.serviceActions.addWhiteListAction(whiteList);
     }
     // </editor-fold>
+    
+    //========================= GLOBAL SERVICES ==========================
+    
+    public Object inSystemList(String unused_uid, Map<String, Object> params, long now)
+    {
+    final String uid = (String) params.get(PGMacro.UID);
+        return UserList.getList(UserList.ListType.SYSTEM_ACCOUNT).contains(uid);
+    }
+    
+    public Object getHackTime(String unused_uid, Map<String, Object> params, long now)
+    {
+        final String uid = (String) params.get(PGMacro.UID);
+        try
+        {
+            HackEntity hack = HackEntity.getEntity(uid);
+            return hack.getDeltaTime();
+        }
+        catch (Exception ex)
+        {
+            return 0;
+        }
+    }
+    
+    public Object getAllConfigs(String unused_uid, Map<String, Object> params, long now)
+    {
+        return PGConfig.inst().getAllConfigs();
+    }
 
     //============================= END ===================================
 }

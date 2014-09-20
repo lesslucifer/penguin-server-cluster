@@ -1,0 +1,3 @@
+JVM_OPTS [ address ] : 44448
+port jetty : 6969
+JMXPORT : 44446
