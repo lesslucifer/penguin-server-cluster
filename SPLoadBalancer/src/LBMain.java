@@ -5,10 +5,10 @@ import libCore.config.Config;
 import libCore.LogUtil;
 import webserver.WebServer;
 
-public class ServiceDaemon
+public class LBMain
 {
     private static final org.apache.log4j.Logger LOG =
-            org.apache.log4j.Logger.getLogger(ServiceDaemon.class);
+            org.apache.log4j.Logger.getLogger(LBMain.class);
 
     public static void main(String[] args) throws Exception
     {

@@ -1,14 +1,24 @@
 
-import config.PGConfig;
 import java.io.File;
 import java.util.TimeZone;
 import libCore.LogUtil;
 import libCore.config.Config;
 import rmitarget.Server;
 
-public class ServiceDaemon
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author KieuAnh
+ */
+public class Main
 {
-    private static org.apache.log4j.Logger _log = org.apache.log4j.Logger.getLogger(ServiceDaemon.class);
+    private static final org.apache.log4j.Logger LOG =
+            org.apache.log4j.Logger.getLogger(Main.class);
 
     public static void main(String[] args) throws Exception
     {
@@ -19,11 +29,11 @@ public class ServiceDaemon
             new File(pidFile).deleteOnExit();
 
         // Set default time zone
-        _log.info("Home: " + Config.getHomePath());
         TimeZone.setDefault(TimeZone.getTimeZone(Config.getParam("time_zone", "tz")));
 
-        PGConfig.inst();
-        
+        System.out.println("Server is started for listen...");
+        System.out.println("===============================");
+
         Server.inst().start();
     }
 }

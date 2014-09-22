@@ -24,7 +24,8 @@ class RMITarget implements RemoteTarget {
     @Override
     public Object doAMF(Request request) throws RemoteException {
         try {
-            Method proc = PGServices.class.getMethod(request.getMethod(), String.class,
+            String rfMethod = "rf_" + request.getMethod();
+            Method proc = PGServices.class.getMethod(rfMethod, String.class,
                     Map.class, Long.TYPE);
             
             return proc.invoke(services,
