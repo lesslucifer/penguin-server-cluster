@@ -4,18 +4,17 @@
  * and open the template in the editor.
  */
 
-package SERVLET.PAYMENT;
+package git.httpservices;
 
-import httpservices.TargetedServlet;
 import share.Methods;
 
 /**
  *
- * @author LinhTA
+ * @author KieuAnh
  */
-public class ZingBilling extends TargetedServlet {
-    public ZingBilling()
-    {
-        super(Methods.Http.ZING_BILLING);
+public class WhiteList extends TargetedServlet
+{
+    public WhiteList() {
+        super(Methods.Http.WHITE_LIST);
     }
 }

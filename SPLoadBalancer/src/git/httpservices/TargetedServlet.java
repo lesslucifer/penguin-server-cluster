@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-package httpservices;
+package git.httpservices;
 
 import java.lang.reflect.InvocationTargetException;
 import javax.servlet.http.*;
 import share.PGMacro;
-import target.RMITargetResolver;
+import git.target.RMITargetResolver;
 import target.Request;
 import target.Target;
 import target.TargetResolver;
@@ -18,7 +18,7 @@ import target.TargetResolver;
  *
  * @author KieuAnh
  */
-public class TargetedServlet extends SERVLET.ServerServlet
+public class TargetedServlet extends git.httpservices.ServerServlet
 {
     private final TargetResolver targetResolver = RMITargetResolver.inst();
     private final String method;

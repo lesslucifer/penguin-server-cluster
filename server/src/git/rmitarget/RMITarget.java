@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package rmitarget;
+package git.rmitarget;
 
 import amfservices.PGServices;
 import java.lang.reflect.Method;
@@ -24,7 +24,7 @@ class RMITarget implements RemoteTarget {
     @Override
     public Object doAMF(Request request) throws RemoteException {
         try {
-            String rfMethod = "rf_" + request.getMethod();
+            String rfMethod = request.getMethod();
             Method proc = PGServices.class.getMethod(rfMethod, String.class,
                     Map.class, Long.TYPE);
             
@@ -42,7 +42,18 @@ class RMITarget implements RemoteTarget {
 
     @Override
     public Object doHTTP(Request request) throws RemoteException {
-        Throwable ex = new UnsupportedOperationException("Not supported yet.");
-            throw new RemoteException("HTTP error: ", ex);
+        try {
+            String rfMethod = request.getMethod();
+            Method proc = httpservices.Services.class.getMethod(rfMethod, Request.class);
+            
+            return proc.invoke(services, request);
+        }
+        catch (Exception ex) {
+            throw new RemoteException("AMF error: ", ex);
+        }
+        finally
+        {
+            EntityPool.inst().releaseAllThreadResources();
+        }
     }
 }

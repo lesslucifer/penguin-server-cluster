@@ -4,64 +4,56 @@
  * and open the template in the editor.
  */
 
-package amfservices.navigate;
+package git.reflect;
 
-import amfservices.PGServices;
-import amfservices.actions.ServiceReflectTarget;
-import config.PGConfig;
-import db.PGKeys;
-import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import libCore.SNServices;
 import libCore.config.Config;
 import logging.PGLog;
 import org.apache.log4j.Logger;
-import pgentity.HackEntity;
-import pgentity.UserList;
-import pgentity.pool.EntityPool;
-import share.PGConst;
+import share.Methods;
 import share.PGError;
 import share.PGException;
 import share.PGHelper;
 import share.PGMacro;
-import zme.api.exception.ZingMeApiException;
+import git.target.RMITargetResolver;
+import target.Request;
+import target.Target;
+import target.TargetResolver;
 
 /**
  *
  * @author KieuAnh
  */
-public class Reflector {
+public class Reflector implements amfservices.Reflector {
     
     private static final Logger LOG = Logger.getLogger(Reflector.class.getName());
     private final SessionCache activeUsers;
-    private final ServiceReflectTarget services;
+    private final TargetResolver targetResolver;
 
-    private Reflector(ServiceReflectTarget target) {
+    public Reflector() {
         this.activeUsers = SessionCache.inst();
-        this.services = target;
-    }
-    
-    public static Reflector getNavigator(ServiceReflectTarget target)
-    {
-        return new Reflector(target);
+        this.targetResolver = RMITargetResolver.inst();
     }
     
     //========================= AUTHENTICATION =============================
     
+    @Override
     public Map<String, Object> authenticate(Map<String, Object> params)
     {
         return Authenticate.authenticate(activeUsers, params);
     }
     
+    @Override
     public Map<String, Object> authenticateSystem(Map<String, Object> params)
     {
-        return Authenticate.authenticateSystem(activeUsers, params);
+        return Authenticate.authenticateSystem(activeUsers, targetResolver,
+                params, this.now());
     }
     
+    @Override
     public Map<String, Object> reflectCall(String method, Map<String, Object> params) 
     {
         long start = System.currentTimeMillis();
@@ -83,10 +75,6 @@ public class Reflector {
             // compare client config
             this.validConfig(content, (Map<String, Object>) params.get("config"));
             
-            // execute service
-            Method mthd = ServiceReflectTarget.class.getMethod(method,
-                    String.class, Map.class, Long.TYPE);
-            
             Map<String, Object> data = Collections.EMPTY_MAP;
             if (params.get("data") instanceof Map)
             {
@@ -94,8 +82,9 @@ public class Reflector {
             }
 
             PGLog.debug("Input\r\n%s", PGHelper.obj2PrettyJSON(data));
-            @SuppressWarnings("unchecked")
-            Object responseData = mthd.invoke(services, uid, data, now);
+            Target target = this.targetResolver.getUserTarget(uid);
+            Request req = Request.makeAMF(uid, method, data, now);
+            Object responseData = target.doAMF(req);
             
             this.putError(null, 0, content);
             content.put("data", responseData);
@@ -116,18 +105,13 @@ public class Reflector {
                 LOG.error("Service " + method, ex.getCause());
             }
         }
-        catch (NoSuchMethodException ex){
-            this.putError(ex, content);
-        } catch (SecurityException ex) {
-            this.putError(ex, content);
-        } catch (IllegalAccessException ex) {
+        catch (SecurityException ex) {
             this.putError(ex, content);
         } catch (IllegalArgumentException ex) {
             this.putError(ex, content);
         }
         finally
         {
-            EntityPool.inst().releaseAllThreadResources();
             long end = System.currentTimeMillis();
             PGLog.info(uid + " end services " + method +
                     " (" + ((double) (end - start)) / 1000.0 + ")");
@@ -181,12 +165,18 @@ public class Reflector {
         VersionString serverConfigVersion = new VersionString(Config.getParam("config", "version"));
         if (clientConfigVersion.compareTo(serverConfigVersion) != 0)
         {
-            Map<String, Object> config = new HashMap<String, Object>();
-            config.put("version", serverConfigVersion.toString());
-            Map<String, Object> clientConfig = PGConfig.inst().getAllConfigs();
-            config.put("config", clientConfig);
-
-            content.put("config", config);
+            try {
+                Map<String, Object> config = new HashMap<String, Object>();
+                config.put("version", serverConfigVersion.toString());
+                Target master = targetResolver.getMasterTarget();
+                Request req = Request.makeAMF(null, Methods.Global.GET_ALL_CONFIGS, null, 0);
+                Object clientConfig = master.doAMF(req);
+                config.put("config", clientConfig);
+                
+                content.put("config", config);
+            } catch (InvocationTargetException ex) {
+                content.put("config", Collections.EMPTY_MAP);
+            }
         }
     }
 
@@ -208,12 +198,19 @@ public class Reflector {
     {
         if (data.containsKey("cheat"))
         {
-            Map<String, Object> cheatData = (Map<String, Object>) data.get("cheat");
-            String uid = (String) cheatData.get(PGMacro.UID);
-            
-            HackEntity hacker = HackEntity.getEntity(uid);
-            
-            return realNow + hacker.getDeltaTime();
+            try {
+                Map<String, Object> cheatData = (Map<String, Object>) data.get("cheat");
+                String uid = (String) cheatData.get(PGMacro.UID);
+                
+                Target master = targetResolver.getMasterTarget();
+                Request req = Request.makeAMF(null, Methods.Global.GET_HACK_TIME,
+                        cheatData, realNow);
+                
+                long dTime = (Long) master.doAMF(req);
+                
+                return realNow + dTime;
+            } catch (InvocationTargetException ex) {
+            }
         }
         
         return realNow;

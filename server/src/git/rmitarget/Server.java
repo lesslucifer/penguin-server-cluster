@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package rmitarget;
+package git.rmitarget;
 
 import java.net.MalformedURLException;
 import java.rmi.AlreadyBoundException;

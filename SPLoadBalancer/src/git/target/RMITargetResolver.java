@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package target;
+package git.target;
 
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -13,6 +13,10 @@ import java.rmi.registry.Registry;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import share.PGException;
+import target.RemoteTarget;
+import target.RemoteTargetAdapter;
+import target.Target;
+import target.TargetResolver;
 
 /**
  *

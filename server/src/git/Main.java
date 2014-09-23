@@ -1,9 +1,10 @@
+package git;
 
 import java.io.File;
 import java.util.TimeZone;
 import libCore.LogUtil;
 import libCore.config.Config;
-import rmitarget.Server;
+import git.rmitarget.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
