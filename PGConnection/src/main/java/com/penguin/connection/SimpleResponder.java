@@ -10,7 +10,7 @@ import com.penguin.data.interfaces.IPGData;
 import com.penguin.data.interfaces.IServices;
 import com.penguin.handler.PGRouter;
 import com.penguin.handler.SimpleIoHandler;
-import com.penguin.test.TestResponder;
+import com.penguin.test.TestResponseder;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.util.Hashtable;
@@ -45,7 +45,7 @@ public class SimpleResponder {
     public static void main(String[] args) throws IOException {
         
         // Create services
-        IServices services = new TestResponder();
+        IServices services = new TestResponseder();
         
         // Create router
         final PGRouter router = new PGRouter(services);
