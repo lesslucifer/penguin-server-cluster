@@ -6,6 +6,7 @@
 
 package git.rmitarget;
 
+import amfservices.actions.ServiceReflectTarget;
 import java.net.MalformedURLException;
 import java.rmi.AlreadyBoundException;
 import java.rmi.Naming;
@@ -31,9 +32,10 @@ public class Server {
         return inst;
     }
     
-    public void start() throws RemoteException, AlreadyBoundException, MalformedURLException
+    public void start() throws Exception
     {
-        RMITarget target = new RMITarget();
+        RMITarget target = new RMITarget(ServiceReflectTarget.class,
+                httpservices.Services.class);
         RemoteTarget stub = (RemoteTarget) UnicastRemoteObject.exportObject(target, 3377);
         
         LocateRegistry.createRegistry(3377);
