@@ -7,21 +7,12 @@
 package git.reflect;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import libCore.SNServices;
-import share.AMFBuilder;
-import share.Methods;
-import share.PGConst;
 import share.PGError;
 import share.PGException;
-import share.PGHelper;
 import share.PGMacro;
-import target.Request;
-import target.Target;
-import target.TargetResolver;
 import zme.api.exception.ZingMeApiException;
 
 /**
@@ -56,7 +47,7 @@ class Authenticate {
         
         return Collections.EMPTY_MAP;
     }
-    
+    /*
     public static Map<String, Object> authenticateSystem(SessionCache sessions,
             TargetResolver targResl,
             Map<String, Object> params, long now)
@@ -97,4 +88,5 @@ class Authenticate {
         resp.put("data", data);
         return resp;
     }
+    */
 }

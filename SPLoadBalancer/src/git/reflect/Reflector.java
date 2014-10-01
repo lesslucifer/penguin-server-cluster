@@ -49,8 +49,9 @@ public class Reflector implements amfservices.Reflector {
     @Override
     public Map<String, Object> authenticateSystem(Map<String, Object> params)
     {
-        return Authenticate.authenticateSystem(activeUsers, targetResolver,
-                params, this.now());
+        return Collections.EMPTY_MAP;
+//        return Authenticate.authenticateSystem(activeUsers, targetResolver,
+//                params, this.now());
     }
     
     @Override
