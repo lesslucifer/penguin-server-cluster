@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import libCore.config.Config;
-import logging.PGLog;
+import share.PGLog;
 import org.apache.log4j.Logger;
 import share.Methods;
 import share.PGError;

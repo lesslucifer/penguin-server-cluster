@@ -28,4 +28,8 @@ public class TestResponseder implements IServices{
         return new PGStringData(0, "", "Data: Hieu, 22, UIT");
     }
     
+    public IPGData Println(IPGData regParams)
+    {
+        return new PGStringData(0, "", "Data: Hieu, 22, UIT");
+    }
 }
