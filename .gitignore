@@ -25,3 +25,4 @@ bak.bak
 /server/src/*.java
 /SPShare/src/*
 /SPShare/src/share/*.java
+/lib
