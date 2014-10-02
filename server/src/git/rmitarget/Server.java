@@ -35,7 +35,7 @@ public class Server {
     public void start() throws Exception
     {
         RMITarget target = new RMITarget(ServiceReflectTarget.class,
-                httpservices.Services.class);
+                git.httpservices.Services.class);
         RemoteTarget stub = (RemoteTarget) UnicastRemoteObject.exportObject(target, 3377);
         
         LocateRegistry.createRegistry(3377);
