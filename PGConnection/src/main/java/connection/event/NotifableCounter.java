@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.penguin.event;
+package connection.event;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

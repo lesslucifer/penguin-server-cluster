@@ -18,7 +18,7 @@ import share.PGError;
 import share.PGException;
 import share.PGHelper;
 import share.PGMacro;
-import git.target.RMITargetResolver;
+import git.target.SocketTargetResolver;
 import target.Request;
 import target.Target;
 import target.TargetResolver;
@@ -35,7 +35,7 @@ public class Reflector implements amfservices.Reflector {
 
     public Reflector() {
         this.activeUsers = SessionCache.inst();
-        this.targetResolver = RMITargetResolver.inst();
+        this.targetResolver = SocketTargetResolver.inst();
     }
     
     //========================= AUTHENTICATION =============================
@@ -197,22 +197,22 @@ public class Reflector implements amfservices.Reflector {
     
     private long convertForCheat(long realNow, Map<String, Object> data)
     {
-        if (data.containsKey("cheat"))
-        {
-            try {
-                Map<String, Object> cheatData = (Map<String, Object>) data.get("cheat");
-                String uid = (String) cheatData.get(PGMacro.UID);
-                
-                Target master = targetResolver.getMasterTarget();
-                Request req = Request.makeAMF(null, Methods.Global.GET_HACK_TIME,
-                        cheatData, realNow);
-                
-                long dTime = (Long) master.doAMF(req);
-                
-                return realNow + dTime;
-            } catch (InvocationTargetException ex) {
-            }
-        }
+//        if (data.containsKey("cheat"))
+//        {
+//            try {
+//                Map<String, Object> cheatData = (Map<String, Object>) data.get("cheat");
+//                String uid = (String) cheatData.get(PGMacro.UID);
+//                
+//                Target master = targetResolver.getMasterTarget();
+//                Request req = Request.makeAMF(null, Methods.Global.GET_HACK_TIME,
+//                        cheatData, realNow);
+//                
+//                long dTime = (Long) master.doAMF(req);
+//                
+//                return realNow + dTime;
+//            } catch (InvocationTargetException ex) {
+//            }
+//        }
         
         return realNow;
     }

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.penguin.handler;
+package connection.handler;
 
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IdleStatus;

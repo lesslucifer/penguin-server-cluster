@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
-package com.penguin.handler;
+package connection.handler;
 
-import com.penguin.data.interfaces.IPGData;
-import com.penguin.event.INotifable;
+import connection.data.interfaces.IPGData;
+import connection.event.INotifable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;

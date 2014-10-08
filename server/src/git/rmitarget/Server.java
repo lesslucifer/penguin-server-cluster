@@ -6,14 +6,13 @@
 
 package git.rmitarget;
 
-import amfservices.actions.ServiceReflectTarget;
-import java.net.MalformedURLException;
-import java.rmi.AlreadyBoundException;
-import java.rmi.Naming;
-import java.rmi.RemoteException;
-import java.rmi.registry.LocateRegistry;
-import java.rmi.server.UnicastRemoteObject;
-import target.RemoteTarget;
+import amfservices.ReflectAdapter;
+import connection.SimpleResponder;
+import connection.data.interfaces.IPGData;
+import connection.data.interfaces.IServices;
+import connection.handler.PGRouter;
+import connection.handler.SimpleIoHandler;
+import org.apache.mina.core.session.IoSession;
 
 /**
  *
@@ -34,12 +33,33 @@ public class Server {
     
     public void start() throws Exception
     {
-        RMITarget target = new RMITarget(ServiceReflectTarget.class,
-                git.httpservices.Services.class);
-        RemoteTarget stub = (RemoteTarget) UnicastRemoteObject.exportObject(target, 3377);
+        // ============= Stub RMI ===============
+//        RMITarget target = new RMITarget(ServiceReflectTarget.class,
+//                git.httpservices.Services.class);
+//        RemoteTarget stub = (RemoteTarget) UnicastRemoteObject.exportObject(target, 3377);
+//        
+//        LocateRegistry.createRegistry(3377);
+//        Naming.rebind("rmi://localhost:3377/Target", stub);
         
-        LocateRegistry.createRegistry(3377);
-        Naming.rebind("rmi://localhost:3377/Target", stub);
+        // ============= Stub socket ============
+        // Create services
+        IServices services = new ReflectAdapter();
+        
+        // Create router
+        final PGRouter router = new PGRouter(services);
+        
+        SimpleResponder req = new SimpleResponder(3377,
+            new SimpleIoHandler()
+            {
+                @Override
+                public void messageReceived(IoSession session, Object message) throws Exception {
+                    if(router != null) {
+                        IPGData data = (IPGData) message;
+                        String method = data.getMethod();
+                        router.drive(method, session, data);
+                    }
+                }
+            });
         
         System.out.println("Server start...");
     }

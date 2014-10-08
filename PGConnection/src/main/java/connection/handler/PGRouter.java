@@ -4,14 +4,12 @@
  * and open the template in the editor.
  */
 
-package com.penguin.handler;
+package connection.handler;
 
-import com.penguin.data.interfaces.IPGData;
-import com.penguin.data.interfaces.IServices;
+import connection.data.interfaces.IPGData;
+import connection.data.interfaces.IServices;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.apache.mina.core.session.IoSession;
 
 /**
@@ -28,7 +26,6 @@ public class PGRouter {
     
     public void drive(final String method, final IoSession session, final IPGData message) {
         
-        // Need to create thread
         new Thread() {
            @Override
            public void run() {
