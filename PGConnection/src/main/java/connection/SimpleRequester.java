@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-package com.penguin.connection;
+package connection;
 
-import com.penguin.PGAddress;
-import com.penguin.data.impl.PGStringData;
-import com.penguin.data.interfaces.IPGData;
-import com.penguin.handler.SimpleIoHandler;
+import connection.PGAddress;
+import connection.data.impl.PGStringData;
+import connection.data.interfaces.IPGData;
+import connection.handler.SimpleIoHandler;
 import java.net.InetSocketAddress;
 import java.util.Hashtable;
 import java.util.Map;
@@ -57,6 +57,7 @@ public class SimpleRequester {
     }
     
     public void send(IPGData req) {
+        
         if(this.session != null && this.session.isConnected()) {
             this.session.write(req);
         }
@@ -81,7 +82,7 @@ public class SimpleRequester {
         
         String strRequest = "I <3 U";
         System.out.println("Have requested: " + strRequest);
-        IPGData msg = new PGStringData(1, "Println", strRequest);
-        req.send(msg);
+//        IPGData msg = new PGStringData(1, "Println", strRequest);
+//        req.send(msg);
     }
 }

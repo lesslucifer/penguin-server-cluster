@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-package com.penguin.connection;
+package connection;
 
-import com.penguin.data.interfaces.IPGData;
-import com.penguin.data.interfaces.IServices;
-import com.penguin.handler.PGRouter;
-import com.penguin.handler.SimpleIoHandler;
+import connection.data.interfaces.IPGData;
+import connection.data.interfaces.IServices;
+import connection.handler.PGRouter;
+import connection.handler.SimpleIoHandler;
 import com.penguin.test.TestResponseder;
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -29,9 +29,12 @@ public class SimpleResponder {
     
     private final NioSocketAcceptor acceptor;
     
-    public SimpleResponder(int port, Map<String, IoFilterAdapter> filters, SimpleIoHandler handler) throws IOException {
+    public SimpleResponder(int port, SimpleIoHandler handler) throws IOException {
         
         this.acceptor = new NioSocketAcceptor();
+        
+        Map<String, IoFilterAdapter> filters = new Hashtable<>();
+        filters.put("codec", new ProtocolCodecFilter( new ObjectSerializationCodecFactory()));
         
         // Apply filter to connection
         for(Map.Entry<String, IoFilterAdapter> entry : filters.entrySet()) {   
@@ -50,10 +53,7 @@ public class SimpleResponder {
         // Create router
         final PGRouter router = new PGRouter(services);
         
-        Map<String, IoFilterAdapter> filters = new Hashtable<>();
-        filters.put("codec", new ProtocolCodecFilter( new ObjectSerializationCodecFactory()));
-        
-        SimpleResponder req = new SimpleResponder(18567, filters, 
+        SimpleResponder req = new SimpleResponder(18567,
             new SimpleIoHandler()
             {
                 @Override
@@ -62,8 +62,10 @@ public class SimpleResponder {
                         IPGData data = (IPGData) message;
                         String method = data.getMethod();
                         router.drive(method, session, data);
+                        System.out.println("Handling " + method + "...");
                     }
                 }
             });
+        System.out.println("Server started to listen...");
     }
 }

@@ -4,11 +4,18 @@
  * and open the template in the editor.
  */
 
-package com.penguin.data.interfaces;
+package connection.handler;
+
+import connection.data.interfaces.IPGData;
 
 /**
  *
  * @author suaongmattroi
  */
-public interface IServices {
+public interface IConnectionServices {
+    
+    IPGData reflectCall(final IPGData pgd);
+    
+    void dispose();
+    
 }

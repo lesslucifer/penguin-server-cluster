@@ -6,9 +6,11 @@
 
 package com.penguin.test;
 
-import com.penguin.data.impl.PGStringData;
-import com.penguin.data.interfaces.IPGData;
-import com.penguin.data.interfaces.IServices;
+import connection.data.impl.PGStringData;
+import connection.data.interfaces.IPGData;
+import connection.data.interfaces.IServices;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -17,19 +19,26 @@ import com.penguin.data.interfaces.IServices;
 public class TestResponseder implements IServices{
     
     public IPGData getFriendlist(IPGData regParams) {
-        return new PGStringData(0, "", "Friendlist: empty");
+        return new PGStringData(regParams.getIndex(), "123", "getFriendlist", "Friendlist: empty", 1234);
     }
     
     public IPGData loadGame(IPGData regParams) {
-        return new PGStringData(0, "", "LoadGame: initializing...");
+        return new PGStringData(regParams.getIndex(), "123", "loadGame", "LoadGame: initializing...", 1234);
     }
     
     public IPGData getDataUser(IPGData regParams) {
-        return new PGStringData(0, "", "Data: Hieu, 22, UIT");
+        return new PGStringData(regParams.getIndex(), "123", "getDataUser", "Data: Hieu, 22, UIT", 1234);
     }
     
-    public IPGData Println(IPGData regParams)
-    {
-        return new PGStringData(0, "", "Data: Hieu, 22, UIT");
+    public IPGData Println(IPGData regParams) {
+        while(regParams.getIndex() != -1)
+        {
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(TestResponseder.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return new PGStringData(regParams.getIndex(), "123", "Println", "Println-> Data: Hieu, 22, UIT", 1234);
     }
 }

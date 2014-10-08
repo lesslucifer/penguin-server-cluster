@@ -4,31 +4,48 @@
  * and open the template in the editor.
  */
 
-package com.penguin.data.impl;
+package connection.data.impl;
 
-import com.penguin.data.interfaces.IPGData;
+import connection.data.interfaces.IPGData;
+import java.util.Map;
 
 /**
  *
  * @author suaongmattroi
  */
-public class PGStringData implements IPGData{
+public class PGMapData implements IPGData{
 
-    private final int index;
+    private final long index;
     
     private final String method;
     
-    private final String data;
+    private final Map data;
     
-    public PGStringData(int index, String method, String data)
+    private final String caller;
+    
+    private final long now;
+    
+    public PGMapData(long index, String caller, String method, Map data, long now)
     {
         this.index = index;
         this.method = method;
         this.data = data;
+        this.caller = caller;
+        this.now = now;
     }
     
     @Override
-    public int getIndex() {
+    public String getCaller() {
+        return caller;
+    }
+
+    @Override
+    public long getNow() {
+        return now;
+    }
+
+    @Override
+    public long getIndex() {
         return this.index;
     }
 

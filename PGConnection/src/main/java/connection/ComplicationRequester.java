@@ -4,14 +4,14 @@
  * and open the template in the editor.
  */
 
-package com.penguin.connection;
+package connection;
 
-import com.penguin.PGAddress;
-import com.penguin.data.impl.PGStringData;
-import com.penguin.data.interfaces.IPGData;
-import com.penguin.event.INotifable;
-import com.penguin.event.NotifableCounter;
-import com.penguin.handler.MultipleIoHandler;
+import connection.PGAddress;
+import connection.data.impl.PGStringData;
+import connection.data.interfaces.IPGData;
+import connection.event.INotifable;
+import connection.event.NotifableCounter;
+import connection.handler.MultipleIoHandler;
 import java.util.Hashtable;
 import java.util.Map;
 import org.apache.mina.core.filterchain.IoFilterAdapter;
@@ -72,8 +72,8 @@ public class ComplicationRequester {
         SimpleRequester loadGameReq = cRequest.addRequest(new PGAddress("localhost", 18567), filters, "loadGame");
         SimpleRequester dataUserReq = cRequest.addRequest(new PGAddress("localhost", 18567), filters, "dataUser");
         
-        friendlistReq.send(new PGStringData(0, "getFriendlist", "14992"));
-        loadGameReq.send(new PGStringData(1, "loadGame", "14992"));
-        dataUserReq.send(new PGStringData(2, "getDataUser", "14992"));
+//        friendlistReq.send(new PGStringData(0, "getFriendlist", "14992"));
+//        loadGameReq.send(new PGStringData(1, "loadGame", "14992"));
+//        dataUserReq.send(new PGStringData(2, "getDataUser", "14992"));
     }
 }

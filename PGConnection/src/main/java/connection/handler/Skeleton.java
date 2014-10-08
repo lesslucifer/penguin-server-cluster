@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-package com.penguin.handler;
+package connection.handler;
 
-import com.penguin.data.interfaces.IPGData;
+import connection.data.interfaces.IPGData;
 import org.apache.mina.core.session.IoSession;
 
 /**

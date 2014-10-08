@@ -4,18 +4,23 @@
  * and open the template in the editor.
  */
 
-package com.penguin.handler;
+package connection.data.interfaces;
 
-import com.penguin.data.interfaces.IPGData;
+import java.io.Serializable;
 
 /**
  *
  * @author suaongmattroi
  */
-public interface IConnectionServices {
+public interface IPGData extends Serializable{
     
-    IPGData reflectCall(final IPGData pgd);
+    long getIndex();
     
-    void dispose();
+    String getMethod();
     
+    Object getData();
+    
+    String getCaller();
+    
+    long getNow();
 }
