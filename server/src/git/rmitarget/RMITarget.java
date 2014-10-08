@@ -10,6 +10,7 @@ import amfservices.PGServices;
 import amfservices.Reflector;
 import java.lang.reflect.Method;
 import java.rmi.RemoteException;
+import java.util.Collections;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -44,8 +45,16 @@ class RMITarget implements RemoteTarget {
             Method proc = amfClass.getMethod(rfMethod, String.class,
                     Map.class, Long.TYPE);
             
-            return proc.invoke(amfTarget,
+            Object resp = proc.invoke(amfTarget,
                     request.getCaller(), request.getParams(), request.getNow());
+            if (check(resp))
+            {
+                return resp;
+            }
+            else
+            {
+                return Collections.EMPTY_MAP;
+            }
         }
         catch (Exception ex) {
             throw new RemoteException("AMF error: ", ex);
@@ -54,6 +63,36 @@ class RMITarget implements RemoteTarget {
         {
             EntityPool.inst().releaseAllThreadResources();
         }
+    }
+    
+    private boolean check(Object x)
+    {
+        if (x instanceof String)
+            return true;
+        
+        if (x instanceof Number)
+            return true;
+        
+        if (x instanceof Boolean)
+            return true;
+        
+        if (x instanceof Map)
+        {
+            Map<String, Object> m = (Map) x;
+            for (Map.Entry<String, Object> entrySet : m.entrySet()) {
+                String key = entrySet.getKey();
+                Object value = entrySet.getValue();
+                
+                if (!check(value))
+                {
+                    return false;
+                }
+            }
+            
+            return true;
+        }
+        
+        return false;
     }
 
     @Override
