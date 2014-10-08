@@ -18,6 +18,7 @@ import org.apache.mina.core.filterchain.IoFilterAdapter;
 import org.apache.mina.core.session.IoSession;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.codec.serialization.ObjectSerializationCodecFactory;
+import org.apache.mina.filter.executor.ExecutorFilter;
 import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
 
 /**
@@ -34,6 +35,7 @@ public class SimpleResponder {
         
         Map<String, IoFilterAdapter> filters = new Hashtable<>();
         filters.put("codec", new ProtocolCodecFilter( new ObjectSerializationCodecFactory()));
+        filters.put("executor", new ExecutorFilter());
         
         // Apply filter to connection
         for(Map.Entry<String, IoFilterAdapter> entry : filters.entrySet()) {   

@@ -13,6 +13,7 @@ import connection.data.interfaces.IServices;
 import connection.handler.PGRouter;
 import connection.handler.SimpleIoHandler;
 import org.apache.mina.core.session.IoSession;
+import pgentity.pool.EntityPool;
 
 /**
  *
@@ -46,17 +47,29 @@ public class Server {
         IServices services = new ReflectAdapter();
         
         // Create router
-        final PGRouter router = new PGRouter(services);
+        final PGRouter router = new PGRouter(services, new Runnable() {
+            @Override
+            public void run() {
+                EntityPool.inst().releaseAllThreadResources();
+            }
+        });
         
         SimpleResponder req = new SimpleResponder(3377,
             new SimpleIoHandler()
             {
                 @Override
                 public void messageReceived(IoSession session, Object message) throws Exception {
-                    if(router != null) {
-                        IPGData data = (IPGData) message;
-                        String method = data.getMethod();
-                        router.drive(method, session, data);
+                    try
+                    {
+                        if(router != null) {
+                            IPGData data = (IPGData) message;
+                            String method = data.getMethod();
+                            router.drive(method, session, data);
+                        }
+                    }
+                    finally
+                    {
+                        EntityPool.inst().releaseAllThreadResources();
                     }
                 }
             });

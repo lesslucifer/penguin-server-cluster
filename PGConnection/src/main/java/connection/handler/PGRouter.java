@@ -25,24 +25,36 @@ public class PGRouter {
     }
     
     public void drive(final String method, final IoSession session, final IPGData message) {
-        
-        new Thread() {
-           @Override
-           public void run() {
-                if(services != null) {
-                    IPGData data;
-                    try {
-                        Method m = services.getClass().getMethod(method, IPGData.class);
-                        data = (IPGData) m.invoke(services, message);
-                        session.write(data);
-                    } catch (NoSuchMethodException | SecurityException | IllegalAccessException | 
-                            IllegalArgumentException | InvocationTargetException ex) 
-                    {
-                        // Return error, wait for format
-                        System.out.println(ex.getMessage());
-                    }
-                }
-           }
-        }.start();
+        if(services != null) {
+            IPGData data;
+            try {
+                Method m = services.getClass().getMethod(method, IPGData.class);
+                data = (IPGData) m.invoke(services, message);
+                session.write(data);
+            } catch (NoSuchMethodException | SecurityException | IllegalAccessException | 
+                    IllegalArgumentException | InvocationTargetException ex) 
+            {
+                // Return error, wait for format
+                System.out.println(ex.getMessage());
+            }
+        }
+//        new Thread() {
+//           @Override
+//           public void run() {
+//                if(services != null) {
+//                    IPGData data;
+//                    try {
+//                        Method m = services.getClass().getMethod(method, IPGData.class);
+//                        data = (IPGData) m.invoke(services, message);
+//                        session.write(data);
+//                    } catch (NoSuchMethodException | SecurityException | IllegalAccessException | 
+//                            IllegalArgumentException | InvocationTargetException ex) 
+//                    {
+//                        // Return error, wait for format
+//                        System.out.println(ex.getMessage());
+//                    }
+//                }
+//           }
+//        }.start();
     }
 }

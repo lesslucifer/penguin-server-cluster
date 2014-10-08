@@ -30,7 +30,7 @@ public class SocketTargetResolver  implements TargetResolver{
     
     private final PGAddress address;
     private Target target;
-    private final Lock lock = new ReentrantLock();
+//    private final Lock lock = new ReentrantLock();
     
     private SocketTargetResolver() {
         this(SOCKET_HOST, SOCKET_PORT);

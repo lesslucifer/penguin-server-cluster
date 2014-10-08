@@ -19,6 +19,7 @@ import org.apache.mina.core.filterchain.IoFilterAdapter;
 import org.apache.mina.core.session.IoSession;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.codec.serialization.ObjectSerializationCodecFactory;
+import org.apache.mina.filter.executor.ExecutorFilter;
 import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
 
 /**
@@ -35,6 +36,7 @@ public class SimpleResponder {
         
         Map<String, IoFilterAdapter> filters = new Hashtable<>();
         filters.put("codec", new ProtocolCodecFilter( new ObjectSerializationCodecFactory()));
+        filters.put("executor", new ExecutorFilter());
         
         // Apply filter to connection
         for(Map.Entry<String, IoFilterAdapter> entry : filters.entrySet()) {   
@@ -60,6 +62,9 @@ public class SimpleResponder {
                 public void messageReceived(IoSession session, Object message) throws Exception {
                     if(router != null) {
                         IPGData data = (IPGData) message;
+                        while(data != null) {
+                            Thread.sleep(1);
+                        }
                         String method = data.getMethod();
                         router.drive(method, session, data);
                         System.out.println("Handling " + method + "...");

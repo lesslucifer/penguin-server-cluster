@@ -19,9 +19,11 @@ import org.apache.mina.core.session.IoSession;
 public class PGRouter {
     
     private IServices services;
+    private Runnable callback;
     
-    public PGRouter(IServices services) {
+    public PGRouter(IServices services, Runnable callback) {
         this.services = services;
+        this.callback = callback;
     }
     
     public void drive(final String method, final IoSession session, final IPGData message) {
@@ -30,19 +32,26 @@ public class PGRouter {
         new Thread() {
            @Override
            public void run() {
-                if(services != null) {
-                    IPGData data;
-                    try {
-                        Method m = services.getClass().getMethod(method, IPGData.class);
-                        data = (IPGData) m.invoke(services, message);
-                        session.write(data);
-                    } catch (NoSuchMethodException | SecurityException | IllegalAccessException | 
-                            IllegalArgumentException | InvocationTargetException ex) 
-                    {
-                        // Return error, wait for format
-                        System.out.println(ex.getMessage());
+               try
+               {
+                    if(services != null) {
+                        IPGData data;
+                        try {
+                            Method m = services.getClass().getMethod(method, IPGData.class);
+                            data = (IPGData) m.invoke(services, message);
+                            session.write(data);
+                        } catch (NoSuchMethodException | SecurityException | IllegalAccessException | 
+                                IllegalArgumentException | InvocationTargetException ex) 
+                        {
+                            // Return error, wait for format
+                            System.out.println(ex.getMessage());
+                        }
                     }
-                }
+               }
+               finally
+               {
+                   callback.run();
+               }
            }
         }.start();
     }
