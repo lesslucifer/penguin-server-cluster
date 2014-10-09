@@ -75,7 +75,7 @@ public class Reflector implements amfservices.Reflector {
             PGLog.debug("Time: %s", now);
 
             // compare client config
-//            this.validConfig(content, (Map<String, Object>) params.get("config"));
+            this.validConfig(content, (Map<String, Object>) params.get("config"));
             
             Map<String, Object> data = Collections.EMPTY_MAP;
             if (params.get("data") instanceof Map)
