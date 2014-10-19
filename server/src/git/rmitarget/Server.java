@@ -6,19 +6,14 @@
 
 package git.rmitarget;
 
-import amfservices.ReflectAdapter;
-import connection.SimpleResponder;
-import connection.data.interfaces.IPGData;
-import connection.data.interfaces.IServices;
-import connection.handler.PGRouter;
-import connection.handler.SimpleIoHandler;
-import org.apache.mina.core.session.IoSession;
-
 /**
  *
  * @author KieuAnh
  */
 public class Server {
+    
+    private static final int PORT = 9090;
+    
     private Server()
     {
         super();
@@ -42,24 +37,7 @@ public class Server {
 //        Naming.rebind("rmi://localhost:3377/Target", stub);
         
         // ============= Stub socket ============
-        // Create services
-        IServices services = new ReflectAdapter();
-        
-        // Create router
-        final PGRouter router = new PGRouter(services);
-        
-        SimpleResponder req = new SimpleResponder(3377,
-            new SimpleIoHandler()
-            {
-                @Override
-                public void messageReceived(IoSession session, Object message) throws Exception {
-                    if(router != null) {
-                        IPGData data = (IPGData) message;
-                        String method = data.getMethod();
-                        router.drive(method, session, data);
-                    }
-                }
-            });
+        MinaTarget target = new MinaTarget(PORT);
         
         System.out.println("Server start...");
     }

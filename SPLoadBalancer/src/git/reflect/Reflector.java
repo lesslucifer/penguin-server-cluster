@@ -18,7 +18,7 @@ import share.PGError;
 import share.PGException;
 import share.PGHelper;
 import share.PGMacro;
-import git.target.SocketTargetResolver;
+import git.target.MinaTargetResolver;
 import target.Request;
 import target.Target;
 import target.TargetResolver;
@@ -35,7 +35,7 @@ public class Reflector implements amfservices.Reflector {
 
     public Reflector() {
         this.activeUsers = SessionCache.inst();
-        this.targetResolver = SocketTargetResolver.inst();
+        this.targetResolver = MinaTargetResolver.inst();
     }
     
     //========================= AUTHENTICATION =============================
@@ -43,7 +43,8 @@ public class Reflector implements amfservices.Reflector {
     @Override
     public Map<String, Object> authenticate(Map<String, Object> params)
     {
-        return Authenticate.authenticate(activeUsers, params);
+//        return Authenticate.authenticate(activeUsers, params);
+        return Collections.EMPTY_MAP;
     }
     
     @Override
@@ -183,16 +184,18 @@ public class Reflector implements amfservices.Reflector {
 
     private String validSession(Map<String, Object> session)
     {
-        String sid = (String) session.get(PGMacro.SID);
-        PGException.Assert(sid != null, PGError.INVALID_SESSION, "Empty session");
-        
         String uid = (String) session.get(PGMacro.UID);
-        String actUid = this.activeUsers.getUID(sid);
-        
-        PGException.Assert((uid != null) && (uid.equals(actUid)),
-                PGError.INVALID_SESSION, "Invalid session");
-        
-        return actUid;
+        return uid;
+//        String sid = (String) session.get(PGMacro.SID);
+//        PGException.Assert(sid != null, PGError.INVALID_SESSION, "Empty session");
+//        
+//        String uid = (String) session.get(PGMacro.UID);
+//        String actUid = this.activeUsers.getUID(sid);
+//        
+//        PGException.Assert((uid != null) && (uid.equals(actUid)),
+//                PGError.INVALID_SESSION, "Invalid session");
+//        
+//        return actUid;
     }
     
     private long convertForCheat(long realNow, Map<String, Object> data)
