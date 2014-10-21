@@ -19,6 +19,7 @@ import share.PGException;
 import share.PGHelper;
 import share.PGMacro;
 import git.target.MinaTargetResolver;
+import share.PGResponse;
 import target.Request;
 import target.Target;
 import target.TargetResolver;
@@ -86,10 +87,9 @@ public class Reflector implements amfservices.Reflector {
             PGLog.debug("Input\r\n%s", PGHelper.obj2PrettyJSON(data));
             Target target = this.targetResolver.getUserTarget(uid);
             Request req = Request.makeAMF(uid, method, data, now);
-            Object responseData = target.doAMF(req);
+            PGResponse responseData = (PGResponse) target.doAMF(req);
             
-            this.putError(null, 0, content);
-            content.put("data", responseData);
+            content.putAll(responseData.toAMF());
         }
         catch (InvocationTargetException ex)
         {

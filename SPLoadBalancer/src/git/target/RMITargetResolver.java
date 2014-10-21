@@ -22,7 +22,7 @@ import target.TargetResolver;
  *
  * @author KieuAnh
  */
-public class RMITargetResolver implements TargetResolver
+class RMITargetResolver implements TargetResolver
 {
     private static final String RMI_HOST = "127.0.0.1";
     private static final int RMI_PORT = 3377;
