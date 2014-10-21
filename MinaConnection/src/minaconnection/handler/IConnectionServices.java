@@ -6,13 +6,13 @@
 
 package minaconnection.handler;
 
-import minaconnection.interfaces.IPGData;
+import share.data.IPGData;
 
 /**
  *
  * @author suaongmattroi
  */
-public interface IConnectionServices {
+interface IConnectionServices {
     
     IPGData reflectCall(final IPGData pgd);
     

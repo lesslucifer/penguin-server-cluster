@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package minaconnection.handler;
+package minaconnection;
 
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IdleStatus;
@@ -14,7 +14,7 @@ import org.apache.mina.core.session.IoSession;
  *
  * @author suaongmattroi
  */
-public class SimpleIoHandler extends IoHandlerAdapter{
+public class SimpleIoHandler extends IoHandlerAdapter {
     
     // Override that method to handler event
     @Override

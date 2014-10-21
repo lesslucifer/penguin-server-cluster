@@ -8,7 +8,7 @@ package minaconnection;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
-import minaconnection.handler.SimpleIoHandler;
+import org.apache.mina.core.service.IoHandler;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.codec.serialization.ObjectSerializationCodecFactory;
 import org.apache.mina.filter.executor.ExecutorFilter;
@@ -22,7 +22,7 @@ public class SimpleResponder {
     
     private final NioSocketAcceptor acceptor;
     
-    public SimpleResponder(int port, SimpleIoHandler handler) throws IOException {
+    public SimpleResponder(int port, IoHandler handler) throws IOException {
         
         this.acceptor = new NioSocketAcceptor();
         

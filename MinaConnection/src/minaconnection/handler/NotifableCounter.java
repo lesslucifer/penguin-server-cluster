@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package minaconnection.event;
+package minaconnection.handler;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  *
  * @author suaongmattroi
  */
-public class NotifableCounter {
+class NotifableCounter {
     
     private class Listener {
         private final Object listener;

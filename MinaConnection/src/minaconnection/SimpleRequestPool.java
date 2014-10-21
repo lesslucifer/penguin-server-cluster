@@ -6,17 +6,13 @@
 
 package minaconnection;
 
+import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
-import minaconnection.PGAddress;
-import minaconnection.PGAddress;
-import minaconnection.SimpleRequester;
-import minaconnection.SimpleRequester;
-import minaconnection.handler.SimpleIoHandler;
-import minaconnection.interfaces.IPGData;
+import minaconnection.interfaces.IMinaData;
 import org.apache.mina.core.filterchain.IoFilterAdapter;
 import org.apache.mina.core.session.IoSession;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
@@ -38,7 +34,6 @@ public class SimpleRequestPool {
     
     private static class PGCaller  {
         private final Object _caller;
-
         private final String _callBack;
         
         public PGCaller(Object caller, String callBack)
@@ -56,57 +51,56 @@ public class SimpleRequestPool {
         }
     }
     
-    public SimpleRequestPool() {
-        _connectionCounter = new AtomicLong(0);
-        _banks = new ConcurrentHashMap<PGAddress, SimpleRequester>();
-        _callers = new ConcurrentHashMap<Long, PGCaller>();
+    private static class MinaOjbect
+    {
+        long index;
+        Serializable data;
     }
     
-    public long getIndex() {
+    public SimpleRequestPool() {
+        _connectionCounter = new AtomicLong(0);
+        _banks = new ConcurrentHashMap();
+        _callers = new ConcurrentHashMap();
+    }
+    
+    private long nextIndex() {
         return _connectionCounter.incrementAndGet();
     }
     
-    public void request(PGAddress address, IPGData data, String callBack, Object caller) {
+    public void request(PGAddress address, Serializable data, String callBack, Object caller) {
         
         if(!_banks.containsKey(address))
         {
             createConnection(address);
         }
         
-        _callers.put(data.getIndex(), new PGCaller(caller, callBack));
+        _callers.put(data.index(), new PGCaller(caller, callBack));
         SimpleRequester sRequest = _banks.get(address);
         sRequest.send(data);
     }
     
     private void createConnection(PGAddress address) {
-        
         // Log here
         System.out.println("Create new connection at: " + address.getAddress() + ", port: " + Integer.toString(address.getPort()));
         
-        Map<String, IoFilterAdapter> filters = new ConcurrentHashMap<String, IoFilterAdapter>();
+        Map<String, IoFilterAdapter> filters = new ConcurrentHashMap();
         filters.put("codec", new ProtocolCodecFilter( new ObjectSerializationCodecFactory()));
         filters.put("executor", new ExecutorFilter());
         
         SimpleRequester req = new SimpleRequester(address, filters, 
-            new SimpleIoHandler()
-            {
-                @Override
-                public void messageReceived(IoSession session, Object message) throws Exception {
-                    handleReceived(session, message);
-                }
-                
-                @Override
-                public void exceptionCaught(IoSession session, Throwable cause) throws Exception {
-                    super.exceptionCaught(session, cause);
-                }
-            });
+            new SimpleIoHandler() {
+            @Override
+            public void messageReceived(IoSession session, Object message) throws Exception {
+                handleReceived(session, message);
+            }
+        });
         req.start();
         _banks.put(address, req);
     }
     
     private void handleReceived(IoSession session, Object message) throws Exception {
-        IPGData data = (IPGData) message;
-        Long index = data.getIndex();
+        IMinaData data = (IMinaData) message;
+        Long index = data.index();
         if(_callers.containsKey(index)) {
             
             PGCaller caller = _callers.get(index);
@@ -116,10 +110,10 @@ public class SimpleRequestPool {
         }
     }
     
-    private void reflect(PGCaller caller, IPGData data) 
-            throws NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-        
-        Method m = caller.getCaller().getClass().getMethod(caller.getCallBack(), IPGData.class);
+    private void reflect(PGCaller caller, IMinaData data) 
+            throws NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException 
+    {    
+        Method m = caller.getCaller().getClass().getMethod(caller.getCallBack(), IMinaData.class);
         m.invoke(caller.getCaller(), data);
     }
 }

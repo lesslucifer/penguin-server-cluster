@@ -8,7 +8,7 @@ package minaconnection;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import minaconnection.interfaces.IPGData;
+import minaconnection.interfaces.IMinaData;
 
 /**
  *
@@ -17,13 +17,14 @@ import minaconnection.interfaces.IPGData;
 public class PGWaitingResponding {
     
     public static final String RESP_FUNC = "handleResp";
-    private IPGData data;
+    private IMinaData data;
     
     public PGWaitingResponding() {
         this.data = null;
     }
     
-    public IPGData doReq() {
+    public IMinaData doReq() {
+        // use another sync methods
         while(data == null) 
         {
             try {
@@ -36,7 +37,7 @@ public class PGWaitingResponding {
         return this.data;
     }
     
-    public void handleResp(IPGData data) {
+    public void handleResp(IMinaData data) {
         this.data = data;
     }
 }

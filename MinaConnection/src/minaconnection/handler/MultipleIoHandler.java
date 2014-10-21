@@ -6,8 +6,7 @@
 
 package minaconnection.handler;
 
-import minaconnection.interfaces.IPGData;
-import minaconnection.event.INotifable;
+import share.data.IPGData;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
@@ -20,7 +19,7 @@ import org.apache.mina.core.session.IoSession;
  *
  * @author suaongmattroi
  */
-public class MultipleIoHandler extends IoHandlerAdapter implements INotifable{
+class MultipleIoHandler extends IoHandlerAdapter implements INotifable{
 
     private Map<Object, String> listeners = new ConcurrentHashMap<Object, String>();
 

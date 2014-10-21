@@ -6,7 +6,7 @@
 
 package minaconnection.handler;
 
-import minaconnection.interfaces.IPGData;
+import share.data.IPGData;
 import minaconnection.interfaces.IServices;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -16,7 +16,7 @@ import org.apache.mina.core.session.IoSession;
  *
  * @author suaongmattroi
  */
-public class PGRouter {
+class PGRouter {
     
     private final IServices services;
     

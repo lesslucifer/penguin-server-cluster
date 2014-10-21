@@ -6,14 +6,15 @@
 
 package minaconnection.handler;
 
-import minaconnection.interfaces.IPGData;
+import minaconnection.SimpleIoHandler;
+import share.data.IPGData;
 import org.apache.mina.core.session.IoSession;
 
 /**
  *
  * @author suaongmattroi
  */
-public class Skeleton extends SimpleIoHandler{
+class Skeleton extends SimpleIoHandler{
     
     private final IConnectionServices servicesHandler;
     
