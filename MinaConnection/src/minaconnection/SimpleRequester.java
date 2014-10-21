@@ -22,6 +22,8 @@ import org.apache.mina.transport.socket.nio.NioSocketConnector;
  */
 public class SimpleRequester {
     
+    private long timeout;
+    
     private final IoConnector connector;
     
     private IoSession session;
@@ -41,6 +43,12 @@ public class SimpleRequester {
         this.connector.setHandler(handler);
     }
     
+    public void setTimeOut(long timeout)
+    {
+        this.timeout = timeout;
+        this.connector.setConnectTimeoutMillis(this.timeout);
+    }
+    
     public void start() {
 
         ConnectFuture connFuture = 
@@ -50,9 +58,13 @@ public class SimpleRequester {
         this.session = connFuture.getSession();
     }
     
+    public boolean isAvailable() {
+        return (this.session != null && this.session.isConnected());
+    }
+    
     public void send(IPGData req) {
         
-        if(this.session != null && this.session.isConnected()) {
+        if(isAvailable()) {
             this.session.write(req);
         }
     }

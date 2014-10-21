@@ -11,10 +11,6 @@ import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
-import minaconnection.PGAddress;
-import minaconnection.PGAddress;
-import minaconnection.SimpleRequester;
-import minaconnection.SimpleRequester;
 import minaconnection.handler.SimpleIoHandler;
 import minaconnection.interfaces.IPGData;
 import org.apache.mina.core.filterchain.IoFilterAdapter;
@@ -74,6 +70,8 @@ public class SimpleRequestPool {
         
         _callers.put(data.getIndex(), new PGCaller(caller, callBack));
         SimpleRequester sRequest = _banks.get(address);
+        if(!sRequest.isAvailable())
+            sRequest.start();
         sRequest.send(data);
     }
     
@@ -98,7 +96,6 @@ public class SimpleRequestPool {
                     super.exceptionCaught(session, cause);
                 }
             });
-        req.start();
         _banks.put(address, req);
     }
     

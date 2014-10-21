@@ -6,6 +6,7 @@
 
 package minaconnection.data.impl;
 
+import java.util.Objects;
 import minaconnection.interfaces.IPGData;
 
 /**
@@ -57,4 +58,31 @@ public class PGStringData implements IPGData{
     public Object getData() {
         return this.data;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 47 * hash + (int) (this.index ^ (this.index >>> 32));
+        hash = 47 * hash + Objects.hashCode(this.caller);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final PGStringData other = (PGStringData) obj;
+        if (this.index != other.index) {
+            return false;
+        }
+        if (!Objects.equals(this.caller, other.caller)) {
+            return false;
+        }
+        return true;
+    }
+    
 }

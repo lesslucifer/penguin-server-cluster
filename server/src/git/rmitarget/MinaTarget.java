@@ -66,6 +66,7 @@ class MinaTarget implements target.Target{
                 public void messageReceived(IoSession session, Object message) throws Exception {
                     IPGData data = (IPGData) message;
                     String method = data.getMethod();
+                    System.out.println("Call services: " + method);
                     doAMF(method, session, data);
                 }
                 
