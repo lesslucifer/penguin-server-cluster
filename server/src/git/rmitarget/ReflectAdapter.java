@@ -7,11 +7,12 @@
 package git.rmitarget;
 
 import amfservices.actions.ServiceReflectTarget;
-import minaconnection.data.impl.PGMapData;
-import minaconnection.interfaces.IPGData;
+import share.data.PGMapData;
+import share.data.IPGData;
 import minaconnection.interfaces.IServices;
 import java.io.IOException;
 import java.util.Map;
+import share.data.PGDataType;
 import share.PGException;
 import zme.api.exception.ZingMeApiException;
 
@@ -30,7 +31,11 @@ public class ReflectAdapter implements IServices{
     
     private IPGData preResp(IPGData reqData, Map<String, Object> dataResp) 
     {
-        return new PGMapData(reqData.getIndex(), reqData.getCaller(), "", dataResp, reqData.getNow());
+        return new PGMapData(reqData.getIndex(),
+                reqData.getCaller(),
+                "", dataResp,
+                reqData.getNow(),
+                PGDataType.AMF);
     }
     
     public IPGData loadGame(IPGData reqData) throws Exception, PGException 

@@ -35,9 +35,8 @@ public class Server {
 //        
 //        LocateRegistry.createRegistry(3377);
 //        Naming.rebind("rmi://localhost:3377/Target", stub);
-        
         // ============= Stub socket ============
-        MinaTarget target = new MinaTarget(PORT);
+        MinaLogicTarget minaTarget = new MinaLogicTarget(PORT, git.httpservices.Services.class);
         
         System.out.println("Server start...");
     }
