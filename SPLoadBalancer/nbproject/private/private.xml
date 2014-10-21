@@ -9,6 +9,8 @@
         <group>
             <file>file:/E:/Projects/Java/penguin-server-cluster/SPLoadBalancer/src/git/reflect/Reflector.java</file>
         </group>
-        <group name="Penguin-Cluster"/>
+        <group name="Penguin-Cluster">
+            <file>file:/E:/Projects/Java/penguin-server-cluster/SPLoadBalancer/src/git/target/MinaTarget.java</file>
+        </group>
     </open-files>
 </project-private>
