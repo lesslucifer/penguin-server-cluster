@@ -20,6 +20,7 @@ import share.PGHelper;
 import share.PGLog;
 import share.PGMacro;
 import target.Request;
+import target.Response;
 import target.Target;
 import target.TargetResolver;
 
@@ -64,7 +65,7 @@ public class Reflector implements amfservices.Reflector {
         String uid = this.validSession(sessionParams);
         PGLog.info("%s call service: %s", uid, method);
         
-        Map<String, Object> content = new HashMap<String, Object>();
+        Map<String, Object> content = new HashMap<>();
         
         try
         {
@@ -86,8 +87,8 @@ public class Reflector implements amfservices.Reflector {
             PGLog.debug("Input\r\n%s", PGHelper.obj2PrettyJSON(data));
             Target target = this.targetResolver.getUserTarget(uid);
             Request req = Request.makeAMF(uid, method, data, now);
-            Object respD = target.doAMF(req);
-            content.putAll((Map)respD);
+            Response respData = (Response) target.doAMF(req);
+            content.putAll(respData.toAMF());
         }
         catch (InvocationTargetException ex)
         {
@@ -105,9 +106,7 @@ public class Reflector implements amfservices.Reflector {
                 LOG.error("Service " + method, ex.getCause());
             }
         }
-        catch (SecurityException ex) {
-            this.putError(ex, content);
-        } catch (IllegalArgumentException ex) {
+        catch (Exception ex) {
             this.putError(ex, content);
         }
         finally
@@ -166,12 +165,12 @@ public class Reflector implements amfservices.Reflector {
         if (clientConfigVersion.compareTo(serverConfigVersion) != 0)
         {
             try {
-                Map<String, Object> config = new HashMap<String, Object>();
+                Map<String, Object> config = new HashMap<>();
                 config.put("version", serverConfigVersion.toString());
                 Target master = targetResolver.getMasterTarget();
                 Request req = Request.makeAMF(null, Methods.Global.GET_ALL_CONFIGS, null, 0);
-                Object clientConfig = master.doAMF(req);
-                config.put("config", clientConfig);
+                Response confResp = (Response) master.doAMF(req);
+                config.put("config", confResp.getData());
                 
                 content.put("config", config);
             } catch (InvocationTargetException ex) {

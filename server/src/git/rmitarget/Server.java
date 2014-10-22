@@ -6,6 +6,8 @@
 
 package git.rmitarget;
 
+import target.Response;
+
 /**
  *
  * @author KieuAnh
@@ -28,6 +30,7 @@ public class Server {
     
     public void start() throws Exception
     {
+        Response.VERBOSE_LOG = true;
         // ============= Stub RMI ===============
 //        RMITarget target = new RMITarget(ServiceReflectTarget.class,
 //                git.httpservices.Services.class);

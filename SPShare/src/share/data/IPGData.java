@@ -12,7 +12,7 @@ import java.io.Serializable;
  *
  * @author suaongmattroi
  */
-public interface IPGData extends Serializable{
+public interface IPGData extends Serializable {
     
     String caller();
     

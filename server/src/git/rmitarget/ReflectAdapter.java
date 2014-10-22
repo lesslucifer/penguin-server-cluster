@@ -20,7 +20,7 @@ import zme.api.exception.ZingMeApiException;
  *
  * @author suaongmattroi
  */
-public class ReflectAdapter implements IServices{
+class ReflectAdapter implements IServices{
     
     private final ServiceReflectTarget servicesReflector;
     
@@ -38,7 +38,7 @@ public class ReflectAdapter implements IServices{
                 PGDataType.AMF);
     }
     
-    public IPGData loadGame(IPGData reqData) throws Exception, PGException 
+    public IPGData loadGame(IPGData reqData) throws Exception
     {
         return preResp(reqData, this.servicesReflector.loadGame(reqData.caller(), 
                 (Map<String, Object>)reqData.data(), reqData.now()));

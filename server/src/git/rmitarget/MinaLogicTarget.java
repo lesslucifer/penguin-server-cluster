@@ -8,23 +8,20 @@ package git.rmitarget;
 
 import java.io.IOException;
 import java.io.Serializable;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.Collections;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import minaconnection.MinaServerHandler;
+import minaconnection.MinaSender;
 import minaconnection.SimpleResponder;
-import share.data.PGMapData;
 import share.data.IPGData;
 import minaconnection.interfaces.IServices;
 import share.data.PGDataType;
-import org.apache.mina.core.session.IoSession;
 import pgentity.pool.EntityPool;
 import share.data.PGObjectData;
-import share.data.PGStringData;
+import target.Response;
 
 /**
  *
@@ -42,7 +39,7 @@ class MinaLogicTarget {
     private final Class<?> httpClass;
     private final ThreadLocal<Object> httpTargets = new ThreadLocal<>();
     
-    class MinaTargetThreadPool
+    private static class MinaTargetThreadPool
     {
         private final ExecutorService pool;
         
@@ -60,69 +57,54 @@ class MinaLogicTarget {
         }
     }
     
-    public MinaLogicTarget(int port, Class<?> httpClass) throws IOException {
-        
-        services = new ReflectAdapter();
+    public MinaLogicTarget(int port, Class<?> httpClass) throws IOException
+    {
+        this.httpClass = httpClass;
+        this.services = new ReflectAdapter();
         threadPool = new MinaTargetThreadPool(MAX_THREAD);
         accepter = new SimpleResponder(port,
             new MinaServerHandler()
             {
                 @Override
-                public void messageReceived(IoSession session, long index, Object message) throws Exception {
+                public void messageReceived(MinaSender sender, Object message) throws Exception {
                     IPGData data = (IPGData) message;
                     String method = data.method();
                     if (data.type() == PGDataType.HTTP)
                     {
-                        doHTTP(method, session, index, data);
+                        doHTTP(method, sender, data);
                     }
                     else
                     {
-                        doAMF(method, session, index, data);
+                        doAMF(method, sender, data);
                     }
                 }
-                
-                @Override
-                public void exceptionCaught(IoSession session, Throwable cause) throws Exception {
-                    super.exceptionCaught(session, cause);
-                }
             });
-        
-        this.httpClass = httpClass;
+        accepter.start();
     }
     
-    public void doAMF(final String method, final IoSession session, final long index, final IPGData message) 
+    public void doAMF(final String method, final MinaSender sender, final IPGData message) 
     {
         threadPool.execute(() -> {
-            IPGData data = null; 
+            Response resp = new Response(message.now()); 
             try {
                 Method m = services.getClass().getMethod(method, IPGData.class);
-                data = (IPGData) m.invoke(services, message);
+                IPGData data = (IPGData) m.invoke(services, message);
+                resp.setData(data.data());
             }
-            catch (NoSuchMethodException | SecurityException |
-                    IllegalAccessException | IllegalArgumentException |
-                    InvocationTargetException ex) {
-                Logger.getLogger(MinaLogicTarget.class.getName()).log(Level.SEVERE, null, ex);
+            catch (Exception ex) {
+                resp.putError(ex);
             }
             finally {
                 // Release thread res
                 EntityPool.inst().releaseAllThreadResources();
                 
                 // Resp null if invoke fail
-                if(data == null)
-                {
-                    data = new PGMapData(
-                            message.caller(),
-                            method,
-                            Collections.EMPTY_MAP,
-                            message.now(),
-                            PGDataType.AMF);
-                }
-                accepter.send(session, index, data);
+                sender.send(resp);
             }
         });
     }
     
-    public void doHTTP(final String method, final IoSession session, final long index, final IPGData message) 
+    public void doHTTP(final String method, final MinaSender sender, final IPGData message) 
     {
         threadPool.execute(() -> {
             Object resp = null;
@@ -153,7 +135,7 @@ class MinaLogicTarget {
                             resp,
                             message.now(),
                             PGDataType.HTTP);
-                accepter.send(session, index, data);
+                sender.send(data);
             }
         });
     }

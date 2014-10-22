@@ -12,7 +12,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 import minaconnection.interfaces.IClientHandler;
-import minaconnection.interfaces.IMinaData;
 import minaconnection.interfaces.IRequestPool;
 import org.apache.mina.core.filterchain.IoFilterAdapter;
 import org.apache.mina.core.session.IoSession;

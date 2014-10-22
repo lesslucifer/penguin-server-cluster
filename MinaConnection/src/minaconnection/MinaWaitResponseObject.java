@@ -24,24 +24,24 @@ class MinaWaitResponseObject implements IClientHandler {
     }
     
     @Override
-    public synchronized Serializable doReq() throws Exception {
+    public Serializable doReq() throws Exception {
         // use another sync methods
-//        while(data == null) 
-//        {
-//            try {
-//                Thread.sleep(1);
-//            } catch (InterruptedException ex) {
-//                Logger.getLogger(MinaWaitResponseObject.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        }
+        while(data == null) 
+        {
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(MinaWaitResponseObject.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         
-        this.wait();
+        //this.wait();
         return this.data;
     }
     
     @Override
-    public synchronized void callback(Serializable data) {
+    public void callback(Serializable data) {
         this.data = data;
-        this.notify();
+        //this.notify();
     }
 }

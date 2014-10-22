@@ -6,7 +6,6 @@
 package minaconnection;
 
 import java.io.Serializable;
-import minaconnection.interfaces.IMinaData;
 
 /**
  *

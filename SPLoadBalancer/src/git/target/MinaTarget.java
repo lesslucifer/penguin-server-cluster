@@ -7,8 +7,6 @@
 package git.target;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import minaconnection.ClientHandlerFactory;
 import minaconnection.MinaAddress;
 import minaconnection.SimpleRequestPoolFactory;
@@ -46,8 +44,7 @@ public class MinaTarget implements Target {
                     PGDataType.AMF);
             IClientHandler cHandler = ClientHandlerFactory.create();
             pool.request(address, msg, cHandler);
-            IPGData data = (IPGData) cHandler.doReq();
-            return data.data();
+            return cHandler.doReq();
         } catch (Exception ex) {
             throw new InvocationTargetException(ex);
         }

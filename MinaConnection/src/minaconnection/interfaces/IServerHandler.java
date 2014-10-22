@@ -5,7 +5,7 @@
  */
 package minaconnection.interfaces;
 
-import org.apache.mina.core.session.IoSession;
+import minaconnection.MinaSender;
 
 /**
  *
@@ -13,8 +13,8 @@ import org.apache.mina.core.session.IoSession;
  */
 public interface IServerHandler {
     
-    void messageSent(IoSession session, long index, Object message) throws Exception;
-    void messageReceived(IoSession session, long index, Object message) throws Exception;
-    void exceptionCaught(IoSession session, Throwable cause) throws Exception;
+    void messageSent(MinaSender writer, Object message) throws Exception;
+    void messageReceived(MinaSender writer, Object message) throws Exception;
+    void exceptionCaught(Throwable cause) throws Exception;
     
 }

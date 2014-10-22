@@ -3,14 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package minaconnection;
 
-package share.data;
+import java.io.Serializable;
 
 /**
  *
  * @author suaongmattroi
  */
-public class PGResponse {
-
+interface IMinaData extends Serializable {
     
+    long index();
+    
+    Serializable data();   
 }

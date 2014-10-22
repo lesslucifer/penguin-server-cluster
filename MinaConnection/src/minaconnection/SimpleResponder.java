@@ -9,7 +9,6 @@ package minaconnection;
 import java.io.IOException;
 import java.io.Serializable;
 import java.net.InetSocketAddress;
-import minaconnection.interfaces.IMinaData;
 import minaconnection.interfaces.IServerHandler;
 import org.apache.mina.core.session.IoSession;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
@@ -24,6 +23,7 @@ import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
 public class SimpleResponder {
     
     private final NioSocketAcceptor acceptor;
+    private final int port;
     
     private final IServerHandler handler;
     
@@ -40,27 +40,43 @@ public class SimpleResponder {
             @Override
             public void messageReceived(IoSession session, Object message) throws Exception {
                 IMinaData mData = (IMinaData) message;
-                handler.messageReceived(session, mData.index(), mData.data());
+                handler.messageReceived(new SenderImpl(session, mData.index()), mData.data());
             }
 
             @Override
             public void messageSent(IoSession session, Object message) throws Exception {
                 IMinaData mData = (IMinaData) message;
-                handler.messageSent(session, mData.index(), mData.data());
+                handler.messageSent(new SenderImpl(session, mData.index()), mData.data());
             }
             
             @Override
             public void exceptionCaught(IoSession session, Throwable cause) throws Exception {
-                handler.exceptionCaught(session, cause);
+                handler.exceptionCaught(cause);
             }
         });
-
+        
+        this.port = port;
+    }
+    
+    public void start() throws IOException
+    {
         acceptor.bind(new InetSocketAddress(port));
     }
     
-    public void send(IoSession session, long index, Serializable obj)
+    private static class SenderImpl implements MinaSender
     {
-        IMinaData mData = new MinaData(index, obj);
-        session.write(mData);
+        private final IoSession session;
+        private final long index;
+
+        public SenderImpl(IoSession session, long index) {
+            this.session = session;
+            this.index = index;
+        }
+        
+        @Override
+        public void send(Serializable obj) {
+            IMinaData mData = new MinaData(index, obj);
+            session.write(mData);
+        }
     }
 }

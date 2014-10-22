@@ -16,17 +16,17 @@ import org.apache.mina.core.session.IoSession;
 public class MinaServerHandler implements IServerHandler{
 
     @Override
-    public void messageSent(IoSession session, long index, Object message) throws Exception {
+    public void messageSent(MinaSender sender, Object message) throws Exception {
         
     }
 
     @Override
-    public void messageReceived(IoSession session, long index, Object message) throws Exception {
+    public void messageReceived(MinaSender sender, Object message) throws Exception {
         
     }
 
     @Override
-    public void exceptionCaught(IoSession session, Throwable cause) throws Exception {
+    public void exceptionCaught(Throwable cause) throws Exception {
         
     }
     
