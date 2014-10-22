@@ -6,6 +6,7 @@
 
 package git.httpservices;
 
+import java.util.Map;
 import pgentity.UserList;
 import share.PGMacro;
 import target.Request;
@@ -27,9 +28,10 @@ public class Services {
         return inst;
     }
     
-    public Object whitelist(Request req)
+    public Object whitelist(Object par)
     {
-        String uid = (String) req.getParams().get(PGMacro.UID);
+        Map<String, Object> params = (Map) par;
+        String uid = ((String[]) params.get(PGMacro.UID))[0];
         return UserList.getList(UserList.ListType.WHITE_LIST)
                 .contains(uid);
     }

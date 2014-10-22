@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package minaconnection.interfaces;
 
 import java.io.Serializable;
@@ -12,15 +11,9 @@ import java.io.Serializable;
  *
  * @author suaongmattroi
  */
-public interface IPGData extends Serializable{
+public interface IClientHandler {
     
-    long getIndex();
+    Serializable doReq();
     
-    String getMethod();
-    
-    Object getData();
-    
-    String getCaller();
-    
-    long getNow();
+    void callback(Serializable data);
 }

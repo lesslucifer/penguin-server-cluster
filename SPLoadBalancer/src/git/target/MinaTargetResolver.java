@@ -6,7 +6,7 @@
 
 package git.target;
 
-import minaconnection.PGAddress;
+import minaconnection.MinaAddress;
 import target.Target;
 import target.TargetResolver;
 
@@ -17,9 +17,9 @@ import target.TargetResolver;
 public class MinaTargetResolver  implements TargetResolver{
     
     private static final String SOCKET_HOST = "127.0.0.1";
-    private static final int SOCKET_PORT = 3377;
+    private static final int SOCKET_PORT = 9090;
     
-    private final PGAddress address;
+    private final MinaAddress address;
     private Target target;
 //    private final Lock lock = new ReentrantLock();
     
@@ -34,7 +34,7 @@ public class MinaTargetResolver  implements TargetResolver{
     }
     
     public MinaTargetResolver(String host, int port) {
-        this.address = new PGAddress(host, port);
+        this.address = new MinaAddress(host, port);
     }
     
     @Override

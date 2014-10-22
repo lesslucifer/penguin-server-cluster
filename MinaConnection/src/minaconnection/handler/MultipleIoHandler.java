@@ -6,12 +6,11 @@
 
 package minaconnection.handler;
 
-import minaconnection.interfaces.IPGData;
-import minaconnection.event.INotifable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+//import minaconnection.interfaces.IMinaData;
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IdleStatus;
 import org.apache.mina.core.session.IoSession;
@@ -20,11 +19,11 @@ import org.apache.mina.core.session.IoSession;
  *
  * @author suaongmattroi
  */
-public class MultipleIoHandler extends IoHandlerAdapter implements INotifable{
+class MultipleIoHandler extends IoHandlerAdapter implements INotifable{
 
     private Map<Object, String> listeners = new ConcurrentHashMap<Object, String>();
 
-    private IPGData result;
+//    private IMinaData result;
     
     public MultipleIoHandler() {
     }
@@ -32,7 +31,8 @@ public class MultipleIoHandler extends IoHandlerAdapter implements INotifable{
     // Impl event 
     @Override
     public Object getParams() {
-        return this.result;
+//        return this.result;
+        return null;
     }
     
     @Override
@@ -64,7 +64,7 @@ public class MultipleIoHandler extends IoHandlerAdapter implements INotifable{
     
     @Override
     public final void messageReceived(IoSession session, Object message) throws Exception {
-        this.result = (IPGData) message;
+//        this.result = (IMinaData) message;
         notifyEvent();
     }
     

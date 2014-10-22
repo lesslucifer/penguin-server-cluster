@@ -6,9 +6,9 @@
 
 package minaconnection;
 
+import java.io.Serializable;
 import java.net.InetSocketAddress;
 import java.util.Map;
-import minaconnection.interfaces.IPGData;
 import org.apache.mina.core.filterchain.IoFilterAdapter;
 import org.apache.mina.core.future.ConnectFuture;
 import org.apache.mina.core.service.IoConnector;
@@ -20,20 +20,18 @@ import org.apache.mina.transport.socket.nio.NioSocketConnector;
  *
  * @author suaongmattroi
  */
-public class SimpleRequester {
-    
-    private long timeout;
+class SimpleRequester {
     
     private final IoConnector connector;
-    
     private IoSession session;
     
-    private final PGAddress address;
+    private final MinaAddress address;
     
-    public SimpleRequester(PGAddress address, Map<String, IoFilterAdapter> filters, IoHandlerAdapter handler) {
+    public SimpleRequester(MinaAddress address,
+            Map<String, IoFilterAdapter> filters,
+            IoHandlerAdapter handler) {
         
         this.address = address;
-        
         this.connector = new NioSocketConnector();
 
         // Apply filter to connection
@@ -43,14 +41,7 @@ public class SimpleRequester {
         this.connector.setHandler(handler);
     }
     
-    public void setTimeOut(long timeout)
-    {
-        this.timeout = timeout;
-        this.connector.setConnectTimeoutMillis(this.timeout);
-    }
-    
     public void start() {
-
         ConnectFuture connFuture = 
                 this.connector.connect(new InetSocketAddress(this.address.getAddress(), this.address.getPort()));
         connFuture.awaitUninterruptibly();
@@ -58,13 +49,9 @@ public class SimpleRequester {
         this.session = connFuture.getSession();
     }
     
-    public boolean isAvailable() {
-        return (this.session != null && this.session.isConnected());
-    }
-    
-    public void send(IPGData req) {
+    public void send(Serializable req) {
         
-        if(isAvailable()) {
+        if(this.session != null && this.session.isConnected()) {
             this.session.write(req);
         }
     }

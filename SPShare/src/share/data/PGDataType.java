@@ -4,18 +4,12 @@
  * and open the template in the editor.
  */
 
-package minaconnection.handler;
-
-import minaconnection.interfaces.IPGData;
+package share.data;
 
 /**
  *
  * @author suaongmattroi
  */
-public interface IConnectionServices {
-    
-    IPGData reflectCall(final IPGData pgd);
-    
-    void dispose();
-    
+public enum PGDataType {
+    HTTP, AMF
 }

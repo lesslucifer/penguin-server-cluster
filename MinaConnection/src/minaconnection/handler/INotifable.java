@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package minaconnection.event;
+package minaconnection.handler;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -12,7 +12,7 @@ import java.lang.reflect.InvocationTargetException;
  *
  * @author suaongmattroi
  */
-public interface INotifable {
+interface INotifable {
     
     void register(Object listener, String method);
     void unregister(Object listener, String method);
