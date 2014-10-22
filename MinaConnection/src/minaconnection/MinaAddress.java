@@ -12,12 +12,12 @@ import java.util.Objects;
  *
  * @author suaongmattroi
  */
-public class PGAddress {
+public class MinaAddress {
     
     private final String address;
     private final int port;
     
-    public PGAddress(String address, int port) {
+    public MinaAddress(String address, int port) {
         this.address = address;
         this.port = port;
     }
@@ -46,7 +46,7 @@ public class PGAddress {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final PGAddress other = (PGAddress) obj;
+        final MinaAddress other = (MinaAddress) obj;
         if (!Objects.equals(this.address, other.address)) {
             return false;
         }

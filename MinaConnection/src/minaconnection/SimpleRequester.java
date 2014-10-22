@@ -6,9 +6,9 @@
 
 package minaconnection;
 
+import java.io.Serializable;
 import java.net.InetSocketAddress;
 import java.util.Map;
-import minaconnection.interfaces.IMinaData;
 import org.apache.mina.core.filterchain.IoFilterAdapter;
 import org.apache.mina.core.future.ConnectFuture;
 import org.apache.mina.core.service.IoConnector;
@@ -25,9 +25,9 @@ class SimpleRequester {
     private final IoConnector connector;
     private IoSession session;
     
-    private final PGAddress address;
+    private final MinaAddress address;
     
-    public SimpleRequester(PGAddress address,
+    public SimpleRequester(MinaAddress address,
             Map<String, IoFilterAdapter> filters,
             IoHandlerAdapter handler) {
         
@@ -49,7 +49,7 @@ class SimpleRequester {
         this.session = connFuture.getSession();
     }
     
-    public void send(IMinaData req) {
+    public void send(Serializable req) {
         
         if(this.session != null && this.session.isConnected()) {
             this.session.write(req);

@@ -3,17 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package minaconnection.interfaces;
 
 import java.io.Serializable;
+import minaconnection.MinaAddress;
 
 /**
  *
  * @author suaongmattroi
  */
-public interface IMinaData extends Serializable{
-    
-    long index();
-    
-    Serializable data();   
+public interface IRequestPool {
+    void request(MinaAddress address, Serializable data, IClientHandler h);
 }

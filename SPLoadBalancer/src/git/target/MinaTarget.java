@@ -6,12 +6,14 @@
 
 package git.target;
 
-import minaconnection.PGAddress;
-import minaconnection.PGWaitingResponding;
-import minaconnection.SimpleRequestPool;
-import share.data.PGMapData;
-import minaconnection.interfaces.IMinaData;
+import minaconnection.ClientHandlerFactory;
+import minaconnection.MinaAddress;
+import minaconnection.SimpleRequestPoolFactory;
+import minaconnection.interfaces.IClientHandler;
+import minaconnection.interfaces.IRequestPool;
+import share.data.IPGData;
 import share.data.PGDataType;
+import share.data.PGMapData;
 import target.Request;
 import target.Target;
 
@@ -21,39 +23,40 @@ import target.Target;
  */
 public class MinaTarget implements Target {
 
-    private final PGAddress address;
-    private final SimpleRequestPool pool;
+    private final MinaAddress address;
+    private final IRequestPool pool;
     
-    public MinaTarget(PGAddress address) {
+    public MinaTarget(MinaAddress address) {
         
-        pool = new SimpleRequestPool();
+        pool = SimpleRequestPoolFactory.create();
         this.address = address;
     }
     
     @Override
     public Object doAMF(Request request) {
-        IMinaData msg = new PGMapData(pool.nextIndex(), 
+        IPGData msg = new PGMapData(
                 request.getCaller(),
                 request.getMethod(),
                 request.getParams(),
                 request.getNow(),
                 PGDataType.AMF);
-        PGWaitingResponding wresp = new PGWaitingResponding();
-        pool.request(address, msg, PGWaitingResponding.RESP_FUNC, wresp);
-        return wresp.doReq();
+        IClientHandler cHandler = ClientHandlerFactory.create();
+        pool.request(address, msg, cHandler);
+        IPGData data = (IPGData) cHandler.doReq();
+        return data.data();
     }
 
     @Override
     public Object doHTTP(Request request) {
-        IMinaData msg = new PGMapData(pool.nextIndex(), 
+        IPGData msg = new PGMapData( 
             request.getCaller(),
             request.getMethod(),
             request.getParams(),
             request.getNow(),
             PGDataType.HTTP);
-        PGWaitingResponding wresp = new PGWaitingResponding();
-        pool.request(address, msg, PGWaitingResponding.RESP_FUNC, wresp);
-        IMinaData data = wresp.doReq();
-        return data.getData();
+        IClientHandler cHandler = ClientHandlerFactory.create();
+        pool.request(address, msg, cHandler);
+        IPGData data = (IPGData) cHandler.doReq();
+        return data.data();
     }
 }

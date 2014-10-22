@@ -11,9 +11,9 @@ import java.io.Serializable;
  *
  * @author suaongmattroi
  */
-public interface IMinaData extends Serializable{
+public interface IClientHandler {
     
-    long index();
+    Serializable doReq();
     
-    Serializable data();   
+    void callback(Serializable data);
 }

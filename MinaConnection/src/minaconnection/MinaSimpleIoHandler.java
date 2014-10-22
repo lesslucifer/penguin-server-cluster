@@ -14,7 +14,7 @@ import org.apache.mina.core.session.IoSession;
  *
  * @author suaongmattroi
  */
-public class SimpleIoHandler extends IoHandlerAdapter {
+class MinaSimpleIoHandler extends IoHandlerAdapter {
     
     // Override that method to handler event
     @Override
@@ -30,24 +30,24 @@ public class SimpleIoHandler extends IoHandlerAdapter {
     public void messageSent(IoSession session, Object message) throws Exception {
     }
     
-    // Final method
     @Override
     public void sessionClosed(IoSession session) throws Exception {
         System.out.println("sessionClosed");
     }
     
+    // Final method
     @Override
-    public void sessionCreated(IoSession session) throws Exception {
+    public final void sessionCreated(IoSession session) throws Exception {
         System.out.println("sessionCreated");
     }
     
     @Override
-    public void sessionIdle(IoSession session, IdleStatus status) throws Exception {
+    public final void sessionIdle(IoSession session, IdleStatus status) throws Exception {
         System.out.println("sessionIdle");
     }
     
     @Override
-    public void sessionOpened(IoSession session) throws Exception {
+    public final void sessionOpened(IoSession session) throws Exception {
         System.out.println("sessionOpened");
     }
 }

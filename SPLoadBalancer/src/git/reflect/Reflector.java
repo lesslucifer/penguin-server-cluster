@@ -6,20 +6,20 @@
 
 package git.reflect;
 
+import git.target.MinaTargetResolver;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import libCore.config.Config;
-import share.PGLog;
 import org.apache.log4j.Logger;
 import share.Methods;
 import share.PGError;
 import share.PGException;
 import share.PGHelper;
+import share.PGLog;
 import share.PGMacro;
-import git.target.MinaTargetResolver;
-import share.PGResponse;
+import share.data.PGResponse;
 import target.Request;
 import target.Target;
 import target.TargetResolver;
@@ -87,9 +87,8 @@ public class Reflector implements amfservices.Reflector {
             PGLog.debug("Input\r\n%s", PGHelper.obj2PrettyJSON(data));
             Target target = this.targetResolver.getUserTarget(uid);
             Request req = Request.makeAMF(uid, method, data, now);
-            PGResponse responseData = (PGResponse) target.doAMF(req);
-            
-            content.putAll(responseData.toAMF());
+            Object respD = target.doAMF(req);
+            content.putAll((Map)respD);
         }
         catch (InvocationTargetException ex)
         {

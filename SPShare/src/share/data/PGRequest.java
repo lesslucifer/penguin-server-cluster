@@ -3,17 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package minaconnection.interfaces;
 
-import java.io.Serializable;
+package share.data;
 
 /**
  *
  * @author suaongmattroi
  */
-public interface IMinaData extends Serializable{
+public class PGRequest {
     
-    long index();
-    
-    Serializable data();   
 }
