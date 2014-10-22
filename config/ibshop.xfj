@@ -1,0 +1,69 @@
+{
+  "ibshop": {
+    "penguins": {
+      "tapIndex": 0,
+      "resClass_up": "IS_pengTab_up",
+      "resClass_down": "IS_pengTab_down",
+      "resClass_selected": "IS_pengTab_selected",
+      "title": "Cánh cụt",
+      "data": {
+        "0": "pen_gold_1",
+        "1": "pen_gold_2",
+        "2": "pen_gold_3",
+        "3": "pen_gold_4",
+        "4": "pen_gold_5",
+        "5": "pen_gold_6",
+        "6": "pen_gold_7",
+        "7": "pen_coin_7",
+        "8": "pen_gold_8",
+        "9": "pen_coin_8",
+        "10": "pen_gold_9",
+        "11": "pen_coin_9",
+        "12": "pen_gold_10",
+        "13": "pen_coin_10",
+        "14": "pen_gold_11",
+        "15": "pen_coin_11",
+        "16": "pen_gold_12",
+        "17": "pen_coin_12",
+        "18": "pen_gold_13",
+        "19": "pen_coin_13",
+        "20": "pen_gold_14",
+        "21": "pen_coin_14",
+        "22": "pen_gold_15",
+        "23": "pen_coin_15",
+        "24": "pen_gold_16",
+        "25": "pen_coin_16",
+        "26": "pen_coin_17"
+      }
+    },
+    "fishs": {
+      "tapIndex": 1,
+      "resClass_up": "IS_foodTab_up",
+      "resClass_down": "IS_foodTab_down",
+      "resClass_selected": "IS_foodTab_selected",
+      "title": "Cá",
+      "data": {
+        "0": "fish_gold_10",
+        "1": "fish_gold_100",
+        "2": "fish_coin_100",
+        "3": "fish_gold_1000",
+        "4": "fish_coin_1000",
+        "5": "fish_gold_2000",
+        "6": "fish_coin_2000"
+      }
+    },
+    "golds": {
+      "tapIndex": 2,
+      "resClass_up": "IS_goldTab_up",
+      "resClass_down": "IS_goldTab_down",
+      "resClass_selected": "IS_goldTab_selected",
+      "title": "Vàng",
+      "data": {
+        "0": "gold_coin_1",
+        "1": "gold_coin_10",
+        "2": "gold_coin_100",
+        "3": "gold_coin_500"
+      }
+    }
+  }
+}

@@ -1,0 +1,715 @@
+{
+  "ibshop_items": {
+    "pen_gold_1": {
+      "kind": "penguin",
+      "entity": "pen_1",
+      "price": {
+        "gold": 100,
+        "coin": 0
+      },
+      "unlock": {
+        "level": 1
+      },
+      "state": "hot",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_gold_2": {
+      "kind": "penguin",
+      "entity": "pen_2",
+      "price": {
+        "gold": 120,
+        "coin": 0
+      },
+      "unlock": {
+        "level": 1
+      },
+      "state": "sale",
+      "promotion": {
+        "percent": 0.5
+      }
+    },
+    "pen_gold_3": {
+      "kind": "penguin",
+      "entity": "pen_3",
+      "price": {
+        "gold": 140,
+        "coin": 0
+      },
+      "unlock": {
+        "level": 3
+      },
+      "state": "sale",
+      "promotion": {
+        "percent": 0.5
+      }
+    },
+    "pen_gold_4": {
+      "kind": "penguin",
+      "entity": "pen_4",
+      "price": {
+        "gold": 160,
+        "coin": 0
+      },
+      "unlock": {
+        "level": 4
+      },
+      "state": "normal",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_gold_5": {
+      "kind": "penguin",
+      "entity": "pen_5",
+      "price": {
+        "gold": 180,
+        "coin": 0
+      },
+      "unlock": {
+        "level": 5
+      },
+      "state": "normal",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_gold_6": {
+      "kind": "penguin",
+      "entity": "pen_6",
+      "price": {
+        "gold": 200,
+        "coin": 0
+      },
+      "unlock": {
+        "level": 6
+      },
+      "state": "normal",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_gold_7": {
+      "kind": "penguin",
+      "entity": "pen_10",
+      "price": {
+        "gold": 999,
+        "coin": 0
+      },
+      "unlock": {
+        "level": 8
+      },
+      "state": "hot",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_gold_8": {
+      "kind": "penguin",
+      "entity": "pen_7",
+      "price": {
+        "gold": 220,
+        "coin": 0
+      },
+      "unlock": {
+        "level": 8
+      },
+      "state": "sale",
+      "promotion": {
+        "percent": 0.2
+      }
+    },
+    "pen_gold_9": {
+      "kind": "penguin",
+      "entity": "pen_8",
+      "price": {
+        "gold": 480,
+        "coin": 0
+      },
+      "unlock": {
+        "level": 9
+      },
+      "state": "hot",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_gold_10": {
+      "kind": "penguin",
+      "entity": "pen_11",
+      "price": {
+        "gold": 1040,
+        "coin": 0
+      },
+      "unlock": {
+        "level": 10
+      },
+      "state": "hot",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_gold_11": {
+      "kind": "penguin",
+      "entity": "pen_12",
+      "price": {
+        "gold": 1080,
+        "coin": 0
+      },
+      "unlock": {
+        "level": 12
+      },
+      "state": "normal",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_gold_12": {
+      "kind": "penguin",
+      "entity": "pen_13",
+      "price": {
+        "gold": 4120,
+        "coin": 0
+      },
+      "unlock": {
+        "level": 14
+      },
+      "state": "normal",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_gold_13": {
+      "kind": "penguin",
+      "entity": "pen_24",
+      "price": {
+        "gold": 3999,
+        "coin": 0
+      },
+      "unlock": {
+        "level": 14
+      },
+      "state": "normal",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_gold_14": {
+      "kind": "penguin",
+      "entity": "pen_25",
+      "price": {
+        "gold": 4060,
+        "coin": 0
+      },
+      "unlock": {
+        "level": 16
+      },
+      "state": "sale",
+      "promotion": {
+        "percent": 0.1
+      }
+    },
+    "pen_gold_15": {
+      "kind": "penguin",
+      "entity": "pen_26",
+      "price": {
+        "gold": 4120,
+        "coin": 0
+      },
+      "unlock": {
+        "level": 18
+      },
+      "state": "hot",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_gold_16": {
+      "kind": "penguin",
+      "entity": "pen_27",
+      "price": {
+        "gold": 8280,
+        "coin": 0
+      },
+      "unlock": {
+        "level": 20
+      },
+      "state": "hot",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_coin_1": {
+      "kind": "penguin",
+      "entity": "pen_1",
+      "price": {
+        "gold": 0,
+        "coin": 2
+      },
+      "unlock": {
+        "level": 1
+      },
+      "state": "hot",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_coin_2": {
+      "kind": "penguin",
+      "entity": "pen_2",
+      "price": {
+        "gold": 0,
+        "coin": 2
+      },
+      "unlock": {
+        "level": 1
+      },
+      "state": "sale",
+      "promotion": {
+        "percent": 0.5
+      }
+    },
+    "pen_coin_3": {
+      "kind": "penguin",
+      "entity": "pen_3",
+      "price": {
+        "gold": 0,
+        "coin": 3
+      },
+      "unlock": {
+        "level": 3
+      },
+      "state": "sale",
+      "promotion": {
+        "percent": 0.5
+      }
+    },
+    "pen_coin_4": {
+      "kind": "penguin",
+      "entity": "pen_4",
+      "price": {
+        "gold": 0,
+        "coin": 3
+      },
+      "unlock": {
+        "level": 4
+      },
+      "state": "normal",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_coin_5": {
+      "kind": "penguin",
+      "entity": "pen_5",
+      "price": {
+        "gold": 0,
+        "coin": 4
+      },
+      "unlock": {
+        "level": 5
+      },
+      "state": "normal",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_coin_6": {
+      "kind": "penguin",
+      "entity": "pen_6",
+      "price": {
+        "gold": 0,
+        "coin": 4
+      },
+      "unlock": {
+        "level": 6
+      },
+      "state": "normal",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_coin_7": {
+      "kind": "penguin",
+      "entity": "pen_10",
+      "price": {
+        "gold": 0,
+        "coin": 20
+      },
+      "unlock": {
+        "level": 8
+      },
+      "state": "hot",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_coin_8": {
+      "kind": "penguin",
+      "entity": "pen_7",
+      "price": {
+        "gold": 0,
+        "coin": 5
+      },
+      "unlock": {
+        "level": 8
+      },
+      "state": "sale",
+      "promotion": {
+        "percent": 0.2
+      }
+    },
+    "pen_coin_9": {
+      "kind": "penguin",
+      "entity": "pen_8",
+      "price": {
+        "gold": 0,
+        "coin": 8
+      },
+      "unlock": {
+        "level": 9
+      },
+      "state": "hot",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_coin_10": {
+      "kind": "penguin",
+      "entity": "pen_11",
+      "price": {
+        "gold": 0,
+        "coin": 21
+      },
+      "unlock": {
+        "level": 10
+      },
+      "state": "hot",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_coin_11": {
+      "kind": "penguin",
+      "entity": "pen_12",
+      "price": {
+        "gold": 0,
+        "coin": 22
+      },
+      "unlock": {
+        "level": 12
+      },
+      "state": "normal",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_coin_12": {
+      "kind": "penguin",
+      "entity": "pen_13",
+      "price": {
+        "gold": 0,
+        "coin": 83
+      },
+      "unlock": {
+        "level": 14
+      },
+      "state": "normal",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_coin_13": {
+      "kind": "penguin",
+      "entity": "pen_24",
+      "price": {
+        "gold": 0,
+        "coin": 80
+      },
+      "unlock": {
+        "level": 14
+      },
+      "state": "normal",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_coin_14": {
+      "kind": "penguin",
+      "entity": "pen_25",
+      "price": {
+        "gold": 0,
+        "coin": 81
+      },
+      "unlock": {
+        "level": 16
+      },
+      "state": "sale",
+      "promotion": {
+        "percent": 0.1
+      }
+    },
+    "pen_coin_15": {
+      "kind": "penguin",
+      "entity": "pen_26",
+      "price": {
+        "gold": 0,
+        "coin": 82
+      },
+      "unlock": {
+        "level": 18
+      },
+      "state": "hot",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_coin_16": {
+      "kind": "penguin",
+      "entity": "pen_27",
+      "price": {
+        "gold": 0,
+        "coin": 165
+      },
+      "unlock": {
+        "level": 20
+      },
+      "state": "hot",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "pen_coin_17": {
+      "kind": "penguin",
+      "entity": "pen_40",
+      "price": {
+        "gold": 0,
+        "coin": 1111
+      },
+      "unlock": {
+        "level": 1
+      },
+      "state": "new",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "fish_gold_1": {
+      "n_fish": "1",
+      "resClass": "IBShop_Fish",
+      "title": "Con cá",
+      "kind": "fish",
+      "entity": "0",
+      "price": {
+        "gold": 1,
+        "coin": 0
+      },
+      "unlock": {
+        "level": 1
+      },
+      "state": "normal",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "fish_gold_10": {
+      "n_fish": "10",
+      "resClass": "IBShop_Many_Fish",
+      "title": "Xâu cá",
+      "kind": "fish",
+      "entity": "0",
+      "price": {
+        "gold": 10,
+        "coin": 0
+      },
+      "unlock": {
+        "level": 1
+      },
+      "state": "normal",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "fish_gold_100": {
+      "n_fish": "100",
+      "resClass": "IBShop_Basket_Fish",
+      "title": "Giỏ cá",
+      "kind": "fish",
+      "entity": "0",
+      "price": {
+        "gold": 95,
+        "coin": 0
+      },
+      "unlock": {
+        "level": 4
+      },
+      "state": "normal",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "fish_gold_1000": {
+      "n_fish": "1000",
+      "resClass": "IBShop_Rush_Fish",
+      "title": "Xô cá",
+      "kind": "fish",
+      "entity": "0",
+      "price": {
+        "gold": 925,
+        "coin": 0
+      },
+      "unlock": {
+        "level": 8
+      },
+      "state": "hot",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "fish_gold_2000": {
+      "n_fish": "2000",
+      "resClass": "IBShop_Pot_Fish",
+      "title": "Lu cá",
+      "kind": "fish",
+      "entity": "0",
+      "price": {
+        "gold": 1800,
+        "coin": 0
+      },
+      "unlock": {
+        "level": 15
+      },
+      "state": "normal",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "fish_coin_100": {
+      "n_fish": "100",
+      "resClass": "IBShop_Basket_Fish",
+      "title": "Giỏ cá",
+      "kind": "fish",
+      "entity": "0",
+      "price": {
+        "gold": 0,
+        "coin": 2
+      },
+      "unlock": {
+        "level": 4
+      },
+      "state": "normal",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "fish_coin_1000": {
+      "n_fish": "1000",
+      "resClass": "IBShop_Rush_Fish",
+      "title": "Xô cá",
+      "kind": "fish",
+      "entity": "0",
+      "price": {
+        "gold": 0,
+        "coin": 18
+      },
+      "unlock": {
+        "level": 8
+      },
+      "state": "hot",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "fish_coin_2000": {
+      "n_fish": "2000",
+      "resClass": "IBShop_Pot_Fish",
+      "title": "Lu cá",
+      "kind": "fish",
+      "entity": "0",
+      "price": {
+        "gold": 0,
+        "coin": 36
+      },
+      "unlock": {
+        "level": 15
+      },
+      "state": "normal",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "gold_coin_1": {
+      "n_gold": "27",
+      "resClass": "IBShop_Gold",
+      "title": "Mớ vàng",
+      "kind": "gold",
+      "entity": "0",
+      "price": {
+        "gold": 0,
+        "coin": 1
+      },
+      "unlock": {
+        "level": 1
+      },
+      "state": "sale",
+      "promotion": {
+        "percent": 0.2
+      }
+    },
+    "gold_coin_10": {
+      "n_gold": "250",
+      "resClass": "IBShop_Many_Gold",
+      "title": "Ụ vàng",
+      "kind": "gold",
+      "entity": "0",
+      "price": {
+        "gold": 0,
+        "coin": 10
+      },
+      "unlock": {
+        "level": 1
+      },
+      "state": "normal",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "gold_coin_100": {
+      "n_gold": "3000",
+      "resClass": "IBShop_Rush_Gold",
+      "title": "Thau vàng",
+      "kind": "gold",
+      "entity": "0",
+      "price": {
+        "gold": 0,
+        "coin": 100
+      },
+      "unlock": {
+        "level": 1
+      },
+      "state": "normal",
+      "promotion": {
+        "percent": 0.0
+      }
+    },
+    "gold_coin_500": {
+      "n_gold": "20500",
+      "resClass": "IBShop_Chest_Gold",
+      "title": "Rương Vàng",
+      "kind": "gold",
+      "entity": "0",
+      "price": {
+        "gold": 0,
+        "coin": 500
+      },
+      "unlock": {
+        "level": 1
+      },
+      "state": "normal",
+      "promotion": {
+        "percent": 0.0
+      }
+    }
+  }
+}

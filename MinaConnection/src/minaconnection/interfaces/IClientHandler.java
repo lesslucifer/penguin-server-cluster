@@ -13,7 +13,7 @@ import java.io.Serializable;
  */
 public interface IClientHandler {
     
-    Serializable doReq();
+    Serializable doReq() throws Exception;
     
     void callback(Serializable data);
 }

@@ -6,6 +6,9 @@
 
 package git.target;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import minaconnection.ClientHandlerFactory;
 import minaconnection.MinaAddress;
 import minaconnection.SimpleRequestPoolFactory;
@@ -33,30 +36,38 @@ public class MinaTarget implements Target {
     }
     
     @Override
-    public Object doAMF(Request request) {
-        IPGData msg = new PGMapData(
-                request.getCaller(),
-                request.getMethod(),
-                request.getParams(),
-                request.getNow(),
-                PGDataType.AMF);
-        IClientHandler cHandler = ClientHandlerFactory.create();
-        pool.request(address, msg, cHandler);
-        IPGData data = (IPGData) cHandler.doReq();
-        return data.data();
+    public Object doAMF(Request request) throws InvocationTargetException {
+        try {
+            IPGData msg = new PGMapData(
+                    request.getCaller(),
+                    request.getMethod(),
+                    request.getParams(),
+                    request.getNow(),
+                    PGDataType.AMF);
+            IClientHandler cHandler = ClientHandlerFactory.create();
+            pool.request(address, msg, cHandler);
+            IPGData data = (IPGData) cHandler.doReq();
+            return data.data();
+        } catch (Exception ex) {
+            throw new InvocationTargetException(ex);
+        }
     }
 
     @Override
-    public Object doHTTP(Request request) {
-        IPGData msg = new PGMapData( 
-            request.getCaller(),
-            request.getMethod(),
-            request.getParams(),
-            request.getNow(),
-            PGDataType.HTTP);
-        IClientHandler cHandler = ClientHandlerFactory.create();
-        pool.request(address, msg, cHandler);
-        IPGData data = (IPGData) cHandler.doReq();
-        return data.data();
+    public Object doHTTP(Request request) throws InvocationTargetException {
+        try {
+            IPGData msg = new PGMapData(
+                    request.getCaller(),
+                    request.getMethod(),
+                    request.getParams(),
+                    request.getNow(),
+                    PGDataType.HTTP);
+            IClientHandler cHandler = ClientHandlerFactory.create();
+            pool.request(address, msg, cHandler);
+            IPGData data = (IPGData) cHandler.doReq();
+            return data.data();
+        } catch (Exception ex) {
+            throw new InvocationTargetException(ex);
+        }
     }
 }

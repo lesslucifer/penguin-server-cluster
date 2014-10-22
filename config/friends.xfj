@@ -1,0 +1,12 @@
+{
+  "friends": {
+    "help_fish": {
+      "per_friend": 2,
+      "max_friend": 50
+    },
+    "steal_egg": {
+      "per_friend": 4,
+      "max_friend": 100
+    }
+  }
+}

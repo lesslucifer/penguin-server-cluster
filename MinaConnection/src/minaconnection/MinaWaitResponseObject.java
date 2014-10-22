@@ -15,7 +15,7 @@ import minaconnection.interfaces.IClientHandler;
  *
  * @author suaongmattroi
  */
-class MinaWaitResponseObject implements IClientHandler{
+class MinaWaitResponseObject implements IClientHandler {
     
     private Serializable data;
     
@@ -24,22 +24,24 @@ class MinaWaitResponseObject implements IClientHandler{
     }
     
     @Override
-    public Serializable doReq() {
+    public synchronized Serializable doReq() throws Exception {
         // use another sync methods
-        while(data == null) 
-        {
-            try {
-                Thread.sleep(1);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(MinaWaitResponseObject.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+//        while(data == null) 
+//        {
+//            try {
+//                Thread.sleep(1);
+//            } catch (InterruptedException ex) {
+//                Logger.getLogger(MinaWaitResponseObject.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }
         
+        this.wait();
         return this.data;
     }
     
     @Override
-    public void callback(Serializable data) {
+    public synchronized void callback(Serializable data) {
         this.data = data;
+        this.notify();
     }
 }

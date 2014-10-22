@@ -1,0 +1,179 @@
+{
+  "randomize_prize": {
+    "prize": {
+      "1": {
+        "rate": 0,
+        "auto": true,
+        "prize": {
+          "gold": "50000"
+        }
+      },
+      "2": {
+        "rate": 1320,
+        "auto": true,
+        "prize": {
+          "fish": "300"
+        }
+      },
+      "3": {
+        "rate": 110,
+        "auto": false,
+        "prize": {
+          "eggs": {
+            "Egg_3": "5"
+          }
+        }
+      },
+      "4": {
+        "rate": 1385,
+        "auto": true,
+        "prize": {
+          "gold": "270"
+        }
+      },
+      "5": {
+        "rate": 980,
+        "auto": true,
+        "prize": {
+          "exp": "360"
+        }
+      },
+      "6": {
+        "rate": 0,
+        "auto": true,
+        "prize": {
+          "coin": "700"
+        }
+      },
+      "7": {
+        "rate": 35,
+        "auto": true,
+        "prize": {
+          "coin": "10"
+        }
+      },
+      "8": {
+        "rate": 835,
+        "auto": true,
+        "prize": {
+          "add_turn": "2"
+        }
+      },
+      "9": {
+        "rate": 900,
+        "auto": false,
+        "prize": {
+          "eggs": {
+            "Egg_0": "10"
+          }
+        }
+      },
+      "10": {
+        "rate": 0,
+        "auto": true,
+        "prize": {
+          "exp": "50000"
+        }
+      },
+      "11": {
+        "rate": 70,
+        "auto": true,
+        "prize": {
+          "exp": "1000"
+        }
+      },
+      "12": {
+        "rate": 1050,
+        "auto": true,
+        "prize": {
+          "fish": "450"
+        }
+      },
+      "13": {
+        "rate": 45,
+        "auto": false,
+        "prize": {
+          "penguin": {
+            "kind": "pen_8",
+            "level": "0"
+          }
+        }
+      },
+      "14": {
+        "rate": 720,
+        "auto": true,
+        "prize": {
+          "gold": "400"
+        }
+      },
+      "15": {
+        "rate": 0,
+        "auto": false,
+        "prize": {
+          "penguin": {
+            "kind": "pen_37",
+            "level": "0"
+          }
+        }
+      },
+      "16": {
+        "rate": 1220,
+        "auto": false,
+        "prize": {
+          "eggs": {
+            "Egg_2": "6"
+          }
+        }
+      },
+      "17": {
+        "rate": 5,
+        "auto": false,
+        "prize": {
+          "penguin": {
+            "kind": "pen_41",
+            "level": "0"
+          }
+        }
+      },
+      "18": {
+        "rate": 1325,
+        "auto": true,
+        "prize": {
+          "exp": "280"
+        }
+      }
+    },
+    "items": {
+      "0": {
+        "turn": 1,
+        "payment_type": "gold",
+        "payment_value": 300
+      },
+      "1": {
+        "turn": 10,
+        "payment_type": "gold",
+        "payment_value": 2950
+      },
+      "2": {
+        "turn": 20,
+        "payment_type": "gold",
+        "payment_value": 5750
+      },
+      "3": {
+        "turn": 1,
+        "payment_type": "coin",
+        "payment_value": 6
+      },
+      "4": {
+        "turn": 10,
+        "payment_type": "coin",
+        "payment_value": 58
+      },
+      "5": {
+        "turn": 20,
+        "payment_type": "coin",
+        "payment_value": 114
+      }
+    }
+  }
+}

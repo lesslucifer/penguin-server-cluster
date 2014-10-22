@@ -1,0 +1,697 @@
+{
+  "daily_quests": {
+    "quests": {
+      "1": {
+        "actions": {
+          "0": {
+            "0": "Daily_01_pool"
+          },
+          "6": {
+            "0": "Daily_02_pool"
+          }
+        },
+        "values": {
+          "1": {
+            "cost": 0,
+            "complete_immediately_cost": 1,
+            "prize": {
+              "gold": "35",
+              "exp": "65"
+            }
+          },
+          "11": {
+            "cost": 0,
+            "complete_immediately_cost": 1,
+            "prize": {
+              "gold": "40",
+              "exp": "75"
+            }
+          },
+          "21": {
+            "cost": 0,
+            "complete_immediately_cost": 1,
+            "prize": {
+              "gold": "45",
+              "exp": "85"
+            }
+          },
+          "31": {
+            "cost": 0,
+            "complete_immediately_cost": 1,
+            "prize": {
+              "gold": "50",
+              "exp": "95"
+            }
+          },
+          "41": {
+            "cost": 0,
+            "complete_immediately_cost": 1,
+            "prize": {
+              "gold": "55",
+              "exp": "105"
+            }
+          },
+          "51": {
+            "cost": 0,
+            "complete_immediately_cost": 1,
+            "prize": {
+              "gold": "60",
+              "exp": "115"
+            }
+          },
+          "61": {
+            "cost": 0,
+            "complete_immediately_cost": 2,
+            "prize": {
+              "gold": "80",
+              "exp": "125"
+            }
+          },
+          "71": {
+            "cost": 0,
+            "complete_immediately_cost": 3,
+            "prize": {
+              "gold": "120",
+              "exp": "150"
+            }
+          },
+          "81": {
+            "cost": 0,
+            "complete_immediately_cost": 4,
+            "prize": {
+              "gold": "200",
+              "exp": "230"
+            }
+          },
+          "91": {
+            "cost": 0,
+            "complete_immediately_cost": 5,
+            "prize": {
+              "gold": "260",
+              "exp": "300"
+            }
+          },
+          "101": {
+            "cost": 0,
+            "complete_immediately_cost": 7,
+            "prize": {
+              "gold": "350",
+              "exp": "420"
+            }
+          }
+        }
+      },
+      "2": {
+        "actions": {
+          "0": {
+            "0": "Daily_03_pool"
+          },
+          "6": {
+            "0": "Daily_04_pool"
+          }
+        },
+        "values": {
+          "1": {
+            "cost": 1,
+            "complete_immediately_cost": 2,
+            "prize": {
+              "gold": "85",
+              "exp": "115"
+            }
+          },
+          "11": {
+            "cost": 1,
+            "complete_immediately_cost": 2,
+            "prize": {
+              "gold": "90",
+              "exp": "120"
+            }
+          },
+          "21": {
+            "cost": 1,
+            "complete_immediately_cost": 2,
+            "prize": {
+              "gold": "95",
+              "exp": "125"
+            }
+          },
+          "31": {
+            "cost": 1,
+            "complete_immediately_cost": 2,
+            "prize": {
+              "gold": "100",
+              "exp": "130"
+            }
+          },
+          "41": {
+            "cost": 1,
+            "complete_immediately_cost": 3,
+            "prize": {
+              "gold": "120",
+              "exp": "135"
+            }
+          },
+          "51": {
+            "cost": 1,
+            "complete_immediately_cost": 3,
+            "prize": {
+              "gold": "130",
+              "exp": "140"
+            }
+          },
+          "61": {
+            "cost": 1,
+            "complete_immediately_cost": 4,
+            "prize": {
+              "gold": "170",
+              "exp": "170"
+            }
+          },
+          "71": {
+            "cost": 1,
+            "complete_immediately_cost": 4,
+            "prize": {
+              "gold": "200",
+              "exp": "250"
+            }
+          },
+          "81": {
+            "cost": 1,
+            "complete_immediately_cost": 7,
+            "prize": {
+              "gold": "300",
+              "exp": "350"
+            }
+          },
+          "91": {
+            "cost": 1,
+            "complete_immediately_cost": 8,
+            "prize": {
+              "gold": "380",
+              "exp": "450"
+            }
+          },
+          "101": {
+            "cost": 1,
+            "complete_immediately_cost": 11,
+            "prize": {
+              "gold": "500",
+              "exp": "690"
+            }
+          }
+        }
+      },
+      "3": {
+        "actions": {
+          "0": {
+            "0": "Daily_05_pool"
+          },
+          "6": {
+            "0": "Daily_06_pool"
+          }
+        },
+        "values": {
+          "1": {
+            "cost": 0,
+            "complete_immediately_cost": 1,
+            "prize": {
+              "gold": "35",
+              "exp": "165"
+            }
+          },
+          "11": {
+            "cost": 0,
+            "complete_immediately_cost": 1,
+            "prize": {
+              "gold": "35",
+              "exp": "170"
+            }
+          },
+          "21": {
+            "cost": 0,
+            "complete_immediately_cost": 1,
+            "prize": {
+              "gold": "40",
+              "exp": "175"
+            }
+          },
+          "31": {
+            "cost": 0,
+            "complete_immediately_cost": 1,
+            "prize": {
+              "gold": "60",
+              "exp": "180"
+            }
+          },
+          "41": {
+            "cost": 0,
+            "complete_immediately_cost": 2,
+            "prize": {
+              "gold": "80",
+              "exp": "185"
+            }
+          },
+          "51": {
+            "cost": 0,
+            "complete_immediately_cost": 2,
+            "prize": {
+              "gold": "110",
+              "exp": "190"
+            }
+          },
+          "61": {
+            "cost": 0,
+            "complete_immediately_cost": 3,
+            "prize": {
+              "gold": "150",
+              "exp": "210"
+            }
+          },
+          "71": {
+            "cost": 0,
+            "complete_immediately_cost": 5,
+            "prize": {
+              "gold": "210",
+              "exp": "280"
+            }
+          },
+          "81": {
+            "cost": 0,
+            "complete_immediately_cost": 7,
+            "prize": {
+              "gold": "330",
+              "exp": "400"
+            }
+          },
+          "91": {
+            "cost": 0,
+            "complete_immediately_cost": 10,
+            "prize": {
+              "gold": "440",
+              "exp": "530"
+            }
+          },
+          "101": {
+            "cost": 0,
+            "complete_immediately_cost": 12,
+            "prize": {
+              "gold": "570",
+              "exp": "730"
+            }
+          }
+        }
+      },
+      "4": {
+        "actions": {
+          "0": {
+            "0": "Daily_07_pool"
+          },
+          "6": {
+            "0": "Daily_08_pool"
+          }
+        },
+        "values": {
+          "1": {
+            "cost": 0,
+            "complete_immediately_cost": 1,
+            "prize": {
+              "gold": "60",
+              "exp": "140"
+            }
+          },
+          "11": {
+            "cost": 0,
+            "complete_immediately_cost": 1,
+            "prize": {
+              "gold": "65",
+              "exp": "145"
+            }
+          },
+          "21": {
+            "cost": 0,
+            "complete_immediately_cost": 1,
+            "prize": {
+              "gold": "70",
+              "exp": "150"
+            }
+          },
+          "31": {
+            "cost": 0,
+            "complete_immediately_cost": 2,
+            "prize": {
+              "gold": "90",
+              "exp": "155"
+            }
+          },
+          "41": {
+            "cost": 0,
+            "complete_immediately_cost": 3,
+            "prize": {
+              "gold": "130",
+              "exp": "160"
+            }
+          },
+          "51": {
+            "cost": 0,
+            "complete_immediately_cost": 4,
+            "prize": {
+              "gold": "160",
+              "exp": "190"
+            }
+          },
+          "61": {
+            "cost": 0,
+            "complete_immediately_cost": 5,
+            "prize": {
+              "gold": "220",
+              "exp": "260"
+            }
+          },
+          "71": {
+            "cost": 0,
+            "complete_immediately_cost": 6,
+            "prize": {
+              "gold": "280",
+              "exp": "320"
+            }
+          },
+          "81": {
+            "cost": 0,
+            "complete_immediately_cost": 9,
+            "prize": {
+              "gold": "400",
+              "exp": "450"
+            }
+          },
+          "91": {
+            "cost": 0,
+            "complete_immediately_cost": 12,
+            "prize": {
+              "gold": "520",
+              "exp": "600"
+            }
+          },
+          "101": {
+            "cost": 0,
+            "complete_immediately_cost": 15,
+            "prize": {
+              "gold": "670",
+              "exp": "820"
+            }
+          }
+        }
+      },
+      "5": {
+        "actions": {
+          "0": {
+            "0": "Daily_09_pool"
+          },
+          "6": {
+            "0": "Daily_10_pool"
+          }
+        },
+        "values": {
+          "1": {
+            "cost": 0,
+            "complete_immediately_cost": 2,
+            "prize": {
+              "gold": "85",
+              "exp": "215"
+            }
+          },
+          "11": {
+            "cost": 0,
+            "complete_immediately_cost": 2,
+            "prize": {
+              "gold": "90",
+              "exp": "220"
+            }
+          },
+          "21": {
+            "cost": 0,
+            "complete_immediately_cost": 2,
+            "prize": {
+              "gold": "100",
+              "exp": "225"
+            }
+          },
+          "31": {
+            "cost": 0,
+            "complete_immediately_cost": 3,
+            "prize": {
+              "gold": "130",
+              "exp": "230"
+            }
+          },
+          "41": {
+            "cost": 0,
+            "complete_immediately_cost": 4,
+            "prize": {
+              "gold": "170",
+              "exp": "235"
+            }
+          },
+          "51": {
+            "cost": 0,
+            "complete_immediately_cost": 5,
+            "prize": {
+              "gold": "230",
+              "exp": "250"
+            }
+          },
+          "61": {
+            "cost": 0,
+            "complete_immediately_cost": 6,
+            "prize": {
+              "gold": "280",
+              "exp": "320"
+            }
+          },
+          "71": {
+            "cost": 0,
+            "complete_immediately_cost": 8,
+            "prize": {
+              "gold": "350",
+              "exp": "400"
+            }
+          },
+          "81": {
+            "cost": 0,
+            "complete_immediately_cost": 11,
+            "prize": {
+              "gold": "500",
+              "exp": "550"
+            }
+          },
+          "91": {
+            "cost": 0,
+            "complete_immediately_cost": 14,
+            "prize": {
+              "gold": "650",
+              "exp": "750"
+            }
+          },
+          "101": {
+            "cost": 0,
+            "complete_immediately_cost": 18,
+            "prize": {
+              "gold": "800",
+              "exp": "1000"
+            }
+          }
+        }
+      }
+    },
+    "action_pools": {
+      "Daily_01_pool": {
+        "daily_01_01": {
+          "n_feed": "1"
+        },
+        "daily_01_02": {
+          "penguin_ate": "10"
+        },
+        "daily_01_03": {
+          "n_theft_eggs": "1"
+        },
+        "daily_01_04": {
+          "n_visit_friend": "1"
+        },
+        "daily_01_05": {
+          "n_help_friend": "1"
+        }
+      },
+      "Daily_02_pool": {
+        "daily_02_01": {
+          "n_feed": "1"
+        },
+        "daily_02_02": {
+          "take_snapshot": "1"
+        },
+        "daily_02_03": {
+          "penguin_ate": "10"
+        },
+        "daily_02_04": {
+          "n_theft_eggs": "2"
+        },
+        "daily_02_05": {
+          "n_visit_friend": "2"
+        }
+      },
+      "Daily_03_pool": {
+        "daily_03_01": {
+          "n_visit_friend": "2"
+        },
+        "daily_03_02": {
+          "n_penguin_feed": "2"
+        },
+        "daily_03_03": {
+          "take_snapshot": "1"
+        },
+        "daily_03_04": {
+          "n_expense_gold": "10"
+        },
+        "daily_03_05": {
+          "penguin_ate": "15"
+        }
+      },
+      "Daily_04_pool": {
+        "daily_04_01": {
+          "n_visit_friend": "2"
+        },
+        "daily_04_02": {
+          "n_sell_eggs": "1"
+        },
+        "daily_04_03": {
+          "take_snapshot": "1"
+        },
+        "daily_04_04": {
+          "n_expense_gold": "20"
+        },
+        "daily_04_05": {
+          "n_penguin_feed": "2"
+        }
+      },
+      "Daily_05_pool": {
+        "daily_05_01": {
+          "n_expense_gold": "30",
+          "n_visit_friend": "2"
+        },
+        "daily_05_02": {
+          "n_expense_gold": "30",
+          "penguin_ate": "20"
+        },
+        "daily_05_03": {
+          "take_snapshot": "1",
+          "n_visit_friend": "2"
+        },
+        "daily_05_04": {
+          "take_snapshot": "1",
+          "n_penguin_feed": "3"
+        },
+        "daily_05_05": {
+          "n_visit_friend": "1",
+          "penguin_ate": "20"
+        }
+      },
+      "Daily_06_pool": {
+        "daily_06_01": {
+          "n_expense_gold": "50",
+          "n_help_friend": "1"
+        },
+        "daily_06_02": {
+          "n_expense_gold": "30",
+          "n_sell_eggs": "2"
+        },
+        "daily_06_03": {
+          "take_snapshot": "1",
+          "n_sell_eggs": "2"
+        },
+        "daily_06_04": {
+          "take_snapshot": "1",
+          "n_expense_gold": "50"
+        },
+        "daily_06_05": {
+          "n_visit_friend": "2",
+          "n_expense_gold": "30"
+        }
+      },
+      "Daily_07_pool": {
+        "daily_07_01": {
+          "n_sell_eggs": "1",
+          "n_expense_gold": "50"
+        },
+        "daily_07_02": {
+          "n_penguin_feed": "2"
+        },
+        "daily_07_03": {
+          "n_visit_friend": "2",
+          "n_expense_gold": "50"
+        },
+        "daily_07_04": {
+          "n_visit_friend": "2",
+          "n_expense_gold": "30"
+        },
+        "daily_07_05": {
+          "n_visit_friend": "1",
+          "penguin_ate": "25"
+        }
+      },
+      "Daily_08_pool": {
+        "daily_08_01": {
+          "n_sell_eggs": "2",
+          "n_expense_gold": "60"
+        },
+        "daily_08_02": {
+          "n_penguin_feed": "2"
+        },
+        "daily_08_03": {
+          "n_help_friend": "2",
+          "n_expense_gold": "50"
+        },
+        "daily_08_04": {
+          "n_visit_friend": "2",
+          "n_sell_eggs": "1"
+        },
+        "daily_08_05": {
+          "n_visit_friend": "1",
+          "n_expense_gold": "60"
+        }
+      },
+      "Daily_09_pool": {
+        "daily_09_01": {
+          "n_feed": "1",
+          "penguin_ate": "30"
+        },
+        "daily_09_02": {
+          "n_theft_eggs": "1",
+          "penguin_ate": "25"
+        },
+        "daily_09_03": {
+          "take_snapshot": "1",
+          "penguin_ate": "20"
+        },
+        "daily_09_04": {
+          "n_visit_friend": "2",
+          "n_expense_gold": "80"
+        }
+      },
+      "Daily_10_pool": {
+        "daily_10_01": {
+          "n_theft_eggs": "1",
+          "n_sell_eggs": "1"
+        },
+        "daily_10_02": {
+          "n_theft_eggs": "2"
+        },
+        "daily_10_03": {
+          "take_snapshot": "1",
+          "n_expense_gold": "80"
+        },
+        "daily_10_04": {
+          "n_visit_friend": "2",
+          "n_expense_gold": "80"
+        }
+      }
+    }
+  }
+}

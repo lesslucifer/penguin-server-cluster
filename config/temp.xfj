@@ -1,0 +1,28 @@
+{
+  "temp": {
+    "DigestTimePerFish": "10",
+    "PenguinExpPerFish": "1",
+    "PenguinDefaultLevel": "0",
+    "BuyPenguinExp_Exp": "120",
+    "BuyPenguinExp_Cost": "3",
+    "BuyPenguinLevel_ExpPerCoin": "40",
+    "MaxInventory": "1000",
+    "SessionTime": "300",
+    "NumberDailyQuest": "5",
+    "CotesEggs_Limit": "100",
+    "CotesEggs_Limit_Display": "100",
+    "MaxDogTime": "7776000000",
+    "WakeDogFirstTime_Time": "604800000",
+    "TakeSnapshotFirstTimeInDay_Prize": "3",
+    "AutoSyncFriends_Day": "1",
+    "SyncFriendsCooldown": "3600000",
+    "AutoRemoveNPC_Level": "10",
+    "AutoRemoveNPC_Friends": "20",
+    "Admin_UID": "288377918",
+    "AdminTool_UID": "canhcutvuive",
+    "SystemPasswordMD5": "dcf99dc6391c8b8b635534829519d8ea",
+    "AdultPenguin_Level": "7",
+    "MaxBuyRPByGoldPerDay": "10",
+    "GameMessageDelay": "5"
+  }
+}

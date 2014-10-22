@@ -1,0 +1,242 @@
+{
+  "items": {
+    "Egg_0": {
+      "type": "egg",
+      "display": {
+        "bucket": "Egg_1.swf",
+        "resClass": "Egg_1",
+        "box_egg": {
+          "resGroup": "Egg_1_eggGroup",
+          "resNormal": "CI_ro",
+          "resHover": "CI_ro_hover"
+        },
+        "title": "Sữa Trắng"
+      },
+      "gold": 2
+    },
+    "Egg_1": {
+      "type": "egg",
+      "display": {
+        "bucket": "Egg_2.swf",
+        "resClass": "Egg_2",
+        "box_egg": {
+          "resGroup": "Egg_2_eggGroup",
+          "resNormal": "CI_ro",
+          "resHover": "CI_ro_hover"
+        },
+        "title": "Nấm Hồng"
+      },
+      "gold": 3
+    },
+    "Egg_2": {
+      "type": "egg",
+      "display": {
+        "bucket": "Egg_3.swf",
+        "resClass": "Egg_3",
+        "box_egg": {
+          "resGroup": "Egg_3_eggGroup",
+          "resNormal": "CI_ro",
+          "resHover": "CI_ro_hover"
+        },
+        "title": "Khủng Long"
+      },
+      "gold": 4
+    },
+    "Egg_3": {
+      "type": "egg",
+      "display": {
+        "bucket": "Egg_4.swf",
+        "resClass": "Egg_4",
+        "box_egg": {
+          "resGroup": "Egg_4_eggGroup",
+          "resNormal": "CI_ro",
+          "resHover": "CI_ro_hover"
+        },
+        "title": "Thuỷ Tinh"
+      },
+      "gold": 6
+    },
+    "Egg_4": {
+      "type": "egg",
+      "display": {
+        "bucket": "Egg_5.swf",
+        "resClass": "Egg_5",
+        "box_egg": {
+          "resGroup": "Egg_5_eggGroup",
+          "resNormal": "CI_ro",
+          "resHover": "CI_ro_hover"
+        },
+        "title": "Éc Ôi"
+      },
+      "gold": 9
+    },
+    "Egg_5": {
+      "type": "egg",
+      "display": {
+        "bucket": "Egg_6.swf",
+        "resClass": "Egg_6",
+        "box_egg": {
+          "resGroup": "Egg_6_eggGroup",
+          "resNormal": "CI_ro",
+          "resHover": "CI_ro_hover"
+        },
+        "title": "Phỉ Thuý"
+      },
+      "gold": 13
+    },
+    "Egg_6": {
+      "type": "egg",
+      "display": {
+        "bucket": "Egg_7.swf",
+        "resClass": "Egg_7",
+        "box_egg": {
+          "resGroup": "Egg_7_eggGroup",
+          "resNormal": "CI_ro",
+          "resHover": "CI_ro_hover"
+        },
+        "title": "Đầu Sẹo"
+      },
+      "gold": 19
+    },
+    "Egg_7": {
+      "type": "egg",
+      "display": {
+        "bucket": "Egg_8.swf",
+        "resClass": "Egg_8",
+        "box_egg": {
+          "resGroup": "Egg_8_eggGroup",
+          "resNormal": "CI_ro",
+          "resHover": "CI_ro_hover"
+        },
+        "title": "Sô cô la"
+      },
+      "gold": 28
+    },
+    "Egg_8": {
+      "type": "egg",
+      "display": {
+        "bucket": "Egg_9.swf",
+        "resClass": "Egg_9",
+        "box_egg": {
+          "resGroup": "Egg_9_eggGroup",
+          "resNormal": "CI_ro",
+          "resHover": "CI_ro_hover"
+        },
+        "title": "Biến Dị"
+      },
+      "gold": 42
+    },
+    "Egg_9": {
+      "type": "egg",
+      "display": {
+        "bucket": "Egg_10.swf",
+        "resClass": "Egg_10",
+        "box_egg": {
+          "resGroup": "Egg_10_eggGroup",
+          "resNormal": "CI_ro",
+          "resHover": "CI_ro_hover"
+        },
+        "title": "Boom Tình Yêu"
+      },
+      "gold": 63
+    },
+    "Egg_10": {
+      "type": "egg",
+      "display": {
+        "bucket": "Egg_11.swf",
+        "resClass": "Egg_11",
+        "box_egg": {
+          "resGroup": "Egg_11_eggGroup",
+          "resNormal": "CI_ro",
+          "resHover": "CI_ro_hover"
+        },
+        "title": "Kẹo Bông"
+      },
+      "gold": 3
+    },
+    "Egg_11": {
+      "type": "egg",
+      "display": {
+        "bucket": "Egg_12.swf",
+        "resClass": "Egg_12",
+        "box_egg": {
+          "resGroup": "Egg_12_eggGroup",
+          "resNormal": "CI_ro",
+          "resHover": "CI_ro_hover"
+        },
+        "title": "Nham Thạch"
+      },
+      "gold": 3
+    },
+    "Egg_12": {
+      "type": "egg",
+      "display": {
+        "bucket": "Egg_13.swf",
+        "resClass": "Egg_13",
+        "box_egg": {
+          "resGroup": "Egg_13_eggGroup",
+          "resNormal": "CI_ro",
+          "resHover": "CI_ro_hover"
+        },
+        "title": "Ngọc Rồng"
+      },
+      "gold": 3
+    },
+    "Egg_13": {
+      "type": "egg",
+      "display": {
+        "bucket": "Egg_14.swf",
+        "resClass": "Egg_14",
+        "box_egg": {
+          "resGroup": "Egg_14_eggGroup",
+          "resNormal": "CI_ro",
+          "resHover": "CI_ro_hover"
+        },
+        "title": "Băng Phách"
+      },
+      "gold": 4
+    },
+    "Egg_14": {
+      "type": "egg",
+      "display": {
+        "bucket": "Egg_15.swf",
+        "resClass": "Egg_15",
+        "box_egg": {
+          "resGroup": "Egg_15_eggGroup",
+          "resNormal": "CI_ro",
+          "resHover": "CI_ro_hover"
+        },
+        "title": "Sao Hỏa"
+      },
+      "gold": 4
+    },
+    "Egg_15": {
+      "type": "egg",
+      "display": {
+        "bucket": "Egg_16.swf",
+        "resClass": "Egg_16",
+        "box_egg": {
+          "resGroup": "Egg_16_eggGroup",
+          "resNormal": "CI_ro",
+          "resHover": "CI_ro_hover"
+        },
+        "title": "Cơm Nấm"
+      },
+      "gold": 9
+    },
+    "Egg_16": {
+      "type": "egg",
+      "display": {
+        "bucket": "Egg_17.swf",
+        "resClass": "Egg_17",
+        "box_egg": {
+          "resGroup": "Egg_17_eggGroup",
+          "resNormal": "CI_ro",
+          "resHover": "CI_ro_hover"
+        },
+        "title": "Rô Bô"
+      },
+      "gold": 9
+    }
+  }
+}

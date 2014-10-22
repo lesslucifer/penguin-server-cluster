@@ -1,0 +1,130 @@
+{
+  "release_event": {
+    "totalPrize": {
+      "exp": "22000",
+      "gold": "200000"
+    },
+    "penguins": {
+      "pen_1": {
+        "levels": {
+          "10": {
+            "item": "event_1_item_a",
+            "time": 36000,
+            "rate": 0.5
+          }
+        }
+      },
+      "pen_8": {
+        "levels": {
+          "10": {
+            "item": "event_1_item_b",
+            "time": 36000,
+            "rate": 0.5
+          }
+        }
+      },
+      "pen_13": {
+        "levels": {
+          "10": {
+            "item": "event_1_item_c",
+            "time": 36000,
+            "rate": 0.5
+          }
+        }
+      },
+      "pen_27": {
+        "levels": {
+          "10": {
+            "item": "event_1_item_d",
+            "time": 36000,
+            "rate": 0.5
+          }
+        }
+      }
+    },
+    "events": {
+      "event_11": {
+        "actions": {
+          "re_items": {
+            "event_1_item_a": "100",
+            "event_1_item_b": "100"
+          }
+        },
+        "prize": {
+          "fish": "15000",
+          "exp": "5000"
+        }
+      },
+      "event_12": {
+        "actions": {
+          "re_items": {
+            "event_1_item_a": "100",
+            "event_1_item_b": "100",
+            "event_1_item_c": "100"
+          }
+        },
+        "prize": {
+          "eggs": {
+            "Egg_1": "50",
+            "Egg_2": "50",
+            "Egg_4": "50",
+            "Egg_5": "50"
+          },
+          "exp": "10000"
+        }
+      },
+      "event_13": {
+        "actions": {
+          "re_items": {
+            "event_1_item_a": "100",
+            "event_1_item_b": "100",
+            "event_1_item_d": "100"
+          }
+        },
+        "prize": {
+          "gold": "35000",
+          "exp": "20000"
+        }
+      },
+      "event_14": {
+        "actions": {
+          "re_items": {
+            "event_1_item_a": "100",
+            "event_1_item_b": "100",
+            "event_1_item_c": "100",
+            "event_1_item_d": "100",
+            "event_1_item_e": "100"
+          }
+        },
+        "prize": {
+          "penguin": {
+            "kind": "pen_40",
+            "level": "0"
+          }
+        }
+      }
+    },
+    "items": {
+      "event_1_item_a": {
+        "resBucket": "Egg_10.swf",
+        "cote_resClass": "Egg_10"
+      },
+      "event_1_item_b": {
+        "resBucket": "Egg_11.swf",
+        "cote_resClass": "Egg_11"
+      },
+      "event_1_item_c": {
+        "resBucket": "Egg_12.swf",
+        "cote_resClass": "Egg_12"
+      },
+      "event_1_item_d": {
+        "resBucket": "Egg_13.swf",
+        "cote_resClass": "Egg_13"
+      },
+      "event_1_item_e": {
+        "resBucket": "Egg_14.swf",
+        "cote_resClass": "Egg_14"
+      }
+    }
+  }
+}

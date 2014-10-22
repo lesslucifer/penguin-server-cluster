@@ -7,6 +7,7 @@
 package git.rmitarget;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Collections;
@@ -17,12 +18,13 @@ import java.util.logging.Logger;
 import minaconnection.MinaServerHandler;
 import minaconnection.SimpleResponder;
 import share.data.PGMapData;
-import share.data.PGStringData;
 import share.data.IPGData;
 import minaconnection.interfaces.IServices;
 import share.data.PGDataType;
 import org.apache.mina.core.session.IoSession;
 import pgentity.pool.EntityPool;
+import share.data.PGObjectData;
+import share.data.PGStringData;
 
 /**
  *
@@ -122,39 +124,37 @@ class MinaLogicTarget {
     
     public void doHTTP(final String method, final IoSession session, final long index, final IPGData message) 
     {
-//        threadPool.execute(() -> {
-//            Object resp = null;
-//            try {
-//                Object httpTarget = this.httpTargets.get();
-//                if (httpTarget == null)
-//                {
-//                    httpTarget = httpClass.newInstance();
-//                    httpTargets.set(httpTarget);
-//                }
-//                Method proc = httpClass.method(method, Object.class);
-//
-//                resp = proc.invoke(httpTarget, message.getData());
-//            }
-//            catch (InstantiationException | IllegalAccessException |
-//                    NoSuchMethodException | SecurityException |
-//                    IllegalArgumentException | InvocationTargetException ex)
-//            {
-//                Logger.getLogger(MinaLogicTarget.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//            finally
-//            {
-//                EntityPool.inst().releaseAllThreadResources();
-//                
-//                if (resp == null) {resp = "";}
-//                
-//                
-//                session.write(new PGStringData(
-//                            message.caller()),
-//                            method,
-//                            resp.toString(),
-//                            message.now(),
-//                            PGDataType.HTTP));
-//            }
-//        });
+        threadPool.execute(() -> {
+            Object resp = null;
+            try {
+                Object httpTarget = this.httpTargets.get();
+                if (httpTarget == null)
+                {
+                    httpTarget = httpClass.newInstance();
+                    httpTargets.set(httpTarget);
+                }
+                Method proc = httpClass.getMethod(method, Object.class);
+
+                resp = proc.invoke(httpTarget, message.data());
+            }
+            catch (Exception ex)
+            {
+                Logger.getLogger(MinaLogicTarget.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            finally
+            {
+                EntityPool.inst().releaseAllThreadResources();
+                
+                if (resp == null) {resp = "";}
+                
+                Serializable data = new PGObjectData(
+                            message.caller(),
+                            method,
+                            resp,
+                            message.now(),
+                            PGDataType.HTTP);
+                accepter.send(session, index, data);
+            }
+        });
     }
 }

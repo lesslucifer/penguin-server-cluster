@@ -11,7 +11,6 @@ import java.io.Serializable;
 import java.net.InetSocketAddress;
 import minaconnection.interfaces.IMinaData;
 import minaconnection.interfaces.IServerHandler;
-import org.apache.mina.core.service.IoHandler;
 import org.apache.mina.core.session.IoSession;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.codec.serialization.ObjectSerializationCodecFactory;

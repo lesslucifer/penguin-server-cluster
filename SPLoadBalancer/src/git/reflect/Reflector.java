@@ -19,7 +19,6 @@ import share.PGException;
 import share.PGHelper;
 import share.PGLog;
 import share.PGMacro;
-import share.data.PGResponse;
 import target.Request;
 import target.Target;
 import target.TargetResolver;

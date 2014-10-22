@@ -1,0 +1,322 @@
+{
+  "cotes": {
+    "levels": {
+      "1": {
+        "resBgBucket": "Background_1.swf",
+        "resBgClass": "Background_1",
+        "lake": {
+          "bucket": "Lake_1.swf",
+          "icon": "lake_1_icon",
+          "upgrade": {
+            "bucket": "lake_1_review"
+          },
+          "bridge": {
+            "class": "cau_1",
+            "position": {
+              "x": -53.0,
+              "y": 17.25
+            }
+          },
+          "sign": {
+            "class": "sign_1",
+            "position": {
+              "x": 109.0,
+              "y": -11.0
+            },
+            "text_position": {
+              "x": 274.0,
+              "y": 55.0
+            }
+          },
+          "state": {
+            "1": "1-4_1",
+            "2": "2-4_1",
+            "3": "3-4_1",
+            "4": "4-4_1",
+            "position": {
+              "x": 274.0,
+              "y": 26.0
+            }
+          }
+        },
+        "upgrade_require": {
+          "gold": "0",
+          "coin": "0",
+          "level": "1"
+        },
+        "max_fish": 150,
+        "max_penguin": 3,
+        "eat_time_reduce": 0
+      },
+      "2": {
+        "resBgBucket": "Background_1.swf",
+        "resBgClass": "Background_1",
+        "lake": {
+          "bucket": "Lake_2.swf",
+          "icon": "lake_2_icon",
+          "upgrade": {
+            "bucket": "lake_2_review"
+          },
+          "bridge": {
+            "class": "cau_2",
+            "position": {
+              "x": -11.0,
+              "y": 21.0
+            }
+          },
+          "sign": {
+            "class": "sign_2",
+            "position": {
+              "x": 109.0,
+              "y": -19.0
+            },
+            "text_position": {
+              "x": 269.0,
+              "y": 55.0
+            }
+          },
+          "state": {
+            "1": "1-4_2",
+            "2": "2-4_2",
+            "3": "3-4_2",
+            "4": "4-4_2",
+            "position": {
+              "x": 271.0,
+              "y": 15.0
+            }
+          }
+        },
+        "upgrade_require": {
+          "gold": "1000",
+          "coin": "0",
+          "level": "4"
+        },
+        "max_fish": 380,
+        "max_penguin": 5,
+        "eat_time_reduce": 0
+      },
+      "3": {
+        "resBgBucket": "Background_1.swf",
+        "resBgClass": "Background_1",
+        "lake": {
+          "bucket": "Lake_3.swf",
+          "icon": "lake_3_icon",
+          "upgrade": {
+            "bucket": "lake_3_review"
+          },
+          "bridge": {
+            "class": "cau_3",
+            "position": {
+              "x": -11.0,
+              "y": 21.0
+            }
+          },
+          "sign": {
+            "class": "sign_3",
+            "position": {
+              "x": 107.0,
+              "y": -42.0
+            },
+            "text_position": {
+              "x": 282.0,
+              "y": 47.0
+            }
+          },
+          "state": {
+            "1": "1-4_3",
+            "2": "2-4_3",
+            "3": "3-4_3",
+            "4": "4-4_3",
+            "position": {
+              "x": 265.0,
+              "y": 8.0
+            }
+          }
+        },
+        "upgrade_require": {
+          "gold": "0",
+          "coin": "40",
+          "level": "9"
+        },
+        "max_fish": 520,
+        "max_penguin": 6,
+        "eat_time_reduce": 5
+      },
+      "4": {
+        "resBgBucket": "Background_1.swf",
+        "resBgClass": "Background_1",
+        "lake": {
+          "bucket": "Lake_4.swf",
+          "icon": "lake_4_icon",
+          "upgrade": {
+            "bucket": "lake_4_review"
+          },
+          "bridge": {
+            "class": "cau_4",
+            "position": {
+              "x": -5.0,
+              "y": -38.0
+            }
+          },
+          "sign": {
+            "class": "sign_4",
+            "position": {
+              "x": 104.0,
+              "y": -47.0
+            },
+            "text_position": {
+              "x": 301.0,
+              "y": 58.0
+            }
+          },
+          "state": {
+            "1": "1-4_4",
+            "2": "2-4_4",
+            "3": "3-4_4",
+            "4": "4-4_4",
+            "position": {
+              "x": 238.0,
+              "y": -21.0
+            }
+          }
+        },
+        "upgrade_require": {
+          "gold": "5000",
+          "coin": "0",
+          "level": "15"
+        },
+        "max_fish": 1000,
+        "max_penguin": 7,
+        "eat_time_reduce": 10
+      },
+      "5": {
+        "resBgBucket": "Background_1.swf",
+        "resBgClass": "Background_1",
+        "lake": {
+          "bucket": "Lake_5.swf",
+          "icon": "lake_5_icon",
+          "upgrade": {
+            "bucket": "lake_5_review"
+          },
+          "bridge": {
+            "class": "cau_5",
+            "position": {
+              "x": -11.0,
+              "y": 31.0
+            }
+          },
+          "sign": {
+            "class": "sign_5",
+            "position": {
+              "x": 107.0,
+              "y": -66.0
+            },
+            "text_position": {
+              "x": 267.0,
+              "y": 56.0
+            }
+          },
+          "state": {
+            "1": "1-4_5",
+            "2": "2-4_5",
+            "3": "3-4_5",
+            "4": "4-4_5",
+            "position": {
+              "x": 251.0,
+              "y": 21.0
+            }
+          }
+        },
+        "upgrade_require": {
+          "gold": "0",
+          "coin": "120",
+          "level": "20"
+        },
+        "max_fish": 1800,
+        "max_penguin": 9,
+        "eat_time_reduce": 15
+      },
+      "6": {
+        "resBgBucket": "Background_1.swf",
+        "resBgClass": "Background_1",
+        "lake": {
+          "bucket": "Lake_6.swf",
+          "icon": "lake_6_icon",
+          "upgrade": {
+            "bucket": "lake_6_review"
+          },
+          "bridge": {
+            "class": "cau_6",
+            "position": {
+              "x": 4.0,
+              "y": -38.0
+            }
+          },
+          "sign": {
+            "class": "sign_6",
+            "position": {
+              "x": 127.0,
+              "y": -51.0
+            },
+            "text_position": {
+              "x": 299.0,
+              "y": 38.0
+            }
+          },
+          "state": {
+            "1": "1-4_6",
+            "2": "2-4_6",
+            "3": "3-4_6",
+            "4": "4-4_6",
+            "position": {
+              "x": 251.0,
+              "y": 21.0
+            }
+          }
+        },
+        "upgrade_require": {
+          "gold": "20000",
+          "coin": "0",
+          "level": "25"
+        },
+        "max_fish": 2500,
+        "max_penguin": 11,
+        "eat_time_reduce": 20
+      }
+    },
+    "dogs": {
+      "items": {
+        "day_gold": {
+          "title": "1 Ngày",
+          "payment_type": "gold",
+          "price": 1000,
+          "time": 86400
+        },
+        "day_coin": {
+          "title": "1 Ngày",
+          "payment_type": "coin",
+          "price": 5,
+          "time": 86400
+        },
+        "week_coin": {
+          "title": "1 Tuần",
+          "payment_type": "coin",
+          "price": 30,
+          "time": 604800
+        },
+        "month_coin": {
+          "title": "1 Tháng",
+          "payment_type": "coin",
+          "price": 100,
+          "time": 2592000
+        }
+      },
+      "item_list": {
+        "0": "day_gold",
+        "1": "day_coin",
+        "2": "week_coin",
+        "3": "month_coin"
+      }
+    }
+  }
+}

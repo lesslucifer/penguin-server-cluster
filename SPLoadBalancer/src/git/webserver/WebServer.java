@@ -19,7 +19,7 @@ import org.slf4j.Logger;
 public class WebServer
 {
 
-    private static ReentrantLock lock;
+    private static final ReentrantLock lock;
     private static WebServer singleton;
 
     static

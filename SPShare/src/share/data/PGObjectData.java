@@ -6,13 +6,11 @@
 
 package share.data;
 
-import java.io.Serializable;
-
 /**
  *
  * @author suaongmattroi
  */
-class PGObjectData implements IPGData{
+public class PGObjectData implements IPGData {
 
     private final String _caller;
     

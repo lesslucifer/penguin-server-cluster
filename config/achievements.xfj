@@ -1,0 +1,449 @@
+{
+  "achievements": {
+    "data": {
+      "ach_001": {
+        "enable": true,
+        "bucket": "achievements.swf",
+        "title": "chamchi",
+        "description": "Số ngày đăng nhập",
+        "unit": "{0} ngày",
+        "description_2": "Đăng nhập {0} ngày",
+        "action": "login_day",
+        "medals": {
+          "0": {
+            "require": 3,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/chamchi-0.png",
+            "share_caption": "Say đắm từ cái nhìn đầu tiên",
+            "share_description": "Thoáng chót đã 3 ngày trôi qua, Chuồng đẹp chim ngoan cảm thấy trong lòng thật là hạnh phúc. Phải cố gắng hơn nữa mới được hì hì.",
+            "prize": {
+              "fish": "400"
+            }
+          },
+          "1": {
+            "require": 7,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/chamchi-1.png",
+            "share_caption": "Một tình yêu chớm nở",
+            "share_description": "Wow, không ngờ mới đây mà đã chơi “Cánh Cụt Vui Vẻ” được 7 ngày rồi. Những ngày qua, đối với mình là một cảm giác thanh thản nhất vui vẻ nhất. Càng lúc càng yêu mấy con chim cánh cụt của mình quá đi.",
+            "prize": {
+              "gold": "5000"
+            }
+          },
+          "2": {
+            "require": 30,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/chamchi-2.png",
+            "share_caption": "Yêu luôn mất rồi",
+            "share_description": "Hix hix, đừng bắt tui bỏ game nha. Mấy con chim cánh cụt của tui dễ thương lắm. Cũng nuôi được 30 ngày rùi. nói bỏ đói tụi nó một ngày cũng hông đành nữa hì hì",
+            "prize": {
+              "coin": "200"
+            }
+          }
+        }
+      },
+      "ach_002": {
+        "enable": true,
+        "bucket": "achievements.swf",
+        "title": "daigia",
+        "description": "Số vàng tiêu thụ",
+        "unit": "{0} vàng",
+        "description_2": "Tiêu xài {0} vàng",
+        "action": "n_expense_gold",
+        "medals": {
+          "0": {
+            "require": 500,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/daigia-0.png",
+            "share_caption": "Đầu tư hiệu quả",
+            "share_description": "He he, mới đây mà mình đã dùng 500 vàng để hồ biến chuồng mình càng ngày càng đẹp. Chỉ còn một chút cố gắng nữa thôi, mình sẽ trở thành trang trại Cánh cụt đẹp nhất.",
+            "prize": {
+              "fish": "2000"
+            }
+          },
+          "1": {
+            "require": 10000,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/daigia-1.png",
+            "share_caption": "Tài năng bẩm sinh",
+            "share_description": "Wow, mình thật ngưỡng mộ mình quá đi. làm sao có thể kiếm được nhiều tiền như vậy được chứ. Mới đầu tư 10000 vàng mà chuồng mình đã dễ thương như vầy, Đúng mình là tài năng bẩm sinh mà!",
+            "prize": {
+              "exp": "7000"
+            }
+          },
+          "2": {
+            "require": 500000,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/daigia-2.png",
+            "share_caption": "Tiêu tiền như thần",
+            "share_description": "Càng lúc mình càng muốn đầu tư nhiều hơn nữa, chỉ mới đầu tư 500000 vàng thôi nhưng mọi người cũng phải đến lúc vào chuồng nhà mình mà ngưỡng mộ đi. Hì hì",
+            "prize": {
+              "exp": "100000"
+            }
+          }
+        }
+      },
+      "ach_003": {
+        "enable": true,
+        "bucket": "achievements.swf",
+        "title": "thanhnho",
+        "description": "Số trứng bị trộm",
+        "unit": "{0} trứng",
+        "description_2": "Bị trộm {0} trứng",
+        "action": "n_stolen_eggs",
+        "medals": {
+          "0": {
+            "require": 169,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-0.png",
+            "share_caption": "Bạn bè “tốt” thật",
+            "share_description": "Cảm ơn các anh chị, cô bác, đã trộm trứng của em. Nên giờ em đã được phần thưởng Thánh nhọ. nhận phần thưởng trên tay mà em rưng rưng khóc. “169” trứng của em đã được các bác đem về “cất dùm”. Em rất CÁM ƠN Ạ!",
+            "prize": {
+              "penguin": {
+                "kind": "pen_23",
+                "level": "0"
+              }
+            }
+          },
+          "1": {
+            "require": 369,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-1.png",
+            "share_caption": "Đời em “tốt” thật",
+            "share_description": "Em cứ nghĩ được trộm \"169\" trứng thôi là đời em đẹp lắm rồi nhưng nhờ mọi người chiêu cố, luôn âm thầm lo lắng cho em, RÌNH RẬP nhà em mà giờ đây em đã đạt được thành tựu Thánh Nhọ với “369” trứng bị trộm. EM RẤT CẢM ƠN Ạ",
+            "prize": {
+              "penguin": {
+                "kind": "pen_38",
+                "level": "0"
+              }
+            }
+          },
+          "2": {
+            "require": 1069,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Đệ Nhất Thánh Nhọ",
+            "share_description": "Tưởng chừng như mình được mọi người \"quan tâm\" đến vậy là số của em đã tận. Nhưng em không ngờ bản thân em lại có thể đi xa được hơn nữa \"169\" trứng ra đi, rồi \"369\" trứng khác lại ra đi, và giờ, \"1069\" trứng còn lại cũng ra đi. Và giờ đây em chỉ còn 3 con chim dễ thương mà thành tựu mang lại. Em đã mãn nguyện rồi.",
+            "prize": {
+              "penguin": {
+                "kind": "pen_39",
+                "level": "0"
+              }
+            }
+          }
+        }
+      },
+      "ach_004": {
+        "enable": true,
+        "bucket": "achievements.swf",
+        "title": "nguoitot",
+        "description": "Số Chim cấp 7 được thả",
+        "unit": "{0} chim",
+        "description_2": "Thả {0} chim cấp 7",
+        "action": "parole_penguin",
+        "medals": {
+          "0": {
+            "require": 4,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Có hơi không đành",
+            "share_description": "Nuôi được 4 em chim cánh cụt thiệt là dễ thương, nhưng bây giờ đành vậy, đành thả tự do cho tụi nó vậy. Đúng là có chút không đành nhưng trong lòng thấy vui lên hẳn",
+            "prize": {
+              "fish": "2000"
+            }
+          },
+          "1": {
+            "require": 65,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Còn đó phân vân",
+            "share_description": "Tiếc cũng không phải là tiếc. Nhưng dù sao, 65 tình cảm được cho đi, cũng bao nhiêu thời gian mới nuôi được chúng lớn. Ừ rồi thì ai cũng muốn được tự do, sống vui mấy em cánh cụt đáng yêu của ta nhé!",
+            "prize": {
+              "fish": "30000"
+            }
+          },
+          "2": {
+            "require": 100,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Vui trong nước mắt",
+            "share_description": "Thả tự do cho một sinh mệnh là một chuyện tốt, một chuyện ý nghĩa. Đáng lẽ phải vui chứ! Đáng ra phải vui chứ! Nhưng trong lòng cảm thấy nhớ thương sâu đâm. Không sao dù gì mình cũng đã làm 100 việc tốt",
+            "prize": {
+              "penguin": {
+                "kind": "pen_52",
+                "level": "0"
+              }
+            }
+          }
+        }
+      },
+      "ach_005": {
+        "enable": true,
+        "bucket": "achievements.swf",
+        "title": "bantot",
+        "description": "Số lần giúp bạn",
+        "unit": "{0} bạn",
+        "description_2": "Thả cá giúp {0} bạn",
+        "action": "n_help_friend",
+        "medals": {
+          "0": {
+            "require": 15,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Quan tâm bạn bè",
+            "share_description": "Có bạn bè nhiều thật vui. Nhưng vui nhất lại là việc giúp được bạn bè mình. Dù nhỏ thôi, chỉ giúp 15 lần thôi, mình cũng cảm thấy vui rồi. Hì hì",
+            "prize": {
+              "coin": "20"
+            }
+          },
+          "1": {
+            "require": 100,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Có tình có nghĩa",
+            "share_description": "Đôi lúc, mong cho qua ngày mới để có thể thả cá giúp bạn mình. Không hiểu sao, bản thân mình lại trở nên thật quan trọng. Giúp 100 lần không nhiều nhưng đó là tính cảm của tôi dành cho bạn đó! Bạn của tôi!",
+            "prize": {
+              "coin": "140"
+            }
+          },
+          "2": {
+            "require": 500,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Chí tính chí nghĩa",
+            "share_description": "Bạn À! Mình vừa giúp bạn được 500 lần rồi đó. Nhớ những kí ức mà chúng mình trải qua thật sự đó là một quảng đường đầy ý nghĩa, đầy tình cảm, đầy khó khăn thử thách. Như vầy với mình hoài bạn nhé!",
+            "prize": {
+              "coin": "600"
+            }
+          }
+        }
+      },
+      "ach_006": {
+        "enable": true,
+        "bucket": "achievements.swf",
+        "title": "sieutrom",
+        "description": "Số trứng đã trộm",
+        "unit": "{0} trứng",
+        "description_2": "Trộm {0} trứng",
+        "action": "n_theft_eggs",
+        "medals": {
+          "0": {
+            "require": 40,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Sữa mặt trời",
+            "share_description": "Hì hì, thông cảm nha bạn hiền. Mình hông muốn trộm trứng của bạn đâu nhưng mình đang có một kế hoạch làm món \"Sữa mặt trời\" nên cho mượn đỡ 40 trứng nha khi nào có ta lại trả cho. Thanks nhiều hè hè",
+            "prize": {
+              "coin": "20"
+            }
+          },
+          "1": {
+            "require": 300,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Sữa vũ trụ",
+            "share_description": "Không phải tham lam đâu! Mà tại thực hiện được kế hoạch này rồi thì mình phải thực hiện kế hoạch khác lớn hơn mà đúng hông? Do đó, giúp mình thêm lần này nữa nhe 300 trứng thui. Yêu nhiều hì hì",
+            "prize": {
+              "coin": "140"
+            }
+          },
+          "2": {
+            "require": 1200,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Sữa ngân hà",
+            "share_description": "Kế hoạch vĩ đại của mình thành công rồi! Thiệt ra mình xin thú nhận là trộm trứng về hông phải làm \"Sữa ngân hà\" gì hết. Trộm bán thôi, nhưng bạn biết đó nhờ vậy mà chuồng mình càng ngày càng đẹp. Có mượn có trả 1200 trứng này khi nào có dịp rồi trả nha. Bây giờ cho mượn trước hi hi.",
+            "prize": {
+              "coin": "600"
+            }
+          }
+        }
+      },
+      "ach_007": {
+        "enable": true,
+        "bucket": "achievements.swf",
+        "title": "vuatrung",
+        "description": "Số trứng đã lượm",
+        "unit": "{0} trứng",
+        "description_2": "Lượm {0} trứng",
+        "action": "collect_egg",
+        "medals": {
+          "0": {
+            "require": 200,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Mớ trứng đầu tiên",
+            "share_description": "Lượm, lượm, lượm, loay hoay đã lượm được 100 trứng rồi. Cánh cụt nhà mình đẻ nhiều quá lượm muốn hông nổi luôn! Nghỉ một chút rồi lượm tiếp thôi, đà này chẳng mấy chốc ta sẽ thành đại gia thôi.",
+            "prize": {
+              "coin": "20"
+            }
+          },
+          "1": {
+            "require": 1400,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Làm không ngừng nghỉ",
+            "share_description": "1400 trứng rồi! Yeah thành công rồi lượm có một tí thôi mà nhiều vậy rồi á! ",
+            "prize": {
+              "coin": "140"
+            }
+          },
+          "2": {
+            "require": 6000,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Đại gia \"lượm trứng\"",
+            "share_description": "Đúng là ông bà mình nói không sai. \"Có công lượm trứng có ngày thành đại gia\". Ta sắp thành \"Đại gia trứng\" rồi. He he he…",
+            "prize": {
+              "coin": "600"
+            }
+          }
+        }
+      },
+      "ach_008": {
+        "enable": true,
+        "bucket": "achievements.swf",
+        "title": "quantam",
+        "description": "Số cá đã thả",
+        "unit": "{0} cá",
+        "description_2": "Thả {0} cá",
+        "action": "n_feed_fish",
+        "medals": {
+          "0": {
+            "require": 2000,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Người hào phóng",
+            "share_description": "Lượm, lượm, lượm, loay hoay đã lượm được 100 trứng rồi. Cánh cụt nhà mình đẻ nhiều quá lượm muốn hông nổi luôn! Nghỉ một chút rồi lượm tiếp thôi, đà này chẳng mấy chốc ta sẽ thành đại gia thôi.",
+            "prize": {
+              "coin": "20"
+            }
+          },
+          "1": {
+            "require": 50000,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Ông chủ tốt",
+            "share_description": "1400 trứng rồi! Yeah thành công rồi lượm có một tí thôi mà nhiều vậy rồi á! ",
+            "prize": {
+              "coin": "140"
+            }
+          },
+          "2": {
+            "require": 200000,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Người chủ tuyệt vời",
+            "share_description": "Đúng là ông bà mình nói không sai. \"Có công lượm trứng có ngày thành đại gia\". Ta sắp thành \"Đại gia trứng\" rồi. He he he…",
+            "prize": {
+              "coin": "600"
+            }
+          }
+        }
+      },
+      "ach_009": {
+        "enable": true,
+        "bucket": "achievements.swf",
+        "title": "thannong",
+        "description": "Số chim cấp 10 đã nuôi",
+        "unit": "{0} chim ",
+        "description_2": "nuôi {0} chim cấp 10",
+        "action": "n_penguin_lv10",
+        "medals": {
+          "0": {
+            "require": 5,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Khởi nghiệp chăn nuôi",
+            "share_description": "Hô hô tuy là mới lứa cánh cụt đầu tiên thôi đó nha mà đạt chất lượng tốt thế này rồi thì những lứa sau sẽ còn đem lại thu nhập tốt hơn gấp mấy lần đây.",
+            "prize": {
+              "coin": "20"
+            }
+          },
+          "1": {
+            "require": 20,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Nhà nông đại tài",
+            "share_description": "Ta là thiên tài trong việc nuôi cánh cụt đây. Thách thức các bạn trẻ trâu, anh hùng bàn phím, phụ nữ có thai và cho con bú đọ sức nuôi cánh cụt đây.",
+            "prize": {
+              "coin": "140"
+            }
+          },
+          "2": {
+            "require": 100,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Chỉ có thể là! Thần Nông",
+            "share_description": "Ôi sao con cánh cụt nào anh ấy nuôi cũng tuyệt vời đến thế. Anh ta là thần thánh hay chỉ là một người nông dân bình thường???",
+            "prize": {
+              "coin": "600"
+            }
+          }
+        }
+      },
+      "ach_010": {
+        "enable": true,
+        "bucket": "achievements.swf",
+        "title": "thantai",
+        "description": "Số vàng quay trúng",
+        "unit": "{0} vàng",
+        "description_2": "quay trúng {0} vàng",
+        "action": "n_gold_dial",
+        "medals": {
+          "0": {
+            "require": 1000,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Mai mắn đến rồi",
+            "share_description": "Yeah!! Vừa chơi đã trúng được nhiều vàng đến thế này thì không lâu ta sẽ thành đại gia cho mà coi hehe.",
+            "prize": {
+              "coin": "20"
+            }
+          },
+          "1": {
+            "require": 20000,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Thần tài gõ cửa",
+            "share_description": "Ôi với số tiền trúng đươc này ta có thể mua cả 1 đàn cánh cụt về chăn thay vịt rồi hô hố hô. Quay số đúng là dễ trúng thiệt quay là có quà hà.",
+            "prize": {
+              "coin": "140"
+            }
+          },
+          "2": {
+            "require": 50000,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Đại gia quay số",
+            "share_description": "Không gì mau làm giàu bằng việc quay số cả. Hôm nay ta thành đại gia rồi. Quay số trúng cả một gia tài lun rồi. Bà con đi quay số mau đi ",
+            "prize": {
+              "coin": "600"
+            }
+          }
+        }
+      },
+      "ach_011": {
+        "enable": true,
+        "bucket": "achievements.swf",
+        "title": "thuongnhan",
+        "description": "Số đơn hàng đã thực hiện",
+        "unit": "{0} đơn hàng",
+        "description_2": "thực hiện {0} đơn hàng",
+        "action": "n_main_quest_completed",
+        "medals": {
+          "0": {
+            "require": 20,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Cửa hàng bán lẻ",
+            "share_description": "Cửa hàng bán lẻ cánh cụt vừa thành lập và đã được mọi người trong vùng ủng hộ đặt hàng liên tục. Cứ đà này thì ta sẽ nhanh chóng thành lập được 1 chuỗi cửa hàng trên cả nước quá kakaaka.",
+            "prize": {
+              "coin": "20"
+            }
+          },
+          "1": {
+            "require": 100,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Chuỗi cửa hàng bán lẻ toàn quốc",
+            "share_description": "Sau một thời gian buôn bán phát đạt chuỗi cửa hàng cánh cụt đã được thành lập trên toàn quốc và được bà con nhiệt tình ủng hộ",
+            "prize": {
+              "coin": "140"
+            }
+          },
+          "2": {
+            "require": 500,
+            "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
+            "share_caption": "Quy mô toàn thế giới",
+            "share_description": "Ngày hôm nay ta ngồi chiễm chệ đếm tiền với số lượng cửa hàng đã được hình thành trên khắp thế giới với số lượng đơn hàng khủng được giao hàng ngày. ",
+            "prize": {
+              "coin": "600"
+            }
+          }
+        }
+      }
+    },
+    "achievement_index": {
+      "0": "ach_001",
+      "1": "ach_002",
+      "2": "ach_003",
+      "3": "ach_004",
+      "4": "ach_005",
+      "5": "ach_006",
+      "6": "ach_007",
+      "7": "ach_008",
+      "8": "ach_009",
+      "9": "ach_010",
+      "10": "ach_011"
+    }
+  }
+}
