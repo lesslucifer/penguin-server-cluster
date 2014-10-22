@@ -33,3 +33,4 @@ bak.bak
 /PGConnection/target/
 /minaConnection/nbproject/private/
 /JavaApplication3/nbproject/private/
+/MinaConnection/src/minaconnection/handler/PGRouter.java
