@@ -6,7 +6,7 @@
 
 package git.reflect;
 
-import git.target.MinaTargetResolver;
+import git.target.Targets;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collections;
 import java.util.HashMap;
@@ -36,7 +36,7 @@ public class Reflector implements amfservices.Reflector {
 
     public Reflector() {
         this.activeUsers = SessionCache.inst();
-        this.targetResolver = MinaTargetResolver.inst();
+        this.targetResolver = Targets.RESOLVER;
     }
     
     //========================= AUTHENTICATION =============================

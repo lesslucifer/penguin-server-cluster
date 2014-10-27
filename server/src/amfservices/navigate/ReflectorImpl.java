@@ -62,7 +62,7 @@ public class ReflectorImpl implements Reflector {
         String uid = this.validSession(sessionParams);
         PGLog.info("%s call service: %s", uid, method);
         
-        Map<String, Object> content = new HashMap<String, Object>();
+        Map<String, Object> content = new HashMap<>();
         
         try
         {
@@ -108,13 +108,7 @@ public class ReflectorImpl implements Reflector {
                 LOG.error("Service " + method, ex.getCause());
             }
         }
-        catch (NoSuchMethodException ex){
-            this.putError(ex, content);
-        } catch (SecurityException ex) {
-            this.putError(ex, content);
-        } catch (IllegalAccessException ex) {
-            this.putError(ex, content);
-        } catch (IllegalArgumentException ex) {
+        catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException ex){
             this.putError(ex, content);
         }
         finally
@@ -173,7 +167,7 @@ public class ReflectorImpl implements Reflector {
         VersionString serverConfigVersion = new VersionString(Config.getParam("config", "version"));
         if (clientConfigVersion.compareTo(serverConfigVersion) != 0)
         {
-            Map<String, Object> config = new HashMap<String, Object>();
+            Map<String, Object> config = new HashMap<>();
             config.put("version", serverConfigVersion.toString());
             Map<String, Object> clientConfig = PGConfig.inst().getAllConfigs();
             config.put("config", clientConfig);

@@ -6,7 +6,16 @@
 
 package git.target;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 import minaconnection.MinaAddress;
+import share.PGHelper;
 import target.Target;
 import target.TargetResolver;
 
@@ -14,45 +23,50 @@ import target.TargetResolver;
  *
  * @author suaongmattroi
  */
-public class MinaTargetResolver  implements TargetResolver{
+class MinaTargetResolver implements TargetResolver
+{
+    private List<Target> allTargets = new LinkedList();
+    private Queue<Target> targetQueue = new LinkedList();
     
-    private static final String SOCKET_HOST = "127.0.0.1";
-    private static final int SOCKET_PORT = 9090;
-    
-    private final MinaAddress address;
-    private Target target;
-//    private final Lock lock = new ReentrantLock();
-    
-    private MinaTargetResolver() {
-        this(SOCKET_HOST, SOCKET_PORT);
+    public MinaTargetResolver(List<MinaAddress> addresses) {
+        for (MinaAddress address : addresses) {
+            Target target = createTarget(address);
+            allTargets.add(target);
+            targetQueue.add(target);
+        }
     }
     
-    private static final MinaTargetResolver inst = new MinaTargetResolver();
-    
-    public static MinaTargetResolver inst() {
-        return inst;
-    }
-    
-    public MinaTargetResolver(String host, int port) {
-        this.address = new MinaAddress(host, port);
+    public static MinaTargetResolver fromFile(File conf) throws IOException
+    {
+        String data = new String(
+                Files.readAllBytes(Paths.get(conf.toURI())),
+                StandardCharsets.UTF_8);
+        
+        TargetList targets = PGHelper.getJSONParser().fromJson(data,
+                TargetList.class);
+        
+        return new MinaTargetResolver(targets.targets);
     }
     
     @Override
     public Target getUserTarget(String uid) {
-        return getTarget();
+        Target top = targetQueue.poll();
+        targetQueue.add(top);
+        
+        return top;
     }
 
     @Override
     public Target getMasterTarget() {
-        return getTarget();
+        return allTargets.get(0);
     }
     
-    private Target getTarget() {
-        if (target == null)
-        {
-            target = new MinaTarget(address);
-        }
-        
-        return target;
+    private Target createTarget(MinaAddress address) {
+        return new MinaTarget(address);
+    }
+    
+    private static class TargetList
+    {
+        private List<MinaAddress> targets;
     }
 }

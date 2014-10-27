@@ -53,7 +53,7 @@ public class RestoreServices {
     }
     
     private static final String BACKUP_DIR = Config.getParam("a1backup", "directory");
-    private NavigableMap<Integer, Restorer> restorers = new TreeMap();
+    private final NavigableMap<Integer, Restorer> restorers = new TreeMap();
     
     private File getFile(String uid, Date day)
     {
@@ -87,7 +87,7 @@ public class RestoreServices {
         }
     }
     
-    private int MAX_DAY_OF_SEARCH = 30;
+    private final int MAX_DAY_OF_SEARCH = 30;
     public Map<String, Date> restoreUser(String uid)
     {
         Date toDay = new Date();

@@ -50,9 +50,6 @@ public class MinaAddress {
         if (!Objects.equals(this.address, other.address)) {
             return false;
         }
-        if (this.port != other.port) {
-            return false;
-        }
-        return true;
+        return this.port == other.port;
     }
 }

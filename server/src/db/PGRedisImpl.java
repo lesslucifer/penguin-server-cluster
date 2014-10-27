@@ -27,8 +27,7 @@ class PGRedisImpl implements PGRedis
         String host = Config.getParam("redis", "host");
         int port = Integer.valueOf(Config.getParam("redis", "port"));
         String password = Config.getParam("redis", "pass");
-        int database = Integer.valueOf(Config.getParam("redis", "database"));
-        jedis = RedisClient.getInstance(host, port, password, database);
+        jedis = RedisClient.getClient(host, port, password);
     }
     
     private static final PGRedisImpl inst = new PGRedisImpl();
