@@ -570,10 +570,10 @@ public class PGServicesAction
         PGException.Assert(conf != null, PGError.MAX_LEVEL_PENGUIN,
                 "Penguin's level is max");
         
-        PGException.Assert(penguin.getExp() + nExp <= conf.getExp() ||
-                grConf.containsKey(penguin.getLevel() + 2),
-                PGError.MAX_LEVEL_PENGUIN,
-                "Penguin's level is max");
+//        PGException.Assert(penguin.getExp() + nExp <= conf.getExp() ||
+//                grConf.containsKey(penguin.getLevel() + 2),
+//                PGError.MAX_LEVEL_PENGUIN,
+//                "Penguin's level is max");
         
         PenguinServices.inst().increasePenguinExp(uid, penguin, nExp, now);
         UserServices.inst().decreaseCoin(user, nReqCoin);
@@ -581,13 +581,8 @@ public class PGServicesAction
         penguin.saveToDB();
         user.saveToDB();
         
-        Map<String, Object> result = new HashMap<String, Object>();
-        result.put(PGMacro.PENGUIN, penguin.buildAMF());
-        Map<String, Object> userData = new HashMap();
-        userData.put(PGMacro.COIN, user.getCoin());
-        result.put(PGMacro.USER, userData);
-        
-        return result;
+        return AMFBuilder.make(PGMacro.PENGUIN, penguin.buildAMF(),
+                PGMacro.USER, AMFBuilder.make(PGMacro.COIN, user.getCoin()));
     }
     
     public Map<String, Object> buyLevelPenguinAction(String uid,

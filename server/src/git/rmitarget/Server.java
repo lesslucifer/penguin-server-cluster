@@ -6,6 +6,7 @@
 
 package git.rmitarget;
 
+import share.PGLog;
 import target.Response;
 
 /**
@@ -14,33 +15,24 @@ import target.Response;
  */
 public class Server {
     
-    private static final int PORT = 9090;
+    private final int port;
     
-    private Server()
+    private Server(int port)
     {
         super();
+        this.port = port;
     }
     
-    private static final Server inst = new Server();
-    
-    public static Server inst()
+    public static Server create(int port)
     {
-        return inst;
+        return new Server(port);
     }
     
     public void start() throws Exception
     {
-        Response.VERBOSE_LOG = true;
-        // ============= Stub RMI ===============
-//        RMITarget target = new RMITarget(ServiceReflectTarget.class,
-//                git.httpservices.Services.class);
-//        RemoteTarget stub = (RemoteTarget) UnicastRemoteObject.exportObject(target, 3377);
-//        
-//        LocateRegistry.createRegistry(3377);
-//        Naming.rebind("rmi://localhost:3377/Target", stub);
-        // ============= Stub socket ============
-        MinaLogicTarget minaTarget = new MinaLogicTarget(PORT, git.httpservices.Services.class);
+        Response.VERBOSE_LOG = false;
+        MinaLogicTarget minaTarget = new MinaLogicTarget(port, git.httpservices.Services.class);
         
-        System.out.println("Server start...");
+        PGLog.info("Server start...");
     }
 }

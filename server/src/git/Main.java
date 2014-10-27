@@ -1,10 +1,12 @@
 package git;
 
+import config.PGConfig;
 import java.io.File;
 import java.util.TimeZone;
 import libCore.LogUtil;
 import libCore.config.Config;
 import git.rmitarget.*;
+import share.PGHelper;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -35,6 +37,9 @@ public class Main
         System.out.println("Server is started for listen...");
         System.out.println("===============================");
 
-        Server.inst().start();
+        PGConfig.inst();
+        
+        int port = PGHelper.toInteger(Config.getParam("logic", "port"));
+        Server.create(port).start();
     }
 }

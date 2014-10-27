@@ -7,8 +7,6 @@
 package minaconnection;
 
 import java.io.Serializable;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import minaconnection.interfaces.IClientHandler;
 
 /**
@@ -26,22 +24,31 @@ class MinaWaitResponseObject implements IClientHandler {
     @Override
     public Serializable doReq() throws Exception {
         // use another sync methods
-        while(data == null) 
+//        while(data == null) 
+//        {
+//            try {
+//                Thread.sleep(1);
+//            } catch (InterruptedException ex) {
+//                Logger.getLogger(MinaWaitResponseObject.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }
+        
+        while (data == null)
         {
-            try {
-                Thread.sleep(1);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(MinaWaitResponseObject.class.getName()).log(Level.SEVERE, null, ex);
+            synchronized (this)
+            {
+                this.wait();
             }
         }
-        
-        //this.wait();
         return this.data;
     }
     
     @Override
     public void callback(Serializable data) {
         this.data = data;
-        //this.notify();
+        synchronized (this)
+        {
+            this.notify();
+        }
     }
 }
