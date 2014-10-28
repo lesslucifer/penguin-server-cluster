@@ -26,6 +26,14 @@
                 <id>jar</id>
             </reference>
             <reference>
+                <foreign-project>MinaConnection-1</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>${project.MinaConnection-1}/build.xml</script>
+                <target>jar</target>
+                <clean-target>clean</clean-target>
+                <id>jar</id>
+            </reference>
+            <reference>
                 <foreign-project>SPShare</foreign-project>
                 <artifact-type>jar</artifact-type>
                 <script>${project.SPShare}/build.xml</script>
