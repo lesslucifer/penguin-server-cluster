@@ -29,7 +29,7 @@ public abstract class PGRedisListEntity implements PooledEntity
     
     public String at(int index)
     {
-        return DBContext.Redis().lgetat(redisKey(), index);
+        return DBContext.Redis().lindex(redisKey(), index);
     }
     
     public List<String> in(int start, int end)
@@ -47,6 +47,11 @@ public abstract class PGRedisListEntity implements PooledEntity
         return DBContext.Redis().lpush(redisKey(), id);
     }
     
+    public void removeAll()
+    {
+        DBContext.Redis().del(redisKey());
+    }
+    
     public boolean contains(String id)
     {
         return this.getAll().contains(id);
@@ -54,6 +59,6 @@ public abstract class PGRedisListEntity implements PooledEntity
     
     public int length()
     {
-        return (int) DBContext.Redis().llen(redisKey());
+        return DBContext.Redis().llen(redisKey()).intValue();
     }
 }

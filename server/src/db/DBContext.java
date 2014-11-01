@@ -7,6 +7,7 @@
 package db;
 
 import db.mysql.SQLClient;
+import libCore.config.Config;
 
 /**
  *
@@ -18,16 +19,31 @@ public class DBContext
     
     static
     {
-        REDIS = PGRedisImpl.inst();
+        REDIS = initRedis();
         SQL = new SQLClient();
     }
     
-    private static PGRedis REDIS;
-    private static SQLClient SQL;
+    private static Redis initRedis()
+    {
+        String host = Config.getParam("redis", "host");
+        int port = Integer.valueOf(Config.getParam("redis", "port"));
+        String password = Config.getParam("redis", "pass");
+        int db = Integer.valueOf(Config.getParam("redis", "database"));
+        
+        int maxActive = Integer.valueOf(Config.getParam("redis", "max_active"));
+        int maxIdle = Integer.valueOf(Config.getParam("redis", "max_idle"));
+        int maxWait = Integer.valueOf(Config.getParam("redis", "max_wait"));
+        
+        return new JedisAdapter(JedisPoolFactory.create(host, port,
+                5000, password, db, maxActive, maxIdle, maxWait));
+    }
+    
+    private final static Redis REDIS;
+    private final static SQLClient SQL;
     /**
      * @return the REDIS
      */
-    public static PGRedis Redis() {
+    public static Redis Redis() {
         return REDIS;
     }
     

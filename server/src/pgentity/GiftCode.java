@@ -69,7 +69,7 @@ public class GiftCode implements PGEntity
     }
     public static boolean isExist(String code)
     {
-        return DBContext.Redis().isExists(PGKeys.GIFTCODES.getChild(code));
+        return DBContext.Redis().exists(PGKeys.GIFTCODES.getChild(code));
     }
     
     @Override

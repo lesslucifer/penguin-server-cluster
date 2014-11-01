@@ -31,7 +31,7 @@ class FeedPenguinLogger extends GenericQuestLogger<FeedPenguinRecord>
         RedisKey keyNFishFed = logPool.beginLog("fish_fed");
         RedisKey keyPenguinsFed = logPool.beginLog("penguins_fed");
         
-        DBContext.Redis().incrby(keyNFishFed, record.getnFish());
+        DBContext.Redis().incrBy(keyNFishFed, record.getnFish());
         DBContext.Redis().sadd(keyPenguinsFed, record.getPenguinID());
         
         logPool.endLog("fish_fed");

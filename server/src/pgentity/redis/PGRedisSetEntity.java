@@ -27,12 +27,17 @@ public abstract class PGRedisSetEntity implements PooledEntity
     
     public int add(String... IDs)
     {
-        return (int) DBContext.Redis().sadd(redisKey(), IDs);
+        return DBContext.Redis().sadd(redisKey(), IDs).intValue();
     }
     
     public long remove(String... IDs)
     {
         return DBContext.Redis().srem(redisKey(), IDs);
+    }
+    
+    public void removeAll()
+    {
+        DBContext.Redis().del(redisKey());
     }
     
     public boolean contains(String ID)
@@ -42,6 +47,6 @@ public abstract class PGRedisSetEntity implements PooledEntity
     
     public int size()
     {
-        return (int) DBContext.Redis().scard(redisKey());
+        return DBContext.Redis().scard(redisKey()).intValue();
     }
 }

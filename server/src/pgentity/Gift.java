@@ -75,7 +75,7 @@ public class Gift implements PGEntity
     public static boolean isExist(String giftID)
     {
         RedisKey redisKey = PGKeys.GIFTS.getChild(giftID);
-        return DBContext.Redis().isExists(redisKey);
+        return DBContext.Redis().exists(redisKey);
     }
     
     @Override

@@ -14,10 +14,10 @@ import share.PGException;
  */
 public class EntityContext implements PGEntity
 {
-    private User user;
-    private Cote cote;
-    private BoxEgg boxEgg;
-    private Penguindex penguindex;
+    private final User user;
+    private final Cote cote;
+    private final BoxEgg boxEgg;
+    private final Penguindex penguindex;
 
     private EntityContext(User user, Cote cote, BoxEgg boxEgg,
             Penguindex penguindex) {
@@ -34,9 +34,17 @@ public class EntityContext implements PGEntity
         return getContext(user);
     }
     
+    public static EntityContext getContext(String uid, String coteID)
+            throws PGException
+    {
+        User user = User.getUser(uid);
+        Cote cote = Cote.getCote(uid, coteID);
+        return getContext(user, cote);
+    }
+    
     public static EntityContext getContext(User user)
     {
-        Cote cote = Cote.getCote(user.getUid(), user.cotes().at(0));
+        Cote cote = Cote.getCote(user.getUid(), user.getLastCote());
         return getContext(user, cote);
     }
     

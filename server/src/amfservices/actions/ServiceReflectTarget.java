@@ -457,6 +457,12 @@ public class ServiceReflectTarget {
         return this.reloadServices.getUserFullInfo(uid, getCote, getFriend, getInv, now);
     }
     
+    public Object getUserCoteList(String uid,
+            Map<String, Object> params, long now)
+    {
+        return reloadServices.getUserCoteList(uid);
+    }
+    
     public Map<String, Object> getPenguinInfo(String uid, Map<String, Object> params, long now) throws PGException
     {
         String peng_id      =   params.get(PGMacro.PENGUIN_ID).toString();
@@ -641,6 +647,21 @@ public class ServiceReflectTarget {
         }
         
         return this.serviceActions.disableGameMessagesAction(msgIDs, now);
+    }
+    
+    public Object visitCote(String uid,
+            Map<String, Object> params, long now)
+    {
+        String coteID = (String) params.get(PGMacro.COTE_ID);
+        return serviceActions.visitCote(uid, coteID, now);
+    }
+    
+    public Object visitFriendCote(String uid,
+            Map<String, Object> params, long now)
+    {
+        String fid = (String) params.get(PGMacro.FID);
+        String coteID = (String) params.get(PGMacro.COTE_ID);
+        return friendServices.visitFriendCote(uid, fid, coteID, now);
     }
     
     public Object penguinSpawnReleaseEventItem(String uid,

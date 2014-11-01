@@ -15,7 +15,7 @@ import java.util.PriorityQueue;
 public class PenguinUpdatorPQ extends PriorityQueue<PenguinUpdator> {
     public PenguinUpdatorPQ()
     {
-        super(new Comparator<PenguinUpdator>() {
+        super(1,new Comparator<PenguinUpdator>() {
             @Override
             public int compare(PenguinUpdator o1, PenguinUpdator o2) {
                 return ((o1.nextActionTime() > o2.nextActionTime())?1:(

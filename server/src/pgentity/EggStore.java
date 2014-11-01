@@ -108,11 +108,11 @@ public class EggStore implements PooledEntity{
     
     public int removeEggs(String eggKind, int nEgg)
     {
-        int nRemoved = nEgg;
+        int nRemoved;
         int nCurrent = PGHelper.toInteger(DBContext.Redis().hget(redisKey, eggKind));
         if (nCurrent <= nEgg)
         {
-            DBContext.Redis().hDel(redisKey, eggKind);
+            DBContext.Redis().hdel(redisKey, eggKind);
             nRemoved = nCurrent;
         }
         else

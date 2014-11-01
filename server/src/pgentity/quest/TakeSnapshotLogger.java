@@ -9,7 +9,6 @@ package pgentity.quest;
 import db.DBContext;
 import java.util.Map;
 import pgentity.LogPool;
-import db.PGKeys;
 import db.RedisKey;
 
 /**
@@ -29,7 +28,7 @@ class TakeSnapshotLogger extends GenericQuestLogger<TakeSnapshotQuestRecord>
     protected void genLog(TakeSnapshotQuestRecord record)
     {
         RedisKey key = logPool.beginLog("take_snapshot");
-        DBContext.Redis().incrby(key, 1);
+        DBContext.Redis().incr(key);
         logPool.endLog("take_snapshot");
     }
 

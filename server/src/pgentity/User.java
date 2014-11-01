@@ -11,7 +11,10 @@ import config.PGConfig;
 import db.DBContext;
 import db.PGKeys;
 import db.RedisKey;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import libCore.config.Config;
 import share.PGLog;
@@ -50,6 +53,8 @@ public class User implements PGEntity, PooledEntity
     private String name;
     private String avatar;
     
+    private String lastCote;
+    
     private int dbVer;
     
     private User(String uid)
@@ -82,10 +87,16 @@ public class User implements PGEntity, PooledEntity
     
     /**
      * Use PGUseServices.createUser for create new user
+     * @param uid
+     * @param name
+     * @param ava
+     * @param now
+     * @return 
      * @deprecated
      */
     @Deprecated
-    public static User newUser(String uid, String name, String ava, long now)
+    public static User newUser(String uid, String name,
+            String ava, long now)
     {
         User user = new User(uid);
         
@@ -121,7 +132,7 @@ public class User implements PGEntity, PooledEntity
     
     public static boolean isExist(String uid)
     {
-        return DBContext.Redis().isExists(PGKeys.USERS.getChild(uid)) &&
+        return DBContext.Redis().exists(PGKeys.USERS.getChild(uid)) &&
                 DBContext.Redis().sismember(PGKeys.ALL_USERS, uid);
     }
     
@@ -142,6 +153,7 @@ public class User implements PGEntity, PooledEntity
         this.exp = (Integer.parseInt(data.get(PGMacro.EXP)));
         this.avatar = (data.get(PGMacro.AVATAR));
         this.name = (data.get(PGMacro.NAME));
+        this.lastCote = data.get(PGMacro.LAST_COTE);
         this.dbVer = PGHelper.toInteger(data.get(PGMacro.DB_VERSION));
     }
 
@@ -157,6 +169,7 @@ public class User implements PGEntity, PooledEntity
         data.put(PGMacro.LEVEL, String.valueOf(getLevel()));
         data.put(PGMacro.AVATAR, getAvatar());
         data.put(PGMacro.NAME, getName());
+        data.put(PGMacro.LAST_COTE, getLastCote());
         data.put(PGMacro.DB_VERSION, String.valueOf(getDbVer()));
         
         DBContext.Redis().hset(this.redisKey(), data);
@@ -182,28 +195,41 @@ public class User implements PGEntity, PooledEntity
     
     public Map<String, Object> buildBasicDataAMF()
     {
-        Map<String, Object> amf = new HashMap();
+        Map<String, Object> amf = buildForFriendAMF();
         
         amf.put(PGMacro.FISH, getFish());
         amf.put(PGMacro.GOLD, getGold());
         amf.put(PGMacro.COIN, getCoin());
-        amf.put(PGMacro.EXP, getExp());
-        amf.put(PGMacro.LEVEL, getLevel());
-        amf.put(PGMacro.AVATAR, getAvatar());
-        amf.put(PGMacro.NAME, getName());
+        amf.put(PGMacro.LAST_COTE, getLastCote());
         
         return amf;
     }
     
-    public Map<String, Object> buidlFullAMF(boolean buildCote, boolean buildFriends,
+    public Map<String, Object> buildFullAMF(boolean buildCote, boolean buildFriends,
             boolean buildInventory, boolean buildOthers, long now)
     {
         Map<String, Object> amf = this.buildBasicDataAMF();
         
         if (buildCote)
         {
-            Cote cote = Cote.getCote(uid, cotes().at(0));
-            amf.put(PGMacro.COTE, cote.buildRescusiveAMF(true, true, true, true));
+            Collection<String> coteIDs = coteListEntity.getAll();
+            String lastVisitedCote = getLastCote();
+            List<Object> cotes = new ArrayList(coteIDs.size());
+            for (String coteID : coteIDs) {
+                Object coteData;
+                Cote cote = Cote.getCote(uid, coteID);
+                if (coteID.equals(lastVisitedCote))
+                {
+                    coteData = cote.buildRescusiveAMF(true, true, true, true);
+                }
+                else
+                {
+                    coteData = cote.buildBasicAMF();
+                }
+                
+                cotes.add(cotes.size(), coteData);
+            }
+            amf.put(PGMacro.COTE, AMFBuilder.toAMF(cotes));
         }
         
         if (buildFriends)
@@ -232,6 +258,8 @@ public class User implements PGEntity, PooledEntity
             MailBox mailBox = MailBox.getMailBoxOf(uid);
             amf.put(PGMacro.MAIL, AMFBuilder
                     .make(PGMacro.NUMBER_NEW_MAILS, mailBox.getUnreadMail()));
+            amf.put(PGMacro.NOTIFICATIONS,
+                    Notification.getNotif(uid).takeAllNotifications());
         }
         
         return amf;
@@ -284,7 +312,7 @@ public class User implements PGEntity, PooledEntity
 
     /**
      * Use increase user exp in PGUserService instead of
-     * @param newExp the exp to set
+     * @param incExp
      */
     @Deprecated
     public void increaseExp(int incExp)
@@ -406,6 +434,17 @@ public class User implements PGEntity, PooledEntity
 
     public void setDbVer(int dbVer) {
         this.dbVer = dbVer;
+    }
+
+    public String getLastCote() {
+        lastCote = (!PGHelper.isNullOrEmpty(lastCote))?lastCote:coteListEntity.at(0);
+        lastCote = (!PGHelper.isNullOrEmpty(lastCote))?lastCote:"";
+        
+        return lastCote;
+    }
+
+    public void setLastCote(String lastCote) {
+        this.lastCote = lastCote;
     }
     
     /**

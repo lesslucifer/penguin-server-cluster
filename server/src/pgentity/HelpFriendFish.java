@@ -58,7 +58,7 @@ public class HelpFriendFish implements PooledEntity
     
     public void helpFish(String friendID, int nFish)
     {
-        boolean needExpire = DBContext.Redis().isExists(redisKey);
+        boolean needExpire = DBContext.Redis().exists(redisKey);
         DBContext.Redis().hincrby(redisKey, friendID, nFish);
         
         if (needExpire)
@@ -69,6 +69,6 @@ public class HelpFriendFish implements PooledEntity
     
     public int numberFriendHelped()
     {
-        return DBContext.Redis().hlen(redisKey);
+        return DBContext.Redis().hlen(redisKey).intValue();
     }
 }

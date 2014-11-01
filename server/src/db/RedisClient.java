@@ -21,8 +21,10 @@ import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 import redis.clients.jedis.Pipeline;
 import redis.clients.jedis.Response;
+import redis.clients.jedis.Transaction;
+import redis.clients.jedis.TransactionBlock;
 import redis.clients.jedis.Tuple;
-import share.PGHelper;
+import redis.clients.jedis.exceptions.JedisException;
 
 /**
  *
@@ -30,34 +32,72 @@ import share.PGHelper;
  */
 class RedisClient {
 
-    private static final Logger logger = Logger.getLogger(RedisClient.class);
-    private static final Map<String, RedisClient> _instances = new NonBlockingHashMap();
+    private static Logger logger = Logger.getLogger(RedisClient.class);
+    private static Map<String, RedisClient> _instances = new NonBlockingHashMap();
     private static final Lock createLock_ = new ReentrantLock();
-    private final JedisPool Pool;
-    private final int _timeout = 2000; //default
+    private JedisPool Pool;
+    private int _timeout = 2000; //default
    
-    public static RedisClient getClient(String host, int port, String password) {
-        try
-        {
-            createLock_.lock();
-            return new RedisClient(host, port, password);
-        }
-        finally
-        {
-            createLock_.unlock();
-        }
+    private int MAX_ACTIVE = 0;
+    private int MAX_IDLE = 0;
+    private int MAX_WAIT = 0;
+
+    public static RedisClient getInstance(String host, int port) {
+        return getInstance(host, port, "", 0);
     }
 
-    public RedisClient(String host, int port, String password) {
+    public static RedisClient getInstance(String host, int port, int database) {
+        return getInstance(host, port, "", database);
+    }
+
+    public static RedisClient getInstance(String host, int port, String password, int database) {
+        String key = host + port + password + database;
+        if (!_instances.containsKey(key)) {
+            createLock_.lock();
+            try {
+                if (_instances.get(key) == null) {
+                    _instances.put(key, new RedisClient(host, port, password, database));
+                }
+            } finally {
+                createLock_.unlock();
+            }
+        }
+        return _instances.get(key);
+    }
+
+    public RedisClient(String host, int port, String password, int database) {
         JedisPoolConfig poolConf = new JedisPoolConfig();
-        poolConf.setTestOnBorrow(false);
-        poolConf.setTestOnReturn(false);
+        poolConf.setTestOnBorrow(true);
         poolConf.setMaxActive(Integer.valueOf(Config.getParam("redis", "max_active")));
         poolConf.setMaxIdle(Integer.valueOf(Config.getParam("redis", "max_idle")));
         poolConf.setMaxWait(Integer.valueOf(Config.getParam("redis", "max_wait")));
         
-        password = PGHelper.isNullOrEmpty(password)?null:password;
-        Pool = new JedisPool(poolConf, host, port, _timeout, password);
+        if (password == null || password.isEmpty() || password =="") {
+		Pool = new JedisPool(poolConf, host, port,this._timeout,null, database);
+        } else {
+			Pool = new JedisPool(poolConf, host, port, this._timeout, password, database);
+        }
+        //Pool = new JedisPool(poolConf, this._host, this._port); 
+        
+    }
+    
+    /**
+     * Currently UNUSED
+     * @param host
+     * @param port
+     * @param timeout
+     * @param password
+     * @param database 
+     */
+    private RedisClient(String host, int port, int timeout, String password, int database) {
+        JedisPoolConfig poolConf = new JedisPoolConfig();
+        poolConf.setTestOnBorrow(true);
+        poolConf.setMaxActive(Integer.valueOf(Config.getParam("redis", "max_active")));
+        poolConf.setMaxIdle(Integer.valueOf(Config.getParam("redis", "max_idle")));
+        poolConf.setMaxWait(Integer.valueOf(Config.getParam("redis", "max_wait")));
+
+        Pool = new JedisPool(poolConf, host, port, timeout,
+                password, database);
     }
 
     public long set(String key, String value) {

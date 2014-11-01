@@ -30,7 +30,9 @@ class NumberPenguinFedChecker extends AbstractQuestChecker
 
     @Override
     public boolean isAccept(EntityContext context) {
-        return (int) DBContext.Redis().scard(getLogPool().getKey("penguins_fed")) >= nReq;
+        int fed = DBContext.Redis().scard(
+                getLogPool().getKey("penguins_fed")).intValue();
+        return fed >= nReq;
     }
 
     @Override

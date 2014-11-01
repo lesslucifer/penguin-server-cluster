@@ -15,7 +15,7 @@ import java.util.Set;
  *
  * @author KieuAnh
  */
-public interface PGRedis
+interface PGRedis
 {
     public static final int ERROR = -1;
     

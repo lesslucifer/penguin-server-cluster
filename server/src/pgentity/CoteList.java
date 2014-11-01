@@ -9,10 +9,9 @@ package pgentity;
 import db.DBContext;
 import pgentity.pool.EntityFactory;
 import pgentity.pool.EntityPool;
-import pgentity.redis.PGRedisListEntity;
-import share.PGError;
 import db.PGKeys;
 import db.RedisKey;
+import pgentity.redis.PGRedisListEntity;
 import share.PGException;
 
 /**

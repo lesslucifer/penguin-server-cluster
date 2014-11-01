@@ -25,9 +25,9 @@ class FragmentList implements PGEntity
 {
     private final RedisKey redisKey;
     private int orgLen = -1, modLen = 0;
-    private Lock sync = new ReentrantLock();
-    private List<Command> commands = new LinkedList();
-    private NavigableMap<Integer, List<String>> fragCache = new TreeMap();
+    private final Lock sync = new ReentrantLock();
+    private final List<Command> commands = new LinkedList();
+    private final NavigableMap<Integer, List<String>> fragCache = new TreeMap();
 
     public FragmentList(RedisKey redisKey) {
         this.redisKey = redisKey;
@@ -109,7 +109,7 @@ class FragmentList implements PGEntity
     {
         if (orgLen < 0)
         {
-            orgLen = (int) DBContext.Redis().llen(redisKey);
+            orgLen = DBContext.Redis().llen(redisKey).intValue();
         }
         
         return orgLen + modLen;

@@ -11,14 +11,12 @@ import config.PGConfig;
 import db.DBContext;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 import pgentity.pool.EntityFactory;
 import pgentity.pool.EntityPool;
 import pgentity.prize.PGPrize;
 import pgentity.prize.PrizeFactory;
 import pgentity.quest.QuestChecker;
 import pgentity.quest.QuestFactory;
-import pgentity.quest.QuestLogger;
 import pgentity.quest.QuestState;
 import share.PGError;
 import db.PGKeys;
@@ -76,6 +74,19 @@ public class MainQuestLine implements PGEntity
         return questLine;
     }
     
+    public static MainQuestLine newLockedQuestLine(String uid, String qLine)
+    {
+        MainQuestLine questLine = new MainQuestLine(uid, qLine);
+        questLine.setIndex(0);
+        questLine.setState(QuestState.RETURNED);
+        questLine.setLastAcceptLevel(1);
+        questLine.saveToDB();
+        
+        EntityPool.inst().put(questLine, MainQuestLine.class, uid, qLine);
+        
+        return questLine;
+    }
+    
     public static void destroyQuestLine(String uid, String qLine)
     {
         try
@@ -84,7 +95,7 @@ public class MainQuestLine implements PGEntity
             mainQuest.getChecker().destroy();
             DBContext.Redis().del(redisKey(uid, qLine));
         }
-        catch (PGException ex)
+        catch (Exception ex)
         {
             // cannot destroy
         }
@@ -94,7 +105,7 @@ public class MainQuestLine implements PGEntity
     
     public static boolean isExist(String uid, String qLine)
     {
-        return DBContext.Redis().isExists(redisKey(uid, qLine));
+        return DBContext.Redis().exists(redisKey(uid, qLine));
     }
     
     public static RedisKey redisKey(String uid, String qLine)
@@ -204,16 +215,16 @@ public class MainQuestLine implements PGEntity
         }
     }
     
-    public QuestLogger getLogger()
-    {
-        Set<String> loggers = null;
-        if (this.index >= 0 && this.state == QuestState.ACCEPTED)
-        {
-            loggers = getConfig().getNeed().keySet();
-        }
-        
-        return QuestFactory.getLogger(LogPool.getPool(redisKey), loggers);
-    }
+//    public QuestLogger getLogger()
+//    {
+//        Set<String> loggers = null;
+//        if (this.index >= 0 && this.state == QuestState.ACCEPTED)
+//        {
+//            loggers = getConfig().getNeed().keySet();
+//        }
+//        
+//        return QuestFactory.getLogger(LogPool.getPool(redisKey), loggers);
+//    }
     
     public Map<String, Object> buildAMF(EntityContext context)
     {
@@ -251,7 +262,6 @@ public class MainQuestLine implements PGEntity
     {
         Map<String, Object> data = new HashMap();
         data.put("data", DBContext.Redis().hgetall(redisKey));
-        data.put("log", getChecker().dump());
         
         return data;
     }

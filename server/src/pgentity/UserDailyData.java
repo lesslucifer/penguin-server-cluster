@@ -61,7 +61,7 @@ public class UserDailyData implements PooledEntity {
     
     public void setData(String dataID, Object data)
     {
-        boolean isKeyExisted = DBContext.Redis().isExists(redisKey);
+        boolean isKeyExisted = DBContext.Redis().exists(redisKey);
         DBContext.Redis().hset(redisKey, dataID, String.valueOf(data));
         
         if (!isKeyExisted)
@@ -72,7 +72,7 @@ public class UserDailyData implements PooledEntity {
     
     public void increaseData(String dataID, int inc)
     {
-        boolean isKeyExisted = DBContext.Redis().isExists(redisKey);
+        boolean isKeyExisted = DBContext.Redis().exists(redisKey);
         DBContext.Redis().hincrby(redisKey, dataID, inc);
         
         if (!isKeyExisted)

@@ -8,7 +8,6 @@ package pgentity.services;
 
 import pgentity.services.penguin.PenguinNormalUpdator;
 import config.CFCote;
-import config.CFInit;
 import config.PGConfig;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -188,16 +187,17 @@ public class CoteServices
     }
     
     public Cote createCote(String uid, String coteID,
-            CFInit.Cote coteConfig,
+            CFCote.Templates.Template templ,
             Penguindex penguindex, long createdTime) throws PGException
     {
         Cote cote = Cote.newCote(uid, coteID,
-                coteConfig.getLevel(), coteConfig.getPoolFish(),
-                coteConfig.getName());
+                templ.getLevel(), templ.getFish(),
+                templ.getName());
         
-        this.initBoxEgg(cote);
+        this.initBoxEgg(cote, templ.getBoxeggLevel());
+        this.initEggs(cote, templ.getEggs());
         this.initPenguins(uid, coteID, cote.penguins(),
-                coteConfig, penguindex, createdTime);
+                templ, penguindex, createdTime);
         this.initDog(cote, createdTime);
         
         cote.saveToDB();
@@ -205,13 +205,13 @@ public class CoteServices
         return cote;
     }
     
-    private void initBoxEgg(Cote cote)
+    private void initBoxEgg(Cote cote, int lvl)
     {
-        BoxEgg.newBoxEgg(cote.getUid(), cote.getCoteID());
+        BoxEgg.newBoxEgg(cote.getUid(), cote.getCoteID(), lvl);
     }
     
     private void initPenguins(String uid, String coteID, PenguinList penguinList,
-            CFInit.Cote penguinConfigs,
+            CFCote.Templates.Template penguinConfigs,
             Penguindex pDex, long now) throws PGException
     {
         int i = 0;
@@ -229,6 +229,11 @@ public class CoteServices
         }
         
         penguinList.add(penguinIDs);
+    }
+    
+    private void initEggs(Cote cote, Map<String, Number> eggs)
+    {
+        cote.eggStore().addEggs(eggs);
     }
     
     private void initDog(Cote cote, long now)

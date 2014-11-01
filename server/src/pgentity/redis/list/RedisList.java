@@ -26,10 +26,10 @@ public class RedisList implements PGEntity{
      */
     private final RedisKey redisKey;
     private int orgLen = -1, modLen = 0;
-    private Lock sync = new ReentrantLock();
+    private final Lock sync = new ReentrantLock();
     private List<String> cache = null;
     private Range cacheRange = null;
-    private List<Command> commands = new ArrayList();
+    private final List<Command> commands = new ArrayList();
 
     public RedisList(RedisKey redisKey) {
         this.redisKey = redisKey;
@@ -114,7 +114,7 @@ public class RedisList implements PGEntity{
     {
         if (orgLen < 0)
         {
-            orgLen = (int) DBContext.Redis().llen(redisKey);
+            orgLen = DBContext.Redis().llen(redisKey).intValue();
         }
         
         return orgLen + modLen;
@@ -180,7 +180,7 @@ public class RedisList implements PGEntity{
                 command.reverseRange(orgRange);
             }
             
-            List<String> cacheList = null;
+            List<String> cacheList;
             if (orgRange.getLength() > 0)
             {
                 cacheList = DBContext.Redis()

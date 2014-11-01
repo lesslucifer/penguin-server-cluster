@@ -71,7 +71,7 @@ public class GiftTemplate implements PGEntity {
     
     public static boolean isExist(String templID)
     {
-        return DBContext.Redis().isExists(
+        return DBContext.Redis().exists(
             PGKeys.GAMEMESSAGES.getChild(templID));
     }
     

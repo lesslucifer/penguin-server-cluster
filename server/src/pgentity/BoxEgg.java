@@ -48,10 +48,10 @@ public class BoxEgg implements PGEntity
         return boxEgg;
     }
     
-    public static BoxEgg newBoxEgg(String uid, String coteID)
+    public static BoxEgg newBoxEgg(String uid, String coteID, int lvl)
     {
         BoxEgg boxEgg = new BoxEgg(uid, coteID);
-        boxEgg.setLevel(1);
+        boxEgg.setLevel(lvl);
         boxEgg.saveToDB();
         
         EntityPool.inst().put(boxEgg, BoxEgg.class, uid, coteID);

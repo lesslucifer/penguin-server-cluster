@@ -55,7 +55,7 @@ public class HackEntity implements PGEntity
     
     private static boolean makeSureUserExist(HackEntity hacker)
     {
-        return DBContext.Redis().isExists(HACK.getChild(hacker.getUid()));
+        return DBContext.Redis().exists(HACK.getChild(hacker.getUid()));
     }
     
     private RedisKey redisKey()
