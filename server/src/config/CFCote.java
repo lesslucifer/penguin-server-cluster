@@ -16,6 +16,7 @@ import share.PGHelper;
 public class CFCote extends JSONMapArray<CFCote.Level> implements JSONable
 {
     private Dog dog;
+    private Templates templs;
     
     private CFCote() {}
     static CFCote parse(Map<String, Object> json)
@@ -39,10 +40,18 @@ public class CFCote extends JSONMapArray<CFCote.Level> implements JSONable
         
         this.dog = new Dog();
         this.dog.deser((Map) json.get("dogs"));
+        
+        this.templs = new Templates();
+        this.templs.deser((Map) json.get("templates"));
     }
 
     public Dog getDog() {
         return dog;
+    }
+    
+    public Templates templs()
+    {
+        return this.templs;
     }
     
     public static class Level implements JSONable
@@ -137,6 +146,62 @@ public class CFCote extends JSONMapArray<CFCote.Level> implements JSONable
 
             public long getTime() {
                 return time;
+            }
+        }
+    }
+    
+    public static class Templates extends JSONMapString<Templates.Template>
+    {
+        private Templates() {}
+        
+        @Override
+        protected Template newElement(Map<String, Object> elemJSON) {
+            return new Template();
+        }
+        
+        public static class Template implements JSONable
+        {
+            private Template() {}
+            
+            private String name;
+            private int level;
+            private int fish;
+            private int boxegg_level;
+            private Map<String, Number> penguins;
+            private Map<String, Number> eggs;
+
+            public String getName() {
+                return name;
+            }
+
+            public int getLevel() {
+                return level;
+            }
+
+            public int getFish() {
+                return fish;
+            }
+
+            public int getBoxeggLevel() {
+                return boxegg_level;
+            }
+
+            public Map<String, Number> getPenguins() {
+                return penguins;
+            }
+
+            public Map<String, Number> getEggs() {
+                return eggs;
+            }
+
+            @Override
+            public void deser(Map<String, Object> json) {
+                this.name = (String) json.get("name");
+                this.level = PGHelper.toInteger(json.get("level"));
+                this.fish = PGHelper.toInteger(json.get("fish"));
+                this.boxegg_level = PGHelper.toInteger(json.get("boxegg_level"));
+                this.penguins = (Map) json.get("penguins");
+                this.eggs = (Map) json.get("eggs");
             }
         }
     }

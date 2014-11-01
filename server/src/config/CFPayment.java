@@ -39,8 +39,8 @@ public class CFPayment extends JSONMapString<CFPayment.Payment>
         
         @Override
         public void deser(Map<String, Object> json) {
-            this.zingCoin = PGHelper.toInteger((String) json.get("zing"));
-            this.gameCoin = PGHelper.toInteger((String) json.get("coin"));
+            this.zingCoin = PGHelper.toInteger(json.get("zing"));
+            this.gameCoin = PGHelper.toInteger(json.get("coin"));
             this.name = (String) json.get("name");
         }
 

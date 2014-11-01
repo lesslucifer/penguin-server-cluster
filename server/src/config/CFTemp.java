@@ -90,6 +90,7 @@ public class CFTemp implements JSONable
     private String SystemPasswordMD5;
     private int AdultPenguin_Level;
     private int MaxBuyRPByGoldPerDay;
+    private int MaxBuyRPByCoinPerDay;
 
     @Override
     public void deser(Map<String, Object> json) {
@@ -203,6 +204,11 @@ public class CFTemp implements JSONable
     public int MaxBuyRPByGoldPerDay()
     {
         return MaxBuyRPByGoldPerDay;
+    }
+    
+    public int MaxBuyRPByCoinPerDay()
+    {
+        return MaxBuyRPByCoinPerDay;
     }
     
     public int AdultPenguin_Level()

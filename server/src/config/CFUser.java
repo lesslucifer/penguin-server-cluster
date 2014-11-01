@@ -6,9 +6,7 @@
 
 package config;
 
-import com.google.common.base.Function;
-import com.google.common.collect.Maps;
-import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import share.PGHelper;
 
@@ -81,19 +79,15 @@ public class CFUser extends JSONExperienceLevelArray<CFUser.Level> implements JS
         }
     }
     
-    public static class Default extends JSONMapArray<Default.Cote>
+    public static class Default implements JSONable
     {
         private int level;
         private int fish;
         private int gold;
         private int coin;
+        private List<String> cotes;
         
         private Default() {}
-        
-        @Override
-        protected Cote newElement(Map<String, Object> elemJSON) {
-            return new Cote();
-        }
 
         @Override
         public void deser(Map<String, Object> json) {
@@ -101,8 +95,7 @@ public class CFUser extends JSONExperienceLevelArray<CFUser.Level> implements JS
             this.fish = PGHelper.toInteger(json.get("fish"));
             this.gold = PGHelper.toInteger(json.get("gold"));
             this.coin = PGHelper.toInteger(json.get("coin"));
-                
-            super.deser((Map) json.get("cote"));
+            this.cotes = PGHelper.mapToList((Map) json.get("cote"));
         }
 
         public int getLevel() {
@@ -121,54 +114,9 @@ public class CFUser extends JSONExperienceLevelArray<CFUser.Level> implements JS
             return coin;
         }
         
-        public static class Cote implements JSONable, CFInit.Cote
+        public List<String> getCotes()
         {
-            private int level;
-            private int poolFish;
-            private String name;
-            private Map<String, Number> penguins;
-            
-            private Cote() {}
-
-            @Override
-            public void deser(Map<String, Object> json) {
-                this.level = PGHelper.toInteger(json.get("level"));
-                this.poolFish = PGHelper.toInteger(json.get("pool_fish"));
-                this.name = (String) json.get("name");
-                
-                Map<String, Map<String, String>> penguinJSON = (Map) json.get("penguins");
-                this.penguins = new HashMap(penguinJSON.size());
-                
-                for (Map.Entry<String, Map<String, String>> penguinEntry : penguinJSON.entrySet()) {
-                    Map<String, String> penguinData = penguinEntry.getValue();
-                    
-                    String pKind = (String) penguinData.get("kind");
-                    int pLevel = PGHelper.toInteger(penguinData.get("level"));
-                    
-                    this.penguins.put(pKind, pLevel);
-                }
-            }
-
-            @Override
-            public int getLevel() {
-                return level;
-            }
-
-            @Override
-            public int getPoolFish() {
-                return poolFish;
-            }
-
-            @Override
-            public String getName() {
-                return name;
-            }
-            
-            @Override
-            public Map<String, Number> getPenguins()
-            {
-                return this.penguins;
-            }
+            return this.cotes;
         }
     }
     
@@ -181,15 +129,11 @@ public class CFUser extends JSONExperienceLevelArray<CFUser.Level> implements JS
             return new NPC();
         }
         
-        public static class NPC extends JSONMapArray<NPC.Cote>
+        public static class NPC implements JSONable
         {
             private String name, avatar;
             private int level, fish, gold, coin;
-            
-            @Override
-            protected Cote newElement(Map<String, Object> elemJSON) {
-                return new Cote();
-            }
+            private List<String> cotes;
             
             @Override
             public void deser(Map<String, Object> json) {
@@ -200,7 +144,7 @@ public class CFUser extends JSONExperienceLevelArray<CFUser.Level> implements JS
                 this.gold = PGHelper.toInteger(json.get("gold"));
                 this.coin = PGHelper.toInteger(json.get("coin"));
                 
-                super.deser((Map) json.get("cotes"));
+                this.cotes =  PGHelper.mapToList((Map) json.get("cotes"));
             }
 
             public String getName() {
@@ -227,53 +171,9 @@ public class CFUser extends JSONExperienceLevelArray<CFUser.Level> implements JS
                 return coin;
             }
             
-            public static class Cote implements JSONable, CFInit.Cote
+            public List<String> cotes()
             {
-                private Cote() {}
-                
-                private String name;
-                private int level, poolFish, boxEggLevel;
-                private Map<String, Number> penguins;
-                private Map<String, Number> eggs;
-                
-                @Override
-                public void deser(Map<String, Object> json) {
-                    this.name = (String) json.get("name");
-                    this.level = PGHelper.toInteger(json.get("level"));
-                    this.poolFish = PGHelper.toInteger(json.get("fish"));
-                    this.boxEggLevel = PGHelper.toInteger(json.get("boxegg_level"));
-                    
-                    penguins = (Map) json.get("penguins");
-                    eggs = (Map) json.get("eggs");
-                }   
-
-                @Override
-                public String getName() {
-                    return name;
-                }
-
-                @Override
-                public int getLevel() {
-                    return level;
-                }
-
-                @Override
-                public int getPoolFish() {
-                    return poolFish;
-                }
-
-                public int getBoxEggLevel() {
-                    return boxEggLevel;
-                }
-
-                @Override
-                public Map<String, Number> getPenguins() {
-                    return penguins;
-                }
-
-                public Map<String, Number> getEggs() {
-                    return eggs;
-                }
+                return this.cotes;
             }
         }
     }
