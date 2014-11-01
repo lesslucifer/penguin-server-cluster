@@ -21,10 +21,6 @@ log
 test
 bak.bak
 /server/nbproject/private/
-/server/src/*
-/server/src/*.java
-/SPShare/src/*
-/SPShare/src/share/*.java
 /lib
 <<<<<<< HEAD
 =======
