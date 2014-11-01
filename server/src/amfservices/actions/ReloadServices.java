@@ -9,8 +9,10 @@ package amfservices.actions;
 import java.util.Map;
 import pgentity.BoxEgg;
 import pgentity.Cote;
+import pgentity.CoteList;
 import pgentity.Penguin;
 import pgentity.User;
+import share.AMFBuilder;
 import share.PGException;
 
 /**
@@ -30,17 +32,23 @@ public class ReloadServices
     {
         return inst;
     }
+    
     public Map<String, Object> getUserBasicInfo(String userID) throws PGException
     {
         User user = User.getUser(userID);
         return user.buildBasicDataAMF();
     }
     
+    public Map<String, Object> getUserCoteList(String uid)
+    {
+        return AMFBuilder.toAMF(CoteList.getCotes(uid).getAll());
+    }
+    
     public Map<String, Object> getUserFullInfo(String uid, boolean getCote,
             boolean getFriends, boolean getInventory, long now)
     {
         User user = User.getUser(uid);
-        return user.buidlFullAMF(getCote, getFriends, getInventory, false, now);
+        return user.buildFullAMF(getCote, getFriends, getInventory, false, now);
     }
     
     public Map<String, Object> getPenguinInfo(String uid, String coteID, String penguinID)

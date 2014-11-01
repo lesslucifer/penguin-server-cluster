@@ -19,6 +19,7 @@ import pgentity.EntityContext;
 import pgentity.FriendList;
 import pgentity.HelpFriendFish;
 import pgentity.Inventory;
+import pgentity.Notification;
 import pgentity.StealFriendEgg;
 import pgentity.User;
 import pgentity.quest.HelpFriendRecord;
@@ -91,7 +92,7 @@ public class FriendServiceActions
         playWithFriendAMF.put(PGMacro.STOLEN_EGG, stealFriendEgg.eggStolen(fid));
 
         response.put(PGMacro.FRIEND, friendContext.getUser()
-                .buidlFullAMF(true, false, false, false, now));
+                .buildFullAMF(true, false, false, false, now));
         response.put(PGMacro.PLAY_WITH_FRIEND, playWithFriendAMF);
 
         return response;
@@ -184,6 +185,8 @@ public class FriendServiceActions
             EggStoreServices.inst().moveEgg(frCoteEggs, inventory.eggStore(), stealEggs);
             stealFriendEgg.stealEgg(fid, nEggStolen);
             MailServices.inst().sendStealEggMail(User.getUser(uid), fid, eggKind, now);
+            Notification.getNotif(uid).send("notification",
+                    "Bạn vừa trộm của bạn mình một trứng");
             
             StealEggRecord stealEggRecord = new StealEggRecord(nEggStolen);
             QuestLogger qLogger = QuestServices.inst().getQuestLogger(uid, now);
@@ -242,5 +245,15 @@ public class FriendServiceActions
         
         return PGServicesAction.inst()
                 .getAchievemensAction(fid, now);
+    }
+    
+    public Map<String, Object> visitFriendCote(String uid, String fid,
+            String coteID, long now)
+    {
+        PGException.Assert(FriendServices.inst().isFriend(uid, fid),
+                PGError.USER_NOT_FRIEND_WITH_FRIEND,
+                "They're not friend");
+        
+        return PGServicesAction.inst().visitCote(fid, coteID, now);
     }
 }

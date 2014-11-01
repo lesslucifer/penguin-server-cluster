@@ -85,7 +85,7 @@ public class PGServicesAction
         
         // build response
         Map<String, Object> response = new HashMap();
-        response.put(PGMacro.USER, user.buidlFullAMF(true, false, true, true, now));
+        response.put(PGMacro.USER, user.buildFullAMF(true, false, true, true, now));
         
         Map<String, Object> playWithFriend = new HashMap();
         playWithFriend.put(PGMacro.NUMBER_FRIEND_HELPED_FISH,
@@ -178,7 +178,9 @@ public class PGServicesAction
         Map<String, Object> successData = new HashMap();
         for (Penguin penguin : fedPenguins) {
             penguin.saveToDB();
-            successData.put(penguin.getPenguinID(), penguin.getFood());
+            successData.put(penguin.getPenguinID(), AMFBuilder.make(
+                    PGMacro.FISH_LAST_EAT, penguin.getFood(),
+                    PGMacro.TIME_LAST_EAT, penguin.getLastEat()));
         }
 
         context.saveToDB();
@@ -438,8 +440,8 @@ public class PGServicesAction
     public Map<String, Object> moveEggFromCoteToInventoryAction(String uid,
             Map<String, Number> eggPacks, long now) throws PGException
     {
-        CoteList userCotes = CoteList.getCotes(uid);
-        Cote cote = Cote.getCote(uid, userCotes.at(0));
+        User user = User.getUser(uid);
+        Cote cote = Cote.getCote(uid, user.getLastCote());
         Map<String, Number> validEggs = EggStoreServices.inst()
                 .validateEgg(cote.eggStore(), eggPacks);
         
@@ -496,9 +498,8 @@ public class PGServicesAction
     public Map<String, Object> moveEggFromBoxEggToInventoryAction(String uid,
             Map<String, Number> eggPacks) throws PGException
     {
-        CoteList userCotes = CoteList.getCotes(uid);
-        String coteID = userCotes.at(0);
-        BoxEgg boxEgg = BoxEgg.getBoxEgg(uid, coteID);
+        User user = User.getUser(uid);
+        BoxEgg boxEgg = BoxEgg.getBoxEgg(uid, user.getLastCote());
         
         int nEggMoved = 0;
         for (Map.Entry<String, Number> movedEggEntry : eggPacks.entrySet()) {
@@ -569,11 +570,11 @@ public class PGServicesAction
         
         PGException.Assert(conf != null, PGError.MAX_LEVEL_PENGUIN,
                 "Penguin's level is max");
-        
-//        PGException.Assert(penguin.getExp() + nExp <= conf.getExp() ||
-//                grConf.containsKey(penguin.getLevel() + 2),
-//                PGError.MAX_LEVEL_PENGUIN,
-//                "Penguin's level is max");
+        /*
+        PGException.Assert(penguin.getExp() + nExp <= conf.getExp() ||
+                grConf.containsKey(penguin.getLevel() + 2),
+                PGError.MAX_LEVEL_PENGUIN,
+                "Penguin's level is max");*/
         
         PenguinServices.inst().increasePenguinExp(uid, penguin, nExp, now);
         UserServices.inst().decreaseCoin(user, nReqCoin);
@@ -581,8 +582,13 @@ public class PGServicesAction
         penguin.saveToDB();
         user.saveToDB();
         
-        return AMFBuilder.make(PGMacro.PENGUIN, penguin.buildAMF(),
-                PGMacro.USER, AMFBuilder.make(PGMacro.COIN, user.getCoin()));
+        Map<String, Object> result = new HashMap<String, Object>();
+        result.put(PGMacro.PENGUIN, penguin.buildAMF());
+        Map<String, Object> userData = new HashMap();
+        userData.put(PGMacro.COIN, user.getCoin());
+        result.put(PGMacro.USER, userData);
+        
+        return result;
     }
     
     public Map<String, Object> buyLevelPenguinAction(String uid,
@@ -672,7 +678,7 @@ public class PGServicesAction
                 break;
         }
         
-        String coteID = user.cotes().at(0);
+        String coteID = user.getLastCote();
         Dog dog = Dog.getDog(uid, coteID);
         final long nextSleepTime = Math.max(now, dog.getNextSleep()) + wakeItem.getTime();
         PGException.Assert(nextSleepTime <= now + PGConfig.inst().temp().MaxDogTime(), 
@@ -1068,10 +1074,9 @@ public class PGServicesAction
                 PGError.INVALID_ITEM, "Invalid item");
         
         User user = User.getUser(uid);
-        UserTempData uTempData = UserTempData.getTempData(uid);
+        UserDailyData uDaily = UserDailyData.getData(uid, now);
         if (PGMacro.GOLD.equals(item.getPaymentType()))
         {
-            UserDailyData uDaily = UserDailyData.getData(uid, now);
             int nTurnHaveBought = PGHelper.toInteger(PGMacro.RP_TURN_BOUGHT_BY_GOLD);
             
             PGException.Assert(nTurnHaveBought < PGConfig.inst().temp()
@@ -1083,14 +1088,21 @@ public class PGServicesAction
             
             QuestLogger uQuestLogger = QuestServices.inst().getQuestLogger(uid, now);
             UserServices.inst().decreaseGold(user, uQuestLogger, item.getPrice());
-            uDaily.increaseData(itemID, item.getnTurn());
+            uDaily.increaseData(PGMacro.RP_TURN_BOUGHT_BY_GOLD, item.getnTurn());
         }
         else if (PGMacro.COIN.equals(item.getPaymentType()))
         {
+            int nTurnHaveBought = PGHelper.toInteger(PGMacro.RP_TURN_BOUGHT_BY_COIN);
+            
+            PGException.Assert(nTurnHaveBought < PGConfig.inst().temp()
+                    .MaxBuyRPByCoinPerDay(), PGError.CANNOT_BUY_RP_TURN,
+                    "You have bought maximum turn by coin in day");
+            
             PGException.Assert(user.getCoin() >= item.getPrice(),
                     PGError.NOT_ENOUGH_COIN, "Not enough coin");
             
             UserServices.inst().decreaseCoin(user, item.getPrice());
+            uDaily.increaseData(PGMacro.RP_TURN_BOUGHT_BY_COIN, item.getnTurn());
         }
         else
         {
@@ -1098,6 +1110,7 @@ public class PGServicesAction
                     "Invalid payment " + item.getPaymentType());
         }
         
+        UserTempData uTempData = UserTempData.getTempData(uid);
         int nTurn = PGHelper.toInteger(uTempData.getData(PGMacro.RAND_PRIZE_TURN));
         nTurn += item.getnTurn();
         uTempData.setData(PGMacro.RAND_PRIZE_TURN, nTurn);
@@ -1320,5 +1333,15 @@ public class PGServicesAction
         }
         
         return Collections.EMPTY_MAP;
+    }
+    
+    public Map<String, Object> visitCote(String uid, String coteID, long now)
+    {
+        EntityContext context = EntityContext.getContext(uid, coteID);
+        QuestLogger uQLogger = QuestServices.inst().getQuestLogger(uid, now);
+        CoteServices.inst().updateCote(context, uQLogger, now);
+        context.saveToDB();
+        
+        return context.getCote().buildRescusiveAMF(true, true, true, true);
     }
 }
