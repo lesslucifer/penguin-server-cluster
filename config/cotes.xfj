@@ -181,7 +181,7 @@
           }
         },
         "upgrade_require": {
-          "gold": "5000",
+          "gold": "7000",
           "coin": "0",
           "level": "15"
         },
@@ -275,7 +275,7 @@
           }
         },
         "upgrade_require": {
-          "gold": "20000",
+          "gold": "30000",
           "coin": "0",
           "level": "25"
         },
@@ -316,6 +316,67 @@
         "1": "day_coin",
         "2": "week_coin",
         "3": "month_coin"
+      }
+    },
+    "templates": {
+      "user_default": {
+        "name": "Bến Lạ",
+        "level": 1,
+        "fish": 20,
+        "boxegg_level": 1,
+        "penguins": {
+          "pen_1": 2,
+          "pen_2": 7
+        },
+        "eggs": {}
+      },
+      "npc_1": {
+        "name": "Tấm",
+        "level": 1,
+        "fish": 50,
+        "boxegg_level": 1,
+        "penguins": {
+          "pen_6": 4,
+          "pen_8": 4
+        },
+        "eggs": {
+          "Egg_0": 3,
+          "Egg_1": 2,
+          "Egg_11": 1
+        }
+      },
+      "npc_2": {
+        "name": "Cám",
+        "level": 6,
+        "fish": 1500,
+        "boxegg_level": 5,
+        "penguins": {
+          "pen_12": 10,
+          "pen_14": 9,
+          "pen_25": 10,
+          "pen_26": 10,
+          "pen_30": 9,
+          "pen_31": 10,
+          "pen_40": 10,
+          "pen_37": 2,
+          "pen_52": 5,
+          "pen_41": 5,
+          "pen_33": 2
+        },
+        "eggs": {
+          "Egg_5": 15,
+          "Egg_6": 15,
+          "Egg_7": 20,
+          "Egg_8": 25
+        }
+      },
+      "user_default_2": {
+        "name": "Đảo Lạ",
+        "level": 1,
+        "fish": 0,
+        "boxegg_level": 1,
+        "penguins": {},
+        "eggs": {}
       }
     }
   }

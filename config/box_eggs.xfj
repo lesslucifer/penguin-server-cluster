@@ -51,7 +51,7 @@
         },
         "upgrade_require": {
           "gold": "0",
-          "coin": "15",
+          "coin": "10",
           "level": "3"
         }
       },
@@ -60,6 +60,33 @@
           "bucket": "EggCages_3.swf",
           "icon": "EggCage_3_icon",
           "upgradeImg": "EggCage_3_4-4",
+          "state": {
+            "1": "EggCage_2_1-4",
+            "2": "EggCage_2_2-4",
+            "3": "EggCage_2_3-4",
+            "4": "EggCage_2_4-4",
+            "position": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          }
+        },
+        "max_egg": 15,
+        "doorPosition": {
+          "x": 17.0,
+          "y": -50.0
+        },
+        "upgrade_require": {
+          "gold": "0",
+          "coin": "40",
+          "level": "8"
+        }
+      },
+      "4": {
+        "state": {
+          "bucket": "EggCages_4.swf",
+          "icon": "EggCage_4_icon",
+          "upgradeImg": "EggCage_4_4-4",
           "state": {
             "1": "EggCage_3_1-4",
             "2": "EggCage_3_2-4",
@@ -71,7 +98,7 @@
             }
           }
         },
-        "max_egg": 35,
+        "max_egg": 25,
         "doorPosition": {
           "x": 17.0,
           "y": -50.0
@@ -82,11 +109,11 @@
           "level": "14"
         }
       },
-      "4": {
+      "5": {
         "state": {
-          "bucket": "EggCages_4.swf",
-          "icon": "EggCage_4_icon",
-          "upgradeImg": "EggCage_4_4-4",
+          "bucket": "EggCages_5.swf",
+          "icon": "EggCage_5_icon",
+          "upgradeImg": "EggCage_5_4-4",
           "state": {
             "1": "EggCage_4_1-4",
             "2": "EggCage_4_2-4",
@@ -98,7 +125,7 @@
             }
           }
         },
-        "max_egg": 50,
+        "max_egg": 40,
         "doorPosition": {
           "x": 17.0,
           "y": -50.0
@@ -109,11 +136,11 @@
           "level": "19"
         }
       },
-      "5": {
+      "6": {
         "state": {
-          "bucket": "EggCages_5.swf",
-          "icon": "EggCage_5_icon",
-          "upgradeImg": "EggCage_5_4-4",
+          "bucket": "EggCages_6.swf",
+          "icon": "EggCage_6_icon",
+          "upgradeImg": "EggCage_6_4-4",
           "state": {
             "1": "EggCage_5_1-4",
             "2": "EggCage_5_2-4",
@@ -125,7 +152,7 @@
             }
           }
         },
-        "max_egg": 70,
+        "max_egg": 60,
         "doorPosition": {
           "x": 17.0,
           "y": -50.0

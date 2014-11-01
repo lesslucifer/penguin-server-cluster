@@ -54,7 +54,7 @@
             "share_caption": "Đầu tư hiệu quả",
             "share_description": "He he, mới đây mà mình đã dùng 500 vàng để hồ biến chuồng mình càng ngày càng đẹp. Chỉ còn một chút cố gắng nữa thôi, mình sẽ trở thành trang trại Cánh cụt đẹp nhất.",
             "prize": {
-              "fish": "2000"
+              "fish": "1000"
             }
           },
           "1": {
@@ -63,7 +63,7 @@
             "share_caption": "Tài năng bẩm sinh",
             "share_description": "Wow, mình thật ngưỡng mộ mình quá đi. làm sao có thể kiếm được nhiều tiền như vậy được chứ. Mới đầu tư 10000 vàng mà chuồng mình đã dễ thương như vầy, Đúng mình là tài năng bẩm sinh mà!",
             "prize": {
-              "exp": "7000"
+              "exp": "5000"
             }
           },
           "2": {
@@ -72,7 +72,7 @@
             "share_caption": "Tiêu tiền như thần",
             "share_description": "Càng lúc mình càng muốn đầu tư nhiều hơn nữa, chỉ mới đầu tư 500000 vàng thôi nhưng mọi người cũng phải đến lúc vào chuồng nhà mình mà ngưỡng mộ đi. Hì hì",
             "prize": {
-              "exp": "100000"
+              "exp": "300000"
             }
           }
         }
@@ -143,12 +143,12 @@
             }
           },
           "1": {
-            "require": 65,
+            "require": 45,
             "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
             "share_caption": "Còn đó phân vân",
-            "share_description": "Tiếc cũng không phải là tiếc. Nhưng dù sao, 65 tình cảm được cho đi, cũng bao nhiêu thời gian mới nuôi được chúng lớn. Ừ rồi thì ai cũng muốn được tự do, sống vui mấy em cánh cụt đáng yêu của ta nhé!",
+            "share_description": "Tiếc cũng không phải là tiếc. Nhưng dù sao, 45 tình cảm được cho đi, cũng bao nhiêu thời gian mới nuôi được chúng lớn. Ừ rồi thì ai cũng muốn được tự do, sống vui mấy em cánh cụt đáng yêu của ta nhé!",
             "prize": {
-              "fish": "30000"
+              "exp": "20000"
             }
           },
           "2": {
@@ -180,7 +180,7 @@
             "share_caption": "Quan tâm bạn bè",
             "share_description": "Có bạn bè nhiều thật vui. Nhưng vui nhất lại là việc giúp được bạn bè mình. Dù nhỏ thôi, chỉ giúp 15 lần thôi, mình cũng cảm thấy vui rồi. Hì hì",
             "prize": {
-              "coin": "20"
+              "exp": "500"
             }
           },
           "1": {
@@ -189,7 +189,7 @@
             "share_caption": "Có tình có nghĩa",
             "share_description": "Đôi lúc, mong cho qua ngày mới để có thể thả cá giúp bạn mình. Không hiểu sao, bản thân mình lại trở nên thật quan trọng. Giúp 100 lần không nhiều nhưng đó là tính cảm của tôi dành cho bạn đó! Bạn của tôi!",
             "prize": {
-              "coin": "140"
+              "exp": "6000"
             }
           },
           "2": {
@@ -198,7 +198,7 @@
             "share_caption": "Chí tính chí nghĩa",
             "share_description": "Bạn À! Mình vừa giúp bạn được 500 lần rồi đó. Nhớ những kí ức mà chúng mình trải qua thật sự đó là một quảng đường đầy ý nghĩa, đầy tình cảm, đầy khó khăn thử thách. Như vầy với mình hoài bạn nhé!",
             "prize": {
-              "coin": "600"
+              "exp": "20000"
             }
           }
         }
@@ -215,28 +215,31 @@
           "0": {
             "require": 40,
             "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
-            "share_caption": "Sữa mặt trời",
-            "share_description": "Hì hì, thông cảm nha bạn hiền. Mình hông muốn trộm trứng của bạn đâu nhưng mình đang có một kế hoạch làm món \"Sữa mặt trời\" nên cho mượn đỡ 40 trứng nha khi nào có ta lại trả cho. Thanks nhiều hè hè",
+            "share_caption": "Dự án bí mật",
+            "share_description": "Hì hì, thông cảm nha bạn hiền. Mình hông muốn trộm trứng của bạn đâu nhưng mình đang có một kế hoạch \"Dự án bí mật\" nên cho mượn đỡ 40 trứng nha khi nào có ta lại trả cho. Thanks nhiều hè hè",
             "prize": {
-              "coin": "20"
+              "penguin": {
+                "kind": "pen_9",
+                "level": "2"
+              }
             }
           },
           "1": {
             "require": 300,
             "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
-            "share_caption": "Sữa vũ trụ",
-            "share_description": "Không phải tham lam đâu! Mà tại thực hiện được kế hoạch này rồi thì mình phải thực hiện kế hoạch khác lớn hơn mà đúng hông? Do đó, giúp mình thêm lần này nữa nhe 300 trứng thui. Yêu nhiều hì hì",
+            "share_caption": "Dự án tuyệt mật",
+            "share_description": "Không phải tham lam đâu! Mà tại thực hiện được kế hoạch này rồi thì mình phải thực hiện kế hoạch khác lớn hơn mà đúng không? Do đó, giúp mình thêm lần này nữa nhe 300 trứng thui. Yêu nhiều hì hì",
             "prize": {
-              "coin": "140"
+              "exp": "5000"
             }
           },
           "2": {
-            "require": 1200,
+            "require": 3000,
             "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
-            "share_caption": "Sữa ngân hà",
-            "share_description": "Kế hoạch vĩ đại của mình thành công rồi! Thiệt ra mình xin thú nhận là trộm trứng về hông phải làm \"Sữa ngân hà\" gì hết. Trộm bán thôi, nhưng bạn biết đó nhờ vậy mà chuồng mình càng ngày càng đẹp. Có mượn có trả 1200 trứng này khi nào có dịp rồi trả nha. Bây giờ cho mượn trước hi hi.",
+            "share_caption": "Dự án chấn động",
+            "share_description": "Kế hoạch vĩ đại của mình thành công rồi! Thiệt ra mình xin thú nhận là trộm trứng về hông phải làm \"Dự án chấn động\" gì hết. Trộm bán thôi, nhưng bạn biết đó nhờ vậy mà chuồng mình càng ngày càng đẹp. Có mượn có trả 1200 trứng này khi nào có dịp rồi trả nha. Bây giờ cho mượn trước hi hi.",
             "prize": {
-              "coin": "600"
+              "coin": "100"
             }
           }
         }
@@ -256,16 +259,16 @@
             "share_caption": "Mớ trứng đầu tiên",
             "share_description": "Lượm, lượm, lượm, loay hoay đã lượm được 100 trứng rồi. Cánh cụt nhà mình đẻ nhiều quá lượm muốn hông nổi luôn! Nghỉ một chút rồi lượm tiếp thôi, đà này chẳng mấy chốc ta sẽ thành đại gia thôi.",
             "prize": {
-              "coin": "20"
+              "exp": "500"
             }
           },
           "1": {
-            "require": 1400,
+            "require": 1500,
             "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
             "share_caption": "Làm không ngừng nghỉ",
-            "share_description": "1400 trứng rồi! Yeah thành công rồi lượm có một tí thôi mà nhiều vậy rồi á! ",
+            "share_description": "1500 trứng rồi! Yeah thành công rồi lượm có một tí thôi mà nhiều vậy rồi á! ",
             "prize": {
-              "coin": "140"
+              "gold": "3000"
             }
           },
           "2": {
@@ -274,7 +277,7 @@
             "share_caption": "Đại gia \"lượm trứng\"",
             "share_description": "Đúng là ông bà mình nói không sai. \"Có công lượm trứng có ngày thành đại gia\". Ta sắp thành \"Đại gia trứng\" rồi. He he he…",
             "prize": {
-              "coin": "600"
+              "exp": "10000"
             }
           }
         }
@@ -294,7 +297,7 @@
             "share_caption": "Người hào phóng",
             "share_description": "Lượm, lượm, lượm, loay hoay đã lượm được 100 trứng rồi. Cánh cụt nhà mình đẻ nhiều quá lượm muốn hông nổi luôn! Nghỉ một chút rồi lượm tiếp thôi, đà này chẳng mấy chốc ta sẽ thành đại gia thôi.",
             "prize": {
-              "coin": "20"
+              "gold": "500"
             }
           },
           "1": {
@@ -303,16 +306,19 @@
             "share_caption": "Ông chủ tốt",
             "share_description": "1400 trứng rồi! Yeah thành công rồi lượm có một tí thôi mà nhiều vậy rồi á! ",
             "prize": {
-              "coin": "140"
+              "exp": "10000"
             }
           },
           "2": {
-            "require": 200000,
+            "require": 400000,
             "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
             "share_caption": "Người chủ tuyệt vời",
             "share_description": "Đúng là ông bà mình nói không sai. \"Có công lượm trứng có ngày thành đại gia\". Ta sắp thành \"Đại gia trứng\" rồi. He he he…",
             "prize": {
-              "coin": "600"
+              "penguin": {
+                "kind": "pen_44",
+                "level": "0"
+              }
             }
           }
         }
@@ -332,7 +338,7 @@
             "share_caption": "Khởi nghiệp chăn nuôi",
             "share_description": "Hô hô tuy là mới lứa cánh cụt đầu tiên thôi đó nha mà đạt chất lượng tốt thế này rồi thì những lứa sau sẽ còn đem lại thu nhập tốt hơn gấp mấy lần đây.",
             "prize": {
-              "coin": "20"
+              "coin": "5"
             }
           },
           "1": {
@@ -341,7 +347,7 @@
             "share_caption": "Nhà nông đại tài",
             "share_description": "Ta là thiên tài trong việc nuôi cánh cụt đây. Thách thức các bạn trẻ trâu, anh hùng bàn phím, phụ nữ có thai và cho con bú đọ sức nuôi cánh cụt đây.",
             "prize": {
-              "coin": "140"
+              "coin": "20"
             }
           },
           "2": {
@@ -350,7 +356,7 @@
             "share_caption": "Chỉ có thể là! Thần Nông",
             "share_description": "Ôi sao con cánh cụt nào anh ấy nuôi cũng tuyệt vời đến thế. Anh ta là thần thánh hay chỉ là một người nông dân bình thường???",
             "prize": {
-              "coin": "600"
+              "coin": "100"
             }
           }
         }
@@ -370,7 +376,7 @@
             "share_caption": "Mai mắn đến rồi",
             "share_description": "Yeah!! Vừa chơi đã trúng được nhiều vàng đến thế này thì không lâu ta sẽ thành đại gia cho mà coi hehe.",
             "prize": {
-              "coin": "20"
+              "exp": "500"
             }
           },
           "1": {
@@ -379,7 +385,7 @@
             "share_caption": "Thần tài gõ cửa",
             "share_description": "Ôi với số tiền trúng đươc này ta có thể mua cả 1 đàn cánh cụt về chăn thay vịt rồi hô hố hô. Quay số đúng là dễ trúng thiệt quay là có quà hà.",
             "prize": {
-              "coin": "140"
+              "coin": "50"
             }
           },
           "2": {
@@ -388,7 +394,7 @@
             "share_caption": "Đại gia quay số",
             "share_description": "Không gì mau làm giàu bằng việc quay số cả. Hôm nay ta thành đại gia rồi. Quay số trúng cả một gia tài lun rồi. Bà con đi quay số mau đi ",
             "prize": {
-              "coin": "600"
+              "exp": "30000"
             }
           }
         }
@@ -408,25 +414,25 @@
             "share_caption": "Cửa hàng bán lẻ",
             "share_description": "Cửa hàng bán lẻ cánh cụt vừa thành lập và đã được mọi người trong vùng ủng hộ đặt hàng liên tục. Cứ đà này thì ta sẽ nhanh chóng thành lập được 1 chuỗi cửa hàng trên cả nước quá kakaaka.",
             "prize": {
-              "coin": "20"
+              "fish": "600"
             }
           },
           "1": {
-            "require": 100,
+            "require": 150,
             "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
             "share_caption": "Chuỗi cửa hàng bán lẻ toàn quốc",
             "share_description": "Sau một thời gian buôn bán phát đạt chuỗi cửa hàng cánh cụt đã được thành lập trên toàn quốc và được bà con nhiệt tình ủng hộ",
             "prize": {
-              "coin": "140"
+              "exp": "5000"
             }
           },
           "2": {
-            "require": 500,
+            "require": 9000,
             "share_img_link": "http://pen.cgkstudio.com/pen_dev/media/images/achievements/thanhnho-2.png",
             "share_caption": "Quy mô toàn thế giới",
             "share_description": "Ngày hôm nay ta ngồi chiễm chệ đếm tiền với số lượng cửa hàng đã được hình thành trên khắp thế giới với số lượng đơn hàng khủng được giao hàng ngày. ",
             "prize": {
-              "coin": "600"
+              "coin": "1000"
             }
           }
         }

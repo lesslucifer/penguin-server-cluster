@@ -20,8 +20,9 @@
     "AutoRemoveNPC_Friends": "20",
     "Admin_UID": "288377918",
     "AdminTool_UID": "canhcutvuive",
-    "SystemPasswordMD5": "dcf99dc6391c8b8b635534829519d8ea",
+    "SystemPasswordMD5": "243bc5b5dccf5b0a6dc1bddd853edaff",
     "AdultPenguin_Level": "7",
+    "MaxBuyRPByCoinPerDay": "100",
     "MaxBuyRPByGoldPerDay": "10",
     "GameMessageDelay": "5"
   }

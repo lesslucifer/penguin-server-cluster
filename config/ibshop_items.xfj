@@ -70,7 +70,7 @@
       "unlock": {
         "level": 5
       },
-      "state": "normal",
+      "state": "new",
       "promotion": {
         "percent": 0.0
       }
@@ -85,27 +85,12 @@
       "unlock": {
         "level": 6
       },
-      "state": "normal",
+      "state": "new",
       "promotion": {
         "percent": 0.0
       }
     },
     "pen_gold_7": {
-      "kind": "penguin",
-      "entity": "pen_10",
-      "price": {
-        "gold": 999,
-        "coin": 0
-      },
-      "unlock": {
-        "level": 8
-      },
-      "state": "hot",
-      "promotion": {
-        "percent": 0.0
-      }
-    },
-    "pen_gold_8": {
       "kind": "penguin",
       "entity": "pen_7",
       "price": {
@@ -115,12 +100,12 @@
       "unlock": {
         "level": 8
       },
-      "state": "sale",
+      "state": "new",
       "promotion": {
-        "percent": 0.2
+        "percent": 0.0
       }
     },
-    "pen_gold_9": {
+    "pen_gold_8": {
       "kind": "penguin",
       "entity": "pen_8",
       "price": {
@@ -129,6 +114,21 @@
       },
       "unlock": {
         "level": 9
+      },
+      "state": "sale",
+      "promotion": {
+        "percent": 0.2
+      }
+    },
+    "pen_gold_9": {
+      "kind": "penguin",
+      "entity": "pen_10",
+      "price": {
+        "gold": 999,
+        "coin": 0
+      },
+      "unlock": {
+        "level": 12
       },
       "state": "hot",
       "promotion": {
@@ -143,7 +143,7 @@
         "coin": 0
       },
       "unlock": {
-        "level": 10
+        "level": 14
       },
       "state": "hot",
       "promotion": {
@@ -158,7 +158,7 @@
         "coin": 0
       },
       "unlock": {
-        "level": 12
+        "level": 16
       },
       "state": "normal",
       "promotion": {
@@ -173,7 +173,7 @@
         "coin": 0
       },
       "unlock": {
-        "level": 14
+        "level": 18
       },
       "state": "normal",
       "promotion": {
@@ -188,7 +188,7 @@
         "coin": 0
       },
       "unlock": {
-        "level": 14
+        "level": 18
       },
       "state": "normal",
       "promotion": {
@@ -203,7 +203,7 @@
         "coin": 0
       },
       "unlock": {
-        "level": 16
+        "level": 20
       },
       "state": "sale",
       "promotion": {
@@ -218,7 +218,7 @@
         "coin": 0
       },
       "unlock": {
-        "level": 18
+        "level": 22
       },
       "state": "hot",
       "promotion": {
@@ -233,7 +233,7 @@
         "coin": 0
       },
       "unlock": {
-        "level": 20
+        "level": 24
       },
       "state": "hot",
       "promotion": {
@@ -310,7 +310,7 @@
       "unlock": {
         "level": 5
       },
-      "state": "normal",
+      "state": "new",
       "promotion": {
         "percent": 0.0
       }
@@ -325,27 +325,12 @@
       "unlock": {
         "level": 6
       },
-      "state": "normal",
+      "state": "new",
       "promotion": {
         "percent": 0.0
       }
     },
     "pen_coin_7": {
-      "kind": "penguin",
-      "entity": "pen_10",
-      "price": {
-        "gold": 0,
-        "coin": 20
-      },
-      "unlock": {
-        "level": 8
-      },
-      "state": "hot",
-      "promotion": {
-        "percent": 0.0
-      }
-    },
-    "pen_coin_8": {
       "kind": "penguin",
       "entity": "pen_7",
       "price": {
@@ -355,12 +340,12 @@
       "unlock": {
         "level": 8
       },
-      "state": "sale",
+      "state": "new",
       "promotion": {
-        "percent": 0.2
+        "percent": 0.0
       }
     },
-    "pen_coin_9": {
+    "pen_coin_8": {
       "kind": "penguin",
       "entity": "pen_8",
       "price": {
@@ -369,6 +354,21 @@
       },
       "unlock": {
         "level": 9
+      },
+      "state": "sale",
+      "promotion": {
+        "percent": 0.2
+      }
+    },
+    "pen_coin_9": {
+      "kind": "penguin",
+      "entity": "pen_10",
+      "price": {
+        "gold": 0,
+        "coin": 20
+      },
+      "unlock": {
+        "level": 12
       },
       "state": "hot",
       "promotion": {
@@ -383,7 +383,7 @@
         "coin": 21
       },
       "unlock": {
-        "level": 10
+        "level": 14
       },
       "state": "hot",
       "promotion": {
@@ -398,7 +398,7 @@
         "coin": 22
       },
       "unlock": {
-        "level": 12
+        "level": 16
       },
       "state": "normal",
       "promotion": {
@@ -413,7 +413,7 @@
         "coin": 83
       },
       "unlock": {
-        "level": 14
+        "level": 18
       },
       "state": "normal",
       "promotion": {
@@ -428,7 +428,7 @@
         "coin": 80
       },
       "unlock": {
-        "level": 14
+        "level": 18
       },
       "state": "normal",
       "promotion": {
@@ -443,7 +443,7 @@
         "coin": 81
       },
       "unlock": {
-        "level": 16
+        "level": 20
       },
       "state": "sale",
       "promotion": {
@@ -458,7 +458,7 @@
         "coin": 82
       },
       "unlock": {
-        "level": 18
+        "level": 22
       },
       "state": "hot",
       "promotion": {
@@ -473,7 +473,7 @@
         "coin": 165
       },
       "unlock": {
-        "level": 20
+        "level": 24
       },
       "state": "hot",
       "promotion": {

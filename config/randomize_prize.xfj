@@ -20,7 +20,7 @@
         "auto": false,
         "prize": {
           "eggs": {
-            "Egg_3": "5"
+            "Egg_1": "60"
           }
         }
       },
@@ -64,7 +64,7 @@
         "auto": false,
         "prize": {
           "eggs": {
-            "Egg_0": "10"
+            "Egg_0": "8"
           }
         }
       },
@@ -76,7 +76,7 @@
         }
       },
       "11": {
-        "rate": 70,
+        "rate": 45,
         "auto": true,
         "prize": {
           "exp": "1000"
@@ -90,7 +90,7 @@
         }
       },
       "13": {
-        "rate": 45,
+        "rate": 60,
         "auto": false,
         "prize": {
           "penguin": {
@@ -136,7 +136,7 @@
         }
       },
       "18": {
-        "rate": 1325,
+        "rate": 1335,
         "auto": true,
         "prize": {
           "exp": "280"

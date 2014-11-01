@@ -29,6 +29,6 @@ class JedisPoolFactory {
         conf.setMaxWait(maxWait);
         
         password = PGHelper.isNullOrEmpty(password)?null:password;
-        return new JedisPool(conf, host, port, timeOut, password, db);
+        return new JedisPool(conf, host, port, timeOut, password);
     }
 }
