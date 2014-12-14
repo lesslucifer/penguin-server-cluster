@@ -30,8 +30,17 @@ public class PGServices
         Reflector refl = null;
         try {
             Class<?> refClass = Class.forName(refClassName);
-            this.refelector = (Reflector) refClass.newInstance();
+            
+            refl = (Reflector) refClass.newInstance();
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
+        }
+        
+        if (refl != null)
+        {
+            this.refelector = refl;
+        }
+        else
+        {
             throw new IllegalStateException("Cannot create reflection " + refClassName);
         }
     }
@@ -333,6 +342,13 @@ public class PGServices
         return this.refelector.reflectCall("getGameMessages", params);
     }
     
+    //----------------------------------------------------------------------
+    
+    public Map<String, Object> visitCote(Map<String, Object> params)
+    {
+        return this.refelector.reflectCall("visitCote", params);
+    }
+    
     //========================= EVENTS SERVICES =============================
     
     // <editor-fold defaultstate="collapsed" desc="EVENTS SERVICES">
@@ -413,6 +429,13 @@ public class PGServices
         return this.refelector.reflectCall("getFriendBoxEggInfo", params);
     }
     
+    //----------------------------------------------------------------------
+    
+    public Map<String, Object> visitFriendCote(Map<String, Object> params)
+    {
+        return this.refelector.reflectCall("visitFriendCote", params);
+    }
+    
     // </editor-fold>
     
     //========================= QUEST SERVICES =============================
@@ -452,6 +475,13 @@ public class PGServices
     public Map<String, Object> getUserInfoDetail(Map<String, Object> params) 
     {
         return this.refelector.reflectCall("getUserInfoDetail", params);
+    }
+    
+    //----------------------------------------------------------------------
+    
+    public Map<String, Object> getUserCoteList(Map<String, Object> params)
+    {
+        return this.refelector.reflectCall("getUserCoteList", params);
     }
     
     //----------------------------------------------------------------------

@@ -27,6 +27,7 @@ class PrizePool extends HashMap<String, IPrizeFactory>{
         this.put("eggs", EggsPrize.Factory.inst());
         this.put("penguin", PenguinPrize.Factory.inst());
         this.put("add_turn", RPTurnPrize.Factory.inst());
+        this.put("cote", CotePrize.Factory.inst());
     }
     
     private static final PrizePool inst = new PrizePool();

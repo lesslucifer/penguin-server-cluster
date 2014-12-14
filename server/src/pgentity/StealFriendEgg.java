@@ -52,7 +52,7 @@ public class StealFriendEgg implements PooledEntity
     
     public void stealEgg(String friendID, int nEggs)
     {
-        boolean needExpire = DBContext.Redis().isExists(redisKey);
+        boolean needExpire = DBContext.Redis().exists(redisKey);
         
         DBContext.Redis().hincrby(redisKey, friendID, nEggs);
         
@@ -69,6 +69,6 @@ public class StealFriendEgg implements PooledEntity
     
     public int numberFriendStolen()
     {
-        return DBContext.Redis().hlen(redisKey);
+        return DBContext.Redis().hlen(redisKey).intValue();
     }
 }

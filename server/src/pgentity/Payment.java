@@ -73,7 +73,7 @@ public class Payment implements PGEntity
     public static boolean isExist(String billNo)
     {
         RedisKey redisKey = PGKeys.PAYMENTS.getChild(billNo);
-        return DBContext.Redis().isExists(redisKey);
+        return DBContext.Redis().exists(redisKey);
     }
 
     @Override

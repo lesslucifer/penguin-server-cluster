@@ -50,7 +50,6 @@ class SimpleRequester {
     }
     
     public void send(Serializable req) {
-        
         if(this.session != null && this.session.isConnected()) {
             this.session.write(req);
         }

@@ -69,7 +69,7 @@ public class Penguin implements PGEntity
     
     private boolean isExist()
     {
-        return DBContext.Redis().isExists(this.redisKey());
+        return DBContext.Redis().exists(this.redisKey());
     }
     
     public static Penguin newPenguin(String uid, String coteID, String penguinID,

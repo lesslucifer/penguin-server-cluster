@@ -37,7 +37,7 @@ class BasicLogger<E extends BasicRecord> extends GenericQuestLogger<E>
         }
         
         RedisKey key = logPool.beginLog(field);
-        DBContext.Redis().incrby(key, record.getValue());
+        DBContext.Redis().incrBy(key, record.getValue());
         PGLog.info("Basic quest log: %s - inc: %d - into: %s",
                 field, record.getValue(), key);
         logPool.endLog(field);

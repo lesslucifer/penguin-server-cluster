@@ -40,7 +40,7 @@ public class GameMessage implements PGEntity {
     
     private static GameMessage loadMsg(String msgID)
     {
-        PGException.Assert(DBContext.Redis().isExists(redisKey(msgID)),
+        PGException.Assert(DBContext.Redis().exists(redisKey(msgID)),
                 PGError.UNDEFINED,
                 "Game message: " + msgID + " not exist");
         
@@ -77,7 +77,7 @@ public class GameMessage implements PGEntity {
     
     public static boolean isExist(String msgID)
     {
-        return DBContext.Redis().isExists(redisKey(msgID));
+        return DBContext.Redis().exists(redisKey(msgID));
     }
     
     @Override

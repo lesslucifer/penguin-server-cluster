@@ -21,6 +21,11 @@ public class RemoteTargetAdapter implements Target {
     }
     
     @Override
+    public Boolean isGood() {
+        return true;
+    }
+    
+    @Override
     public Object doAMF(Request request) throws InvocationTargetException {
         try {
             return remote.doAMF(request);

@@ -18,9 +18,9 @@
         </data>
         <references xmlns="http://www.netbeans.org/ns/ant-project-references/2">
             <reference>
-                <foreign-project>MinaConnection</foreign-project>
+                <foreign-project>MinaConnection-1</foreign-project>
                 <artifact-type>jar</artifact-type>
-                <script>${build.script.reference.MinaConnection}</script>
+                <script>${project.MinaConnection-1}/build.xml</script>
                 <target>jar</target>
                 <clean-target>clean</clean-target>
                 <id>jar</id>

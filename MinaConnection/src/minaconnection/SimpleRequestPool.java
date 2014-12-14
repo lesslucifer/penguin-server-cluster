@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 import minaconnection.interfaces.IClientHandler;
+import minaconnection.interfaces.IMinaException;
 import minaconnection.interfaces.IRequestPool;
 import org.apache.mina.core.filterchain.IoFilterAdapter;
 import org.apache.mina.core.session.IoSession;
@@ -31,6 +32,8 @@ class SimpleRequestPool implements IRequestPool{
     
     private final Map<MinaAddress, SimpleRequester> _banks;
     private final Map<Long, IClientHandler> _callers;
+    
+    private IMinaException _exceptionHandler;
     
     public SimpleRequestPool() {
         _connectionCounter = new AtomicLong(0);
@@ -59,6 +62,11 @@ class SimpleRequestPool implements IRequestPool{
         sRequest.send(mData);
     }
     
+    @Override
+    public void registerExceptionCaught(IMinaException exceptionHandler) {
+        _exceptionHandler    =   exceptionHandler;
+    }
+    
     private void createConnection(MinaAddress address) 
     {    
         // [LOG HERE]
@@ -74,11 +82,17 @@ class SimpleRequestPool implements IRequestPool{
             public void messageReceived(IoSession session, Object message) throws Exception {
                 handleReceived(session, message);
             }
+            @Override 
+            public void exceptionCaught(IoSession session, Throwable cause) throws Exception {
+                super.exceptionCaught(session, cause);
+                handleException(session, cause, address);
+            }
         });
         req.start();
         _banks.put(address, req);
     }
     
+    // Client handler incoming message
     private void handleReceived(IoSession session, Object message) throws Exception 
     {
         IMinaData data = (IMinaData) message;
@@ -89,6 +103,15 @@ class SimpleRequestPool implements IRequestPool{
             _callers.remove(index);
             
             reflect(caller, data);
+        }
+    }
+    
+    // Client handler exceptions
+    private void handleException(IoSession session, Throwable cause, MinaAddress address) throws Exception
+    {
+        if(_exceptionHandler != null)
+        {
+            _exceptionHandler.exceptionCaught(address, cause);
         }
     }
     

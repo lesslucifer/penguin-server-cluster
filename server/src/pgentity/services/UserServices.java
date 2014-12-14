@@ -6,12 +6,12 @@
 
 package pgentity.services;
 
-import config.CFInit;
+import config.CFCote;
+import config.CFMainQuests;
 import config.CFUser;
 import config.PGConfig;
 import db.DBContext;
 import db.PGKeys;
-import db.PGRedis;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -30,6 +30,7 @@ import libCore.config.Config;
 import logging.Logging;
 import logging.report.PGLogCategory;
 import logging.report.PGRecord;
+import pgentity.Cote;
 import pgentity.CoteList;
 import pgentity.EntityContext;
 import pgentity.FriendList;
@@ -73,7 +74,7 @@ public class UserServices
     public User createNewUser(String uid, String signedReq, long createdTime)
             throws PGException, IOException, ZingMeApiException
     {
-        if (DBContext.Redis().sadd(PGKeys.ALL_USERS, uid) != PGRedis.ERROR)
+        if (DBContext.Redis().sadd(PGKeys.ALL_USERS, uid) > 0L)
         {
             SNServices sns = new SNServices(signedReq);
             PGException.Assert(sns.validUser(uid), PGError.INVALID_SIGNED_REQUEST,
@@ -90,8 +91,8 @@ public class UserServices
                     sns, uTempData, createdTime);
             
             Penguindex penguindex = Penguindex.getPenguindex(uid);
-            CFUser.Default coteConfs = PGConfig.inst()
-                    .getUser().getDefaultUser();
+            List<String> coteConfs = PGConfig.inst()
+                    .getUser().getDefaultUser().getCotes();
             this.initCote(user.cotes(), coteConfs, penguindex, createdTime);
             
             this.initQuest(user, createdTime);
@@ -105,17 +106,44 @@ public class UserServices
         return null;
     }
     
-    private void initCote(CoteList coteList, Map<Integer, ? extends CFInit.Cote> coteConfs,
+    public User createTestUser(String uid, String name, String ava, long createdTime)
+            throws PGException, IOException, ZingMeApiException
+    {
+        if (DBContext.Redis().sadd(PGKeys.ALL_USERS, uid) > 0L)
+        {
+            @SuppressWarnings("deprecated")
+            User user = User.newUser(uid, name, ava, createdTime);
+            
+            Penguindex penguindex = Penguindex.getPenguindex(uid);
+            List<String> coteConfs = PGConfig.inst()
+                    .getUser().getDefaultUser().getCotes();
+            this.initCote(user.cotes(), coteConfs, penguindex, createdTime);
+            
+            this.initQuest(user, createdTime);
+            this.initNPCs(user, createdTime);
+            
+            user.saveToDB();
+            
+            return user;
+        }
+        
+        return null;
+    }
+    
+    private void initCote(CoteList coteList,
+            List<String> coteTokens,
             Penguindex penguindex, long createdTime) throws PGException
     {
-        String[] coteIDs = new String[coteConfs.size()];
-        for (Integer index : coteConfs.keySet()) {
-            CFInit.Cote coteConfig = coteConfs.get(index);
+        String[] coteIDs = new String[coteTokens.size()];
+        for (int i = 0; i < coteTokens.size(); ++i) {
+            CFCote.Templates.Template coteConf = PGConfig.inst().getCote()
+                    .templs().get(coteTokens.get(i));
             
             final String coteID = PGKeys.randomKey();
-            coteIDs[index] = coteID;
+            coteIDs[i] = coteID;
             
-            CoteServices.inst().createCote(coteList.getUid(), coteID, coteConfig, penguindex, createdTime);
+            CoteServices.inst().createCote(coteList.getUid(),
+                    coteID, coteConf, penguindex, createdTime);
         }
         
         for (String coteID : coteIDs) {
@@ -123,11 +151,33 @@ public class UserServices
         }
     }
     
+    public Cote addNewCote(String uid, String coteToken, long now)
+    {
+        String coteID = PGKeys.randomKey();
+        Penguindex pdx = Penguindex.getPenguindex(uid);
+        CFCote.Templates.Template coteConf = PGConfig.inst().getCote()
+                .templs().get(coteToken);
+        
+        Cote cote = CoteServices.inst().createCote(uid, coteID, coteConf, pdx, now);
+        CoteList.getCotes(uid).append(coteID);
+        
+        return cote;
+    }
+    
     private void initQuest(User user, long createdTime)
     {
         Iterable<String> qLines = PGConfig.inst().getMainQuest().keySet();
         for (String qLine : qLines) {
-            MainQuestLine.newQuestLine(user.getUid(), qLine);
+            CFMainQuests.QuestLine conf = PGConfig.inst()
+                    .getMainQuest().get(qLine);
+            if (conf.minimizeLevel(user.getLevel()) >= 0)
+            {
+                MainQuestLine.newQuestLine(user.getUid(), qLine);
+            }
+            else
+            {
+                MainQuestLine.newLockedQuestLine(user.getUid(), qLine);
+            }
         }
         
         QuestServices.inst().newDailyQuest(user, createdTime);
@@ -149,7 +199,7 @@ public class UserServices
             User npc = User.newUser(npcID, name, avatar, now);
             Penguindex npcPenguindex = Penguindex.getPenguindex(npcID);
             
-            this.initCote(npc.cotes(), conf.get(npcIdx), npcPenguindex, now);
+            this.initCote(npc.cotes(), conf.get(npcIdx).cotes(), npcPenguindex, now);
             this.initQuest(npc, now);
             
             FriendServices.inst().setNPCData(npc, npcIdx, now);
@@ -183,7 +233,10 @@ public class UserServices
                     .getUser().get(level).getLevelUpPrize());
 
             prize.award(context, now);
-            
+        }
+        
+        if (oldUserLevel < context.getUser().getLevel())
+        {
             // check main quest
             QuestServices.inst().autoAcceptMainQuest(context.getUser());
         }
@@ -360,7 +413,7 @@ public class UserServices
         {
             @Override
             public void run() {
-                BufferedWriter out = null;
+                BufferedWriter out;
                 try {
                     String dayToken = TimeUtil.dayToken(now);
                     String a1BackupDir = Config.getParam("a1backup", "directory");

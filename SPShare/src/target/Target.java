@@ -13,6 +13,8 @@ import java.lang.reflect.InvocationTargetException;
  * @author KieuAnh
  */
 public interface Target {
+    Boolean isGood();
+    
     Object doAMF(Request request) throws InvocationTargetException;
     Object doHTTP(Request request) throws InvocationTargetException;
 }

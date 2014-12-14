@@ -13,7 +13,6 @@ import db.PGKeys;
 import db.RedisKey;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import org.json.simple.JSONObject;
 import pgentity.Achievement;
 import pgentity.CoteList;
@@ -111,10 +110,7 @@ class V0_Restorer implements Restorer
     public static void restoreQuestLine(String uid, String qLine, Map<String, Object> data)
     {
         EntityPool.inst().remove(MainQuestLine.class, uid, qLine);
-        
         DBContext.Redis().hset(MainQuestLine.redisKey(uid, qLine), (Map) data.get("data"));
-        MainQuestLine questLine = MainQuestLine.getQuestLine(uid, qLine);
-        questLine.getLogger().restore(data);
     }
     
     public static void restoreAchievements(String uid, Map<String, Object> data)

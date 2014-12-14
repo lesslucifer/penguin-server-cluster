@@ -26,8 +26,9 @@ public class PGKeys
     public static final RedisKey GIFTS = RedisKey.root().getChild("gifts");
     public static final RedisKey PAYMENTS = RedisKey.root().getChild("payments");
     public static final RedisKey GIFTCODES = RedisKey.root().getChild("giftcodes");
-    public static final RedisKey GAMEMESSAGES = RedisKey.root().getChild("gifttemplates");
-    public static final RedisKey GIFTTEMPLATES = RedisKey.root().getChild("msg");
+    public static final RedisKey GAMEMESSAGES = RedisKey.root().getChild("msg");
+    public static final RedisKey GIFTTEMPLATES = RedisKey.root().getChild("gifttemplates");
+    public static final RedisKey RACING = RedisKey.root().getChild("race");
     
     public static final String FD_COTES = "cotes";
     public static final String FD_FRIENDSLIST = "friends";
@@ -53,11 +54,25 @@ public class PGKeys
     public static final String FD_DAILY_QUEST = "daily";
     public static final String FD_MAIN_QUEST = "main";
     public static final String FD_QUEST_LOGGER = "logger";
+    
+    public static final String FD_RANK = "rank";
+    
+    public static final String FD_NOTIF = "notif";
 
     private static final String DB_VER_PREFIX = Config.getParam("db_version", "db_ver") + "_";
+    private static final long PACK_SIZE = 0x1000;
+    private static volatile long currentKey = Long.MAX_VALUE;
+    private static long currentPack = 0;
+    private static long nextPack = 0;
     public static synchronized String randomKey() {
+        if (currentKey >= nextPack)
+        {
+            currentPack = DBContext.Redis().incrBy(INC, PACK_SIZE);
+            nextPack = currentPack + PACK_SIZE;
+            currentKey = currentPack;
+        }
         return DB_VER_PREFIX +
-                Long.toString(DBContext.Redis().incr(INC), Character.MAX_RADIX);
+                Long.toString(currentKey++, Character.MAX_RADIX);
     }
 
     private static String randomKey2() {

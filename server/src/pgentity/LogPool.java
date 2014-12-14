@@ -48,7 +48,7 @@ public class LogPool
     private void beginCheckExpire(RedisKey key)
     {
         if (expireTime > 0 && !needExpires.contains(key) &&
-                !DBContext.Redis().isExists(key))
+                !DBContext.Redis().exists(key))
         {
             needExpires.add(key);
         }

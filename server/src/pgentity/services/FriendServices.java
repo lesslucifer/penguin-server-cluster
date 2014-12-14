@@ -7,6 +7,7 @@
 package pgentity.services;
 
 import com.google.common.collect.Sets;
+import config.CFCote;
 import config.CFUser;
 import config.PGConfig;
 import db.DBContext;
@@ -70,16 +71,18 @@ public class FriendServices
         npc.setLevel(conf.getLevel());
         npc.saveToDB();
         
-        for (Integer coteIdx : conf.keySet())
+        List<String> cotes = conf.cotes();
+        for (int i = 0; i < cotes.size(); ++i)
         {
-            CFUser.NPCs.NPC.Cote coteConf = conf.get(coteIdx);
+            CFCote.Templates.Template coteConf = PGConfig.inst()
+                    .getCote().templs().get(cotes.get(i));
             
-            Cote npcCote = Cote.getCote(npc.getUid(), npc.cotes().at(coteIdx));
-            npcCote.setPoolFish(coteConf.getPoolFish());
+            Cote npcCote = Cote.getCote(npc.getUid(), npc.cotes().at(i));
+            npcCote.setPoolFish(coteConf.getFish());
             npcCote.setLevel(coteConf.getLevel());
             
-            BoxEgg boxEgg = BoxEgg.getBoxEgg(npc.getUid(), npc.cotes().at(coteIdx));
-            boxEgg.setLevel(coteConf.getBoxEggLevel());
+            BoxEgg boxEgg = BoxEgg.getBoxEgg(npc.getUid(), npc.cotes().at(i));
+            boxEgg.setLevel(coteConf.getBoxeggLevel());
             boxEgg.saveToDB();
             
             npcCote.eggStore().removeEggs(npcCote.eggStore().getEggs());

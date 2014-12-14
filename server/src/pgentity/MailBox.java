@@ -117,7 +117,7 @@ public class MailBox extends PGRedisListEntity
     
     public void resetUnreadMail()
     {
-        DBContext.Redis().hDel(mailDataRK, PGMacro.NUMBER_NEW_MAILS);
+        DBContext.Redis().hdel(mailDataRK, PGMacro.NUMBER_NEW_MAILS);
     }
     
     @Deprecated

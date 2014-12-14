@@ -1,0 +1,30 @@
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+/Penguin-demo-server-connect/target/
+/Penguin Server/.svn
+bakall.bak
+run.bat
+build
+dist
+DOC
+log
+test
+bak.bak
+/server/nbproject/private/
+/lib
+<<<<<<< HEAD
+=======
+/config
+>>>>>>> bb021d48fb450c9c3e370dd3b947441c6605cef1
+/minaConnection/nbproject/private/
+/JavaApplication3/nbproject/private/

@@ -59,6 +59,7 @@ public class Cote implements PGEntity
     
     /**
      * Static factory
+     * @param uid
      * @param coteID
      * @return Cote entity
      * @throws PGException if coteID aren't exist in db
@@ -78,6 +79,7 @@ public class Cote implements PGEntity
      * Create a new (blank) cote entity
      * without any database check/update/save
      * NERVER USE THIS METHOD - USED BY <i>PGCoteServices.createCote</i> instead
+     * @param uid
      * @param coteID
      * @return Blank entity - contains no data
      */
@@ -146,7 +148,7 @@ public class Cote implements PGEntity
     
     public boolean isExist()
     {
-        return DBContext.Redis().isExists(this.redisKey());
+        return DBContext.Redis().exists(this.redisKey());
     }
     
     //<editor-fold defaultstate="collapsed" desc="AMF">

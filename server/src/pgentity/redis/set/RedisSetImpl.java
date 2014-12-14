@@ -25,8 +25,8 @@ public class RedisSetImpl implements RedisSet
     private final RedisKey redisKey;
     private final Lock sync = new ReentrantLock();
     private Set<String> cache;
-    private Set<String> addedElem = new HashSet();
-    private Set<String> removedElem = new HashSet();
+    private final Set<String> addedElem = new HashSet();
+    private final Set<String> removedElem = new HashSet();
 
     public RedisSetImpl(RedisKey redisKey) {
         this.redisKey = redisKey;
@@ -98,10 +98,10 @@ public class RedisSetImpl implements RedisSet
         }
         else
         {
-            int dataSz = (int) DBContext.Redis().scard(redisKey);
-            int nDiffAdd = DBContext.Redis().sndiff(redisKey, addedElem);
+            int dataSz = DBContext.Redis().scard(redisKey).intValue();
+            int nDiffAdd = DBContext.Redis().sndiff(redisKey, addedElem).intValue();
             int nDiffRem = removedElem.size() -
-                    DBContext.Redis().sndiff(redisKey, removedElem);
+                    DBContext.Redis().sndiff(redisKey, removedElem).intValue();
             
             return dataSz + nDiffAdd - nDiffRem;
         }

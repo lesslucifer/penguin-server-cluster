@@ -1,26 +1,24 @@
 {
   "payment": {
-    "payment": {
-      "payment_1": {
-        "name": "Pen Xu",
-        "zing": 1,
-        "coin": 1
-      },
-      "payment_2": {
-        "name": "Pen Xu",
-        "zing": 10,
-        "coin": 10
-      },
-      "payment_3": {
-        "name": "Pen Xu",
-        "zing": 100,
-        "coin": 100
-      },
-      "payment_4": {
-        "name": "Pen Xu",
-        "zing": 1000,
-        "coin": 1000
-      }
+    "payment_1": {
+      "name": "Pen Xu",
+      "zing": 1,
+      "coin": 1
+    },
+    "payment_2": {
+      "name": "Pen Xu",
+      "zing": 10,
+      "coin": 10
+    },
+    "payment_3": {
+      "name": "Pen Xu",
+      "zing": 100,
+      "coin": 100
+    },
+    "payment_4": {
+      "name": "Pen Xu",
+      "zing": 1000,
+      "coin": 1000
     }
   }
 }

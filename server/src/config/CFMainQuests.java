@@ -55,10 +55,16 @@ public class CFMainQuests extends JSONMapString<CFMainQuests.QuestLine>
         
         public QuestLevel get(int uLevel)
         {
-            return this.qLevels.get(this.qLevels.floorKey(uLevel));
+            Integer min = this.qLevels.floorKey(uLevel);
+            if (min != null)
+            {
+                return this.qLevels.get(min);
+            }
+            
+            return null;
         }
         
-        public int minimizeLevel(int uLevel)
+        public Integer minimizeLevel(int uLevel)
         {
             return this.qLevels.floorKey(uLevel);
         }

@@ -6,7 +6,7 @@
 
 package git.httpservices;
 
-import git.target.MinaTargetResolver;
+import git.target.Targets;
 import java.lang.reflect.InvocationTargetException;
 import javax.servlet.http.*;
 import share.PGMacro;
@@ -20,7 +20,7 @@ import target.TargetResolver;
  */
 public class TargetedServlet extends git.httpservices.ServerServlet
 {
-    private final TargetResolver targetResolver = MinaTargetResolver.inst();
+    private final TargetResolver targetResolver = Targets.RESOLVER;
     private final String method;
 
     public TargetedServlet(String method) {

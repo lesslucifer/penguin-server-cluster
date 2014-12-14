@@ -32,22 +32,22 @@ class MinaSimpleIoHandler extends IoHandlerAdapter {
     
     @Override
     public void sessionClosed(IoSession session) throws Exception {
-        System.out.println("sessionClosed");
+        System.out.println("Mina sessionClosed");
     }
     
     // Final method
     @Override
     public final void sessionCreated(IoSession session) throws Exception {
-        System.out.println("sessionCreated");
+        System.out.println("Mina sessionCreated");
     }
     
     @Override
     public final void sessionIdle(IoSession session, IdleStatus status) throws Exception {
-        System.out.println("sessionIdle");
+        System.out.println("Mina sessionIdle");
     }
     
     @Override
     public final void sessionOpened(IoSession session) throws Exception {
-        System.out.println("sessionOpened");
+        System.out.println("Mina sessionOpened");
     }
 }
