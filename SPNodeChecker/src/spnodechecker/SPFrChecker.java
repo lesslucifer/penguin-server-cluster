@@ -52,8 +52,6 @@ public class SPFrChecker extends javax.swing.JFrame implements ListDataListener 
     private void initComponents() {
 
         jTextField1 = new javax.swing.JTextField();
-        testReq = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         btnCheck = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         result = new javax.swing.JList();
@@ -61,8 +59,6 @@ public class SPFrChecker extends javax.swing.JFrame implements ListDataListener 
         jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setText("Test User");
 
         btnCheck.setText("Check");
         btnCheck.addActionListener(new java.awt.event.ActionListener() {
@@ -79,28 +75,20 @@ public class SPFrChecker extends javax.swing.JFrame implements ListDataListener 
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCheck)
-                    .addComponent(jLabel1))
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(testReq)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addComponent(btnCheck)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(testReq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(18, 18, 18)
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnCheck)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 313, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -109,38 +97,30 @@ public class SPFrChecker extends javax.swing.JFrame implements ListDataListener 
 
     private boolean getParams()
     {
-        if(testReq.getText().equals(""))
-            return false;
-        
-        this.uid = null;
-        this.sid = null;
-        this.signed_request = null;
-        
-        String req = testReq.getText();
-        
-        int uidIndex = req.indexOf("&sign_user");
-        int nameIndex = req.indexOf("&username");
-        this.uid = req.substring(uidIndex + 11, nameIndex);
-        
-        int sidIndex = req.indexOf("&session_id");
-        int signRequestIndex = req.indexOf("&signed_request");
-        this.sid = req.substring(sidIndex + 12, signRequestIndex);
-        
-        int codeIndex = req.indexOf("&code");
-        this.signed_request = req.substring(signRequestIndex + 16, codeIndex);
-        
-        return (uid != null && sid != null && signed_request != null);
+        return true;
+//        this.uid = null;
+//        this.sid = null;
+//        this.signed_request = null;
+//        
+//        String req = testReq.getText();
+//        
+//        int uidIndex = req.indexOf("&sign_user");
+//        int nameIndex = req.indexOf("&username");
+//        this.uid = req.substring(uidIndex + 11, nameIndex);
+//        
+//        int sidIndex = req.indexOf("&session_id");
+//        int signRequestIndex = req.indexOf("&signed_request");
+//        this.sid = req.substring(sidIndex + 12, signRequestIndex);
+//        
+//        int codeIndex = req.indexOf("&code");
+//        this.signed_request = req.substring(signRequestIndex + 16, codeIndex);
+//        
+//        return (uid != null && sid != null && signed_request != null);
     }
     
     private void btnCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckActionPerformed
         model.clearAll();
-        List<SPAddress> addresses = holder.getAddresses();
-        try {
-            Map<String, Object> data = new HashMap();
-            checker.check(model, addresses, data);
-        } catch (InvocationTargetException ex) {
-            Logger.getLogger(SPFrChecker.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
 //        if(getParams())
 //        {
 //            Map<String, Object> data = new HashMap();
@@ -191,11 +171,9 @@ public class SPFrChecker extends javax.swing.JFrame implements ListDataListener 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCheck;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JList result;
-    private javax.swing.JTextField testReq;
     // End of variables declaration//GEN-END:variables
 
     @Override

@@ -7,6 +7,7 @@
 package spnodechecker;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
 import minaconnection.ClientHandlerFactory;
 import minaconnection.MinaAddress;
 import minaconnection.SimpleRequestPoolFactory;
@@ -24,6 +25,8 @@ class MinaTarget implements Target {
 
     private final MinaAddress _address;
     private final IRequestPool _pool;
+    
+    IClientHandler _cHandler;
     
     private Boolean _isGood;
     
@@ -50,14 +53,21 @@ class MinaTarget implements Target {
     
     private void badConnection() {
         _isGood = false;
+        
+        if(_cHandler != null)
+        {
+            HashMap<String, Object> data = new HashMap();
+            data.put("state", false);
+            _cHandler.callback(data);
+        }
     }
     
     @Override
     public Object doAMF(Request request) throws InvocationTargetException {
         try {
-            IClientHandler cHandler = ClientHandlerFactory.create();
-            _pool.request(_address, request, cHandler);
-            return cHandler.doReq();
+            _cHandler = ClientHandlerFactory.create();
+            _pool.request(_address, request, _cHandler);
+            return _cHandler.doReq();
         } catch (Exception ex) {
             throw new InvocationTargetException(ex);
         }
@@ -66,9 +76,9 @@ class MinaTarget implements Target {
     @Override
     public Object doHTTP(Request request) throws InvocationTargetException {
         try {
-            IClientHandler cHandler = ClientHandlerFactory.create();
-            _pool.request(_address, request, cHandler);
-            Response resp = (Response) cHandler.doReq();
+            _cHandler = ClientHandlerFactory.create();
+            _pool.request(_address, request, _cHandler);
+            Response resp = (Response) _cHandler.doReq();
             return resp.getData();
         } catch (Exception ex) {
             throw new InvocationTargetException(ex);

@@ -115,6 +115,12 @@ class SimpleRequestPool implements IRequestPool{
         }
     }
     
+    @Override
+    public void stop(MinaAddress address)
+    {
+        
+    }
+    
     private void reflect(IClientHandler caller, IMinaData data) 
             throws NoSuchMethodException, IllegalAccessException, 
             IllegalArgumentException, InvocationTargetException 

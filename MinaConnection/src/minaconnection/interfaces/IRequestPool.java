@@ -16,4 +16,5 @@ import minaconnection.MinaAddress;
 public interface IRequestPool {
     void request(MinaAddress address, Serializable data, IClientHandler h);
     void registerExceptionCaught(IMinaException exceptionHandler);
+    void stop(MinaAddress address);
 }

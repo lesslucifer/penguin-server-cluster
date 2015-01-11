@@ -24,15 +24,6 @@ class MinaWaitResponseObject implements IClientHandler {
     @Override
     public Serializable doReq() throws Exception {
         // use another sync methods
-//        while(data == null) 
-//        {
-//            try {
-//                Thread.sleep(1);
-//            } catch (InterruptedException ex) {
-//                Logger.getLogger(MinaWaitResponseObject.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        }
-        
         while (data == null)
         {
             synchronized (this)

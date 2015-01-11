@@ -6,6 +6,8 @@
             <file>file:/E:/Projects/Java/penguin-server-cluster/MinaConnection/src/minaconnection/SimpleRequestPool.java</file>
             <file>file:/E:/Projects/Java/penguin-server-cluster/MinaConnection/src/minaconnection/MinaWaitResponseObject.java</file>
         </group>
-        <group/>
+        <group>
+            <file>file:/E:/Projects/Java/penguin-server-cluster/MinaConnection/src/minaconnection/SimpleRequestPool.java</file>
+        </group>
     </open-files>
 </project-private>

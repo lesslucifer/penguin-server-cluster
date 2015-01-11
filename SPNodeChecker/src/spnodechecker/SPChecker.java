@@ -21,10 +21,12 @@ import target.Response;
  */
 class SPChecker {
     
-    public void check(SpFrCheckerModel model, List<SPAddress> addresses, Map<String, Object> data) throws InvocationTargetException
+    public Map<SPAddress, String> check(List<SPAddress> addresses, Map<String, Object> data) throws InvocationTargetException
     {
         if(addresses == null)
             System.out.println("List address is empty");
+     
+        Map<SPAddress, String> results = new HashMap();
         
         for(int i = 0; i < addresses.size(); ++i)
         {
@@ -39,24 +41,57 @@ class SPChecker {
                     Map result = (Map)respData.getData();
                     Boolean state = (Boolean)result.get("state");
                     if(state)
-                        successed(model, address);
+                        successed(results, address);
                     else
-                        failed(model, address);
+                        failed(results, address);
                 }
-                else failed(model, address);
+                else failed(results, address);
             } catch(Exception e) {
-                failed(model, address);
+                failed(results, address);
             } finally {
-                // dispose connection
             }
         }
+        return results;
     }
     
-    private void failed(SpFrCheckerModel model, SPAddress address) {
-        model.addAddress(address.getAddress() + ":" + address.getPort() + ": failed" );
+    // Use for UI checker
+//    public void check(SpFrCheckerModel model, List<SPAddress> addresses, Map<String, Object> data) throws InvocationTargetException
+//    {
+//        if(addresses == null)
+//            System.out.println("List address is empty");
+//        
+//        for(int i = 0; i < addresses.size(); ++i)
+//        {
+//            SPAddress address = addresses.get(i);
+//            MinaTarget target = new MinaTarget(new MinaAddress(address.getAddress(), address.getPort()));
+//            try {
+//                Map<String, Object> reqData = new HashMap();
+//                Request req = Request.makeAMF("", "checkConnection", reqData, (long)0);
+//                Response respData = (Response) target.doAMF(req);
+//                if(respData != null)
+//                {
+//                    Map result = (Map)respData.getData();
+//                    Boolean state = (Boolean)result.get("state");
+//                    if(state)
+//                        successed(model, address);
+//                    else
+//                        failed(model, address);
+//                }
+//                else failed(model, address);
+//            } catch(Exception e) {
+//                failed(model, address);
+//            } finally {
+//            }
+//        }
+//    }
+    
+    private void failed(Map<SPAddress, String> result, SPAddress address) {
+//        model.addAddress(address.getAddress() + ":" + address.getPort() + ": failed" );
+        result.put(address, "failed");
     }
     
-    private void successed(SpFrCheckerModel model, SPAddress address) {
-        model.addAddress(address.getAddress() + ":" + address.getPort() + ": successed" );
+    private void successed(Map<SPAddress, String> result, SPAddress address) {
+//        model.addAddress(address.getAddress() + ":" + address.getPort() + ": successed" );
+        result.put(address, "successed");
     }
 }
